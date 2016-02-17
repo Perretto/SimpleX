@@ -6,15 +6,16 @@ using System.Threading.Tasks;
 
 namespace SimpleX.Model
 {
-    public class contatoFornecedor
+    public class clienteContato
     {
         public Guid ID { get; set; }
         public string nomeContato { get; set; }
         public string telefoneContato { get; set; }
         public string emailContato { get; set; }
-        public Guid fornecedorID { get; set; }
-        public fornecedor fornecedor { get; set; }
+        public Guid clienteID { get; set; }
+        public cliente cliente { get; set; }
         public Guid empresaID { get; set; }
         public empresa empresaID { get; set; }
+ 
     }
 }

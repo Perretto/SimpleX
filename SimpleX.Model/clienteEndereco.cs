@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SimpleX.Model
 {
-    public class enderecoCliente
+    public class clienteEndereco
     {
         public Guid ID { get; set; }
         public string logradouro { get; set; }
