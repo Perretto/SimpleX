@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SimpleX.Model
 {
-    public class cliente
+    public class empresa
     {
         public Guid ID { get; set; }
         public string razaoSocial { get; set; }
@@ -18,9 +18,5 @@ namespace SimpleX.Model
         public string IM { get; set; }
         public Guid CNAEID { get; set; }
         public CNAE CNAE { get; set; }
-        public string suframa { get; set; }
-        public Guid empresaID { get; set; }
-        public empresa empresa { get; set; }
-
     }
 }
