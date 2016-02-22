@@ -30,7 +30,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,19 +47,37 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="produtoCategoria.cs" />
     <Compile Include="cidade.cs" />
     <Compile Include="cliente.cs" />
     <Compile Include="CNAE.cs" />
     <Compile Include="clienteContato.cs" />
+    <Compile Include="produtoComposicao.cs" />
+    <Compile Include="compra.cs" />
+    <Compile Include="compraPagamento.cs" />
+    <Compile Include="compraProduto.cs" />
+    <Compile Include="formaPagamento.cs" />
     <Compile Include="fornecedorContato.cs" />
     <Compile Include="empresa.cs" />
     <Compile Include="clienteEndereco.cs" />
     <Compile Include="empresaEndereco.cs" />
     <Compile Include="estado.cs" />
     <Compile Include="fornecedor.cs" />
+    <Compile Include="fornecedorEndereco.cs" />
     <Compile Include="pais.cs" />
+    <Compile Include="produto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="compraStatus.cs" />
+    <Compile Include="vendaPagamento.cs" />
+    <Compile Include="vendaStatus.cs" />
+    <Compile Include="produtoTipo.cs" />
     <Compile Include="usuario.cs" />
+    <Compile Include="venda.cs" />
+    <Compile Include="vendaProduto.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

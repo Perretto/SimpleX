@@ -15,6 +15,6 @@ namespace SimpleX.Model
         public Guid fornecedorID { get; set; }
         public fornecedor fornecedor { get; set; }
         public Guid empresaID { get; set; }
-        public empresa empresaID { get; set; }
+        public empresa empresa { get; set; }
     }
 }

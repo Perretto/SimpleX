@@ -9,6 +9,7 @@ namespace SimpleX.Model
     public class fornecedor
     {
         public Guid ID { get; set; }
+        public string codigo { get; set; }
         public string razaoSocial { get; set; }
         public string nomeFantasia { get; set; }
         public string CNPJ { get; set; }
