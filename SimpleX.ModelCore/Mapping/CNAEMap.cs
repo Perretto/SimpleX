@@ -17,7 +17,6 @@ namespace SimpleX.ModelCore.Mapping
             this.Property(c => c.ID).HasColumnName("ID");
             this.Property(c => c.nome).HasColumnName("nome");
             this.Property(c => c.codigo).HasColumnName("codigo");
-            this.Property(c => c.empresaID).HasColumnName("empresaID");
 
         }
     }

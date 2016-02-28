@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contexts\Context.cs" />
     <Compile Include="Mapping\cidadeMap.cs" />
     <Compile Include="Mapping\clienteEnderecoMap.cs" />
     <Compile Include="Mapping\clienteMap.cs" />
@@ -73,7 +74,36 @@
     <Compile Include="Mapping\vendaPagamentoMap.cs" />
     <Compile Include="Mapping\vendaProdutoMap.cs" />
     <Compile Include="Mapping\vendaStatusMapcs.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\IRepository.cs" />
+    <Compile Include="Repository\Repository.cs" />
+    <Compile Include="Services\cidadeService.cs" />
+    <Compile Include="Services\clienteContatoService.cs" />
+    <Compile Include="Services\clienteEnderecoService.cs" />
+    <Compile Include="Services\clienteService.cs" />
+    <Compile Include="Services\CNAEService.cs" />
+    <Compile Include="Services\compraPagamentoService.cs" />
+    <Compile Include="Services\compraProdutoService.cs" />
+    <Compile Include="Services\compraService.cs" />
+    <Compile Include="Services\compraStatusService.cs" />
+    <Compile Include="Services\empresaEnderecoService.cs" />
+    <Compile Include="Services\empresaService.cs" />
+    <Compile Include="Services\estadoService.cs" />
+    <Compile Include="Services\formaPagamentoService.cs" />
+    <Compile Include="Services\fornecedorContatoService.cs" />
+    <Compile Include="Services\fornecedorEnderecoService.cs" />
+    <Compile Include="Services\fornecedorService.cs" />
+    <Compile Include="Services\paisService.cs" />
+    <Compile Include="Services\produtoCategoriaService.cs" />
+    <Compile Include="Services\produtoComposicaoService.cs" />
+    <Compile Include="Services\produtoService.cs" />
+    <Compile Include="Services\produtoTipoService.cs" />
+    <Compile Include="Services\usuarioService.cs" />
+    <Compile Include="Services\vendaPagamentoService.cs" />
+    <Compile Include="Services\vendaProdutoService.cs" />
+    <Compile Include="Services\vendaService.cs" />
+    <Compile Include="Services\vendaStatusService.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -81,6 +111,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SimpleX.Core\SimpleX.Core.csproj">
+      <Project>{1e42dd9f-bdcf-4dbd-b0ca-ac6c0d2084f5}</Project>
+      <Name>SimpleX.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SimpleX.Model\SimpleX.Model.csproj">
       <Project>{3d387e6d-6347-4a1b-ae93-005be2c038be}</Project>
       <Name>SimpleX.Model</Name>
