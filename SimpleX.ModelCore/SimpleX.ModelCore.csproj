@@ -30,7 +30,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,7 +47,75 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contexts\Context.cs" />
+    <Compile Include="Mapping\cidadeMap.cs" />
+    <Compile Include="Mapping\clienteEnderecoMap.cs" />
+    <Compile Include="Mapping\clienteMap.cs" />
+    <Compile Include="Mapping\clienteContatoMap.cs" />
+    <Compile Include="Mapping\CNAEMap.cs" />
+    <Compile Include="Mapping\compraMap.cs" />
+    <Compile Include="Mapping\compraPagamentoMap.cs" />
+    <Compile Include="Mapping\compraProdutoMap.cs" />
+    <Compile Include="Mapping\compraStatusMap.cs" />
+    <Compile Include="Mapping\empresaEnderecoMap.cs" />
+    <Compile Include="Mapping\empresaMap.cs" />
+    <Compile Include="Mapping\estadoMap.cs" />
+    <Compile Include="Mapping\formaPagamentoMap.cs" />
+    <Compile Include="Mapping\fornecedorContatoMap.cs" />
+    <Compile Include="Mapping\fornecedorEnderecoMap.cs" />
+    <Compile Include="Mapping\fornecedorMap.cs" />
+    <Compile Include="Mapping\paisMap.cs" />
+    <Compile Include="Mapping\produtoCategoriaMap.cs" />
+    <Compile Include="Mapping\produtoComposicaoMap.cs" />
+    <Compile Include="Mapping\produtoMap.cs" />
+    <Compile Include="Mapping\produtoTipoMap.cs" />
+    <Compile Include="Mapping\usuarioMap.cs" />
+    <Compile Include="Mapping\vendaMap.cs" />
+    <Compile Include="Mapping\vendaPagamentoMap.cs" />
+    <Compile Include="Mapping\vendaProdutoMap.cs" />
+    <Compile Include="Mapping\vendaStatusMapcs.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\IRepository.cs" />
+    <Compile Include="Repository\Repository.cs" />
+    <Compile Include="Result.cs" />
+    <Compile Include="Services\cidadeService.cs" />
+    <Compile Include="Services\clienteContatoService.cs" />
+    <Compile Include="Services\clienteEnderecoService.cs" />
+    <Compile Include="Services\clienteService.cs" />
+    <Compile Include="Services\CNAEService.cs" />
+    <Compile Include="Services\compraPagamentoService.cs" />
+    <Compile Include="Services\compraProdutoService.cs" />
+    <Compile Include="Services\compraService.cs" />
+    <Compile Include="Services\compraStatusService.cs" />
+    <Compile Include="Services\empresaEnderecoService.cs" />
+    <Compile Include="Services\empresaService.cs" />
+    <Compile Include="Services\estadoService.cs" />
+    <Compile Include="Services\formaPagamentoService.cs" />
+    <Compile Include="Services\fornecedorContatoService.cs" />
+    <Compile Include="Services\fornecedorEnderecoService.cs" />
+    <Compile Include="Services\fornecedorService.cs" />
+    <Compile Include="Services\paisService.cs" />
+    <Compile Include="Services\produtoCategoriaService.cs" />
+    <Compile Include="Services\produtoComposicaoService.cs" />
+    <Compile Include="Services\produtoService.cs" />
+    <Compile Include="Services\produtoTipoService.cs" />
+    <Compile Include="Services\usuarioService.cs" />
+    <Compile Include="Services\vendaPagamentoService.cs" />
+    <Compile Include="Services\vendaProdutoService.cs" />
+    <Compile Include="Services\vendaService.cs" />
+    <Compile Include="Services\vendaStatusService.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SimpleX.Model\SimpleX.Model.csproj">
+      <Project>{3d387e6d-6347-4a1b-ae93-005be2c038be}</Project>
+      <Name>SimpleX.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

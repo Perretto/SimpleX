@@ -288,6 +288,16 @@
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SimpleX.ModelCore\SimpleX.ModelCore.csproj">
+      <Project>{083e1368-0433-4d56-9bab-d30377aa251f}</Project>
+      <Name>SimpleX.ModelCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SimpleX.Model\SimpleX.Model.csproj">
+      <Project>{3d387e6d-6347-4a1b-ae93-005be2c038be}</Project>
+      <Name>SimpleX.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -1,8 +1,12 @@
-﻿using System;
+﻿using SimpleX.Model;
+using SimpleX.ModelCore.Contexts;
+using SimpleX.ModelCore.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+
 
 namespace Simplex.Pizzaria.Controllers
 {
@@ -10,6 +14,8 @@ namespace Simplex.Pizzaria.Controllers
     {
         public ActionResult Index()
         {
+            empresaService empresaService = new empresaService();
+            List<empresa> lstEmpresa = empresaService.Listar();
             return View();
         }
 
