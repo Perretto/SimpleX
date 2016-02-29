@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SimpleX.Core
+namespace SimpleX.ModelCore
 {
     public class Result
     {

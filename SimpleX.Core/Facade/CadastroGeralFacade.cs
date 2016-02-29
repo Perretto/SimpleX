@@ -9,14 +9,14 @@ using System.Threading.Tasks;
 
 namespace SimpleX.Core.Facade
 {
-    public class CadastroGeralFacade
+    public class cadastroGeralFacade
     {
         private CNAEService serviceCNAE;
         private cidadeService serviceCidade;
         private estadoService serviceEstado;
         private paisService servicePais;
 
-        public CadastroGeralFacade()
+        public cadastroGeralFacade()
         {
             serviceCNAE = new CNAEService();
             serviceCidade = new cidadeService();

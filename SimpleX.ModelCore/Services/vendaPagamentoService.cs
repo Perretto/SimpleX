@@ -8,7 +8,6 @@ using SimpleX.ModelCore;
 using SimpleX.ModelCore.Repository;
 using SimpleX.Model;
 using System.Data.Entity;
-using SimpleX.Core;
 using SimpleX.ModelCore.Contexts;
 
 namespace SimpleX.ModelCore.Services
@@ -40,7 +39,7 @@ namespace SimpleX.ModelCore.Services
 
         public vendaPagamento Consultar(Guid id)
         {
-            return repositorvendaPagamento.Obter(id);
+            return repositoryvendaPagamento.Obter(id);
         }
 
         public Result Salvar(vendaPagamento vendaPagamento)

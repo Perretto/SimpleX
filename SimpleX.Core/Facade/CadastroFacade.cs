@@ -10,7 +10,7 @@ using SimpleX.Model;
 
 namespace Empresario.Core.Facade
 {
-    public class CadastroFacade
+    public class cadastroFacade
     {
         
         private clienteService serviceCliente;

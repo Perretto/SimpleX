@@ -8,7 +8,6 @@ using SimpleX.ModelCore;
 using SimpleX.ModelCore.Repository;
 using SimpleX.Model;
 using System.Data.Entity;
-using SimpleX.Core;
 using SimpleX.ModelCore.Contexts;
 
 namespace SimpleX.ModelCore.Services
