@@ -26,11 +26,16 @@ namespace Empresario.Core.Facade
         private produtoTipoService serviceProdutoTipo;
         private produtoComposicaoService serviceProdutoComposicao;
 
-        public CadastroFacade()
+        public cadastroFacade()
         {
             serviceCliente = new clienteService();
             serviceClienteEndereco = new clienteEnderecoService();
             serviceClienteContato = new clienteContatoService();
+
+            serviceFornecedor = new fornecedorService();
+            serviceFornecedorEndereco = new fornecedorEnderecoService();
+            serviceFornecedorContato = new fornecedorContatoService();
+
             serviceProduto = new produtoService();
             serviceProdutoCategoria = new produtoCategoriaService();
             serviceProdutoTipo = new produtoTipoService();
@@ -42,6 +47,11 @@ namespace Empresario.Core.Facade
             serviceCliente.Dispose();
             serviceClienteEndereco.Dispose();
             serviceClienteContato.Dispose();
+
+            serviceFornecedor.Dispose();
+            serviceFornecedorEndereco.Dispose();
+            serviceFornecedorContato.Dispose();
+
             serviceProduto.Dispose();
             serviceProdutoCategoria.Dispose();
             serviceProdutoTipo.Dispose();
