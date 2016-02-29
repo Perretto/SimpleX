@@ -43,6 +43,7 @@
     <Compile Include="Facade\administracaoFacade.cs" />
     <Compile Include="Facade\cadastroFacade.cs" />
     <Compile Include="Facade\cadastroGeralFacade.cs" />
+    <Compile Include="Facade\movimentacaoFacade.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
