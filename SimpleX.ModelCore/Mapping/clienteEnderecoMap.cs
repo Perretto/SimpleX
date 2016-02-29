@@ -13,7 +13,7 @@ namespace SimpleX.ModelCore.Mapping
     {
         public clienteEnderecoMap()
         {
-            this.ToTable("clienteEndereco");
+            this.ToTable("clienteendereco");
             this.Property(c => c.ID).HasColumnName("ID");
             this.Property(c => c.logradouro).HasColumnName("logradouro");
             this.Property(c => c.numero).HasColumnName("numero");

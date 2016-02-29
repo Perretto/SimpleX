@@ -13,7 +13,7 @@ namespace SimpleX.ModelCore.Mapping
     {
         public formaPagamentoMap()
         {
-            this.ToTable("formaPagamento");
+            this.ToTable("formapagamento");
             this.Property(c => c.ID).HasColumnName("ID");
             this.Property(c => c.nome).HasColumnName("nome");
             this.Property(c => c.empresaID).HasColumnName("empresaID");
