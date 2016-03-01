@@ -13,18 +13,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <meta name="keywords" content="Minimal Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-    <link href="content/bootstrap.min.css" rel='stylesheet' type='text/css' />
+    <link href="~/content/bootstrap.min.css" rel='stylesheet' type='text/css' />
     <!-- Custom Theme files -->
-    <link href="content/style.css" rel='stylesheet' type='text/css' />
-    <link href="content/font-awesome.css" rel="stylesheet">
-    <script src="scripts/jquery.min.js"> </script>
+    <link href="~/content/style.css" rel='stylesheet' type='text/css' />
+    <link href="~/content/font-awesome.css" rel="stylesheet">
+    <script src="~/scripts/jquery.min.js"> </script>
     <!-- Mainly scripts -->
-    <script src="scripts/jquery.metisMenu.js"></script>
-    <script src="scripts/jquery.slimscroll.min.js"></script>
+    <script src="~/scripts/jquery.metisMenu.js"></script>
+    <script src="~/scripts/jquery.slimscroll.min.js"></script>
     <!-- Custom and plugin javascript -->
-    <link href="content/custom.css" rel="stylesheet">
-    <script src="scripts/custom.js"></script>
-    <script src="scripts/screenfull.js"></script>
+    <link href="~/content/custom.css" rel="stylesheet">
+    <script src="~/scripts/custom.js"></script>
+    <script src="~/scripts/screenfull.js"></script>
     <script>
         $(function () {
             $('#supported').text('Supported/allowed: ' + !!screenfull.enabled);
@@ -46,7 +46,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
     <!----->
     <!--pie-chart--->
-    <script src="scripts/pie-chart.js" type="text/javascript"></script>
+    <script src="~/scripts/pie-chart.js" type="text/javascript"></script>
     <script type="text/javascript">
 
         $(document).ready(function () {
@@ -85,7 +85,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
     </script>
     <!--skycons-icons-->
-    <script src="scripts/skycons.js"></script>
+    <script src="~/scripts/skycons.js"></script>
     <!--//skycons-icons-->
 </head>
 <body>
@@ -100,7 +100,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <h1> <a class="navbar-brand" href="index.html"><img src="Images/logoPizza.png" alt="Logo"></a></h1>
+                <h1> <a class="navbar-brand" href="index.html"><img src="~/Images/logoPizza.png" alt="Logo"></a></h1>
             </div>
             <div class=" border-bottom">
                 <div class="full-left">
@@ -193,7 +193,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle dropdown-at" data-toggle="dropdown"><span class=" name-caret">Rackham<i class="caret"></i></span><img src="images/wo.jpg"></a>
+                            <a href="#" class="dropdown-toggle dropdown-at" data-toggle="dropdown"><span class=" name-caret">Rackham<i class="caret"></i></span><img src="~/images/wo.jpg"></a>
                             <ul class="dropdown-menu " role="menu">
                                 <li><a href="profile.html"><i class="fa fa-user"></i>Edit Profile</a></li>
                                 <li><a href="inbox.html"><i class="fa fa-envelope"></i>Inbox</a></li>
@@ -281,37 +281,33 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <!--//banner-->
                 <!--content-->
                 <div class="content-top">
-                    <div class="clearfix">
+                    <div class="grid-form">
 
+                        <div class="grid-form1">
+                            @RenderBody()
+                        </div>
                     </div>
-                </div>
-                <!---->
 
+            <div class="clearfix">
 
-                <div class="content-mid">
-                    <div class="clearfix">
-
-                    </div>
-                </div>
-                <!----->
-                <div class="content-bottom">
-                    <div class="clearfix"> </div>
-                </div>
-                <!--//content-->
-                <!---->
-                <div class="copy">
-                    <p> &copy; 2016 Minimal. All Rights Reserved | Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
-                </div>
+            </div>
+            </div>
+            <!---->
+            <!--//content-->
+            <!---->
+            <div class="copy">
+                <p> &copy; 2016 Minimal. All Rights Reserved | Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
+            </div>
             </div>
             <div class="clearfix"> </div>
-        </div>
+            </div>
 
     </div>
     <!---->
     <!--scrolling js-->
-    <script src="scripts/jquery.nicescroll.js"></script>
-    <script src="scripts/scripts.js"></script>
+    <script src="~/scripts/jquery.nicescroll.js"></script>
+    <script src="~/scripts/scripts.js"></script>
     <!--//scrolling js-->
-    <script src="scripts/bootstrap.min.js"> </script>
+    <script src="~/scripts/bootstrap.min.js"> </script>
 </body>
 </html>
