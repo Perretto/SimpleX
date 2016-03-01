@@ -14,8 +14,8 @@ namespace Simplex.Pizzaria.Controllers
     {
         public ActionResult Index()
         {
-            empresaService empresaService = new empresaService();
-            List<empresa> lstEmpresa = empresaService.Listar();
+            //empresaService empresaService = new empresaService();
+            //List<empresa> lstEmpresa = empresaService.Listar();
             return View();
         }
 

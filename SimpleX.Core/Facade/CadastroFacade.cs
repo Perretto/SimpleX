@@ -8,7 +8,7 @@ using SimpleX.ModelCore.Services;
 using SimpleX.ModelCore;
 using SimpleX.Model;
 
-namespace Empresario.Core.Facade
+namespace SimpleX.Core.Facade
 {
     public class cadastroFacade
     {

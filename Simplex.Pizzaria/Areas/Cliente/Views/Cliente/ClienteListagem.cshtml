@@ -1,4 +1,6 @@
-﻿@{
+﻿@model List<SimpleX.Model.cliente>
+
+@{
     //ViewBag.Title = "ClienteListagem";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -9,8 +11,12 @@
         <h2>Listagem de clientes</h2>
         <br />
 <div>
+
+    @for (var i = 0; i < Model.Count; i++)
+    {
+     
     <div class="grid-form1">
-        <h4>00001 - André Perretto de Andrade</h4>
+        <h4>@Model[i].codigo - @Model[i].razaoSocial</h4>
 
         <br />
         <table class="table">
@@ -34,5 +40,7 @@
     </div>
 
     <br />
+    }
+
     <div class="btn btn-primary btn-float-right"><i class="fa fa-plus-circle"></i> Incluir novo cliente</div>
 </div>
