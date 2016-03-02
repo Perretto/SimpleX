@@ -274,6 +274,7 @@
     <Content Include="fonts\Muli-Regular.ttf" />
     <Content Include="Areas\Cliente\Views\web.config" />
     <Content Include="Areas\Cliente\Views\Cliente\ClienteListagem.cshtml" />
+    <Content Include="Areas\Cliente\Views\Cliente\PartialClienteListagem.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Chart.js" />
     <Content Include="Scripts\clndr.js" />

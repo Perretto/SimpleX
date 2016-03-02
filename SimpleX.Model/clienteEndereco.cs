@@ -23,7 +23,7 @@ namespace SimpleX.Model
         public Guid empresaID { get; set; }
         public empresa empresa { get; set; }
         public Guid clienteID { get; set; }
-        public cliente cliente { get; set; }
+        public virtual cliente cliente { get; set; }
  
     }
 }
