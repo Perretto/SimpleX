@@ -1,0 +1,49 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Listagem de fornecedores</h2>
+<br />
+
+<table class="table">
+    <tbody>
+        <tr class="table-row">
+            <td class="table-img">
+                <form class=" navbar-left-right">
+                    <input onkeydown="atualizarFornecedores()" id="pesquisarfornecedor" type="text" value="Pesquisar..." onfocus="    this.value = '';" onblur="    if (this.value == '') { this.value = 'Pesquisar...'; }">
+                </form>
+                <br />
+                <br />
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+<div id="PartialFornecedorListagem">
+    @{
+        Html.RenderPartial("PartialFornecedorListagem");
+    }
+</div>
+
+
+<div class="btn btn-primary btn-float-right"><i class="fa fa-plus-circle"></i> Incluir novo fornecedor</div>
+</div>
+
+<script type="text/javascript" src="~/Scripts/jquery-1.7.1.min.js"></script>
+<script type="text/javascript">
+    function atualizarFornecedores() {
+        var pesquisarfornecedor = $("#pesquisarfornecedor").val();
+     $.ajax({
+         type: 'GET',
+         url: '/Fornecedor/Fornecedor/PartialFornecedorListagem?pesquisarfornecedor=' + pesquisarfornecedor,
+         dataType: 'html',
+         cache: false,
+         async: true,
+         success: function (data) {
+             $('#PartialFornecedorListagem').html(data);
+         }
+     });
+ } $(document).ready(function () {
+     setInterval(atualizarFornecedores, 30000);
+ });
+</script>

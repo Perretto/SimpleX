@@ -21,5 +21,8 @@ namespace SimpleX.Model
         public CNAE CNAE { get; set; }
         public Guid empresaID { get; set; }
         public empresa empresa { get; set; }
+
+        public virtual List<fornecedorEndereco> fornecedoresEnderecos { get; set; }
+        public virtual List<fornecedorContato> fornecedoresContatos { get; set; }
     }
 }
