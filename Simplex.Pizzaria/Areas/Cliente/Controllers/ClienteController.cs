@@ -26,6 +26,19 @@ namespace Simplex.Pizzaria.Areas.Cliente.Controllers
 
             return View(lstCliente);
         }
-        
+
+        public ActionResult ClienteCadastro()
+        {
+            return View();
+        }
+
+        //public ActionResult ClienteCadastro(Guid ClienteID)
+        //{
+        //    cadastroFacade facadeCliente = new cadastroFacade();
+        //    cliente cliente = facadeCliente.ConsultarCliente(ClienteID);
+
+        //    return View(cliente);
+        //}
+
     }
 }

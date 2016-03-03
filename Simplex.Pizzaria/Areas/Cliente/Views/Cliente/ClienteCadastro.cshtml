@@ -1,0 +1,152 @@
+﻿@model SimpleX.Model.cliente
+
+
+@{
+    ViewBag.Title = "Cadastro de Clientes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4>Cadastro de Clientes</h4>
+<div class="tab-content">
+    <div class="tab-pane active" id="horizontal-form">
+
+        @using (Html.BeginForm("SalvarCliente", "Cliente", FormMethod.Post, new { @class = "form-horizontal" }))
+        {
+            <div class="form-group">
+                <label for="focusedinput" class="col-sm-2 control-label">Código</label>
+                <div class="col-sm-2">
+                    @Html.TextBoxFor(c => c.codigo, new { @class = "form-control1", placeholder = "Código do cliente" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="focusedinput" class="col-sm-2 control-label">Nome</label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(c => c.razaoSocial, new { @class = "form-control1", placeholder = "Código do cliente" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="focusedinput" class="col-sm-2 control-label">Apelido</label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(c => c.nomeFantasia, new { @class = "form-control1", placeholder = "Apelido ou Nome Fantasia" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="focusedinput" class="col-sm-2 control-label">CNPJ</label>
+                <div class="col-sm-3">
+                    @Html.TextBoxFor(c => c.CNPJ, new { @class = "form-control1", placeholder = "Número do Cadastro Nacional de Pessoa Jurídica" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="focusedinput" class="col-sm-2 control-label">CPF</label>
+                <div class="col-sm-3">
+                    @Html.TextBoxFor(c => c.CPF, new { @class = "form-control1", placeholder = "Número do Cadastro de Pessoa Física (CPF)" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="focusedinput" class="col-sm-2 control-label">RG</label>
+                <div class="col-sm-3">
+                    @Html.TextBoxFor(c => c.RG, new { @class = "form-control1", placeholder = "Número do Registro Geral (RG)" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="focusedinput" class="col-sm-2 control-label">IE</label>
+                <div class="col-sm-3">
+                    @Html.TextBoxFor(c => c.IE, new { @class = "form-control1", placeholder = "Código da Inscrição Estadual" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="focusedinput" class="col-sm-2 control-label">IM</label>
+                <div class="col-sm-3">
+                    @Html.TextBoxFor(c => c.IM, new { @class = "form-control1", placeholder = "Código da Inscrição Municipal" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="focusedinput" class="col-sm-2 control-label">CNAE</label>
+                <div class="col-sm-3">
+                    @Html.TextBoxFor(c => c.CNAE, new { @class = "form-control1", placeholder = "Código do CNAE" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="focusedinput" class="col-sm-2 control-label">Suframa</label>
+                <div class="col-sm-3">
+                    @Html.TextBoxFor(c => c.suframa, new { @class = "form-control1", placeholder = "Código do Suframa" })
+                </div>
+            </div>
+
+            <div class="grid-form1">
+                <h4>Endereços</h4>
+                <div class="btn btn-primary btn-float-right"><i class="fa fa-plus-circle"></i> Incluir novo endereço</div>
+                <br>
+                <table class="table">
+                    <tbody>
+                        <tr class="table-row">
+                            <td class="table-img">
+                                <img src="images/in.jpg" alt="">
+                            </td>
+                            <td class="table-text">
+                                <h6>Rua Conselheiro Moreira de Barros</h6>
+                                <p>3707 | Sobreloja | São Paulo | SP | 02430002</p>
+                            </td>
+                            <td class="march">Entrega e Cobrança</td>
+                            <td style="width:1px">
+                                <a href="#" class="btn btn-primary"><i class="fa fa-pencil"></i></a>
+                                <a href="#" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+            <div class="grid-form1">
+                <h4>Contatos</h4>
+                <div class="btn btn-primary btn-float-right"><i class="fa fa-plus-circle"></i> Incluir novo contato</div>
+                <br>
+                <table class="table">
+                    <tbody>
+                        <tr class="table-row">
+                            <td class="table-img">
+                                <img src="images/in.jpg" alt="">
+                            </td>
+                            <td class="table-text">
+                                <h6>Paulo Hidenari</h6>
+                                <p>11 97334-4958 | 11 2233-2255 | paulohidenari@hotmail.com</p>
+                            </td>
+                            <td class="march" align="right">
+                                <div class="btn btn-primary"><i class="fa fa-phone"></i> Ligar</div>
+                                <div class="btn btn-success"><i class="fa fa-whatsapp"></i> WhatsApp</div>
+
+                            </td>
+                            <td style="width:1px">
+                                <a href="#" class="btn btn-primary"><i class="fa fa-pencil"></i></a>
+                                <a href="#" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="panel-footer">
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2">
+                        <input type="submit" class="btn-primary btn" title="Salvar" name="Salvar" value="Salvar">
+                        <button class="btn-default btn">Cancelar</button>
+                        <button class="btn-inverse btn">Limpar Dados</button>
+                    </div>
+                </div>
+            </div>
+
+
+
+        }
+    </div>
+</div>
