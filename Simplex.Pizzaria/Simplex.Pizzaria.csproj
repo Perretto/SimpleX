@@ -178,7 +178,10 @@
     <Compile Include="Areas\Cliente\Controllers\ClienteController.cs" />
     <Compile Include="Areas\Fornecedor\Controllers\FornecedorController.cs" />
     <Compile Include="Areas\Fornecedor\FornecedorAreaRegistration.cs" />
+    <Compile Include="Areas\Produto\Controllers\ProdutoController.cs" />
+    <Compile Include="Areas\Produto\ProdutoAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -280,6 +283,9 @@
     <Content Include="Areas\Fornecedor\Views\web.config" />
     <Content Include="Areas\Fornecedor\Views\Fornecedor\FornecedorListagem.cshtml" />
     <Content Include="Areas\Fornecedor\Views\Fornecedor\PartialFornecedorListagem.cshtml" />
+    <Content Include="Areas\Produto\Views\web.config" />
+    <Content Include="Areas\Produto\Views\Produto\ProdutoListagem.cshtml" />
+    <Content Include="Areas\Produto\Views\Produto\PartialProdutoListagem.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Chart.js" />
     <Content Include="Scripts\clndr.js" />
@@ -361,6 +367,9 @@
     <Folder Include="Areas\Cliente\Views\Shared\" />
     <Folder Include="Areas\Fornecedor\Models\" />
     <Folder Include="Areas\Fornecedor\Views\Shared\" />
+    <Folder Include="Areas\Produto\Models\" />
+    <Folder Include="Areas\Produto\Views\Shared\" />
+    <Folder Include="Views\Default\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
