@@ -181,6 +181,7 @@
     <Compile Include="Areas\Produto\Controllers\ProdutoController.cs" />
     <Compile Include="Areas\Produto\ProdutoAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -368,6 +369,7 @@
     <Folder Include="Areas\Fornecedor\Views\Shared\" />
     <Folder Include="Areas\Produto\Models\" />
     <Folder Include="Areas\Produto\Views\Shared\" />
+    <Folder Include="Views\Default\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

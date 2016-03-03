@@ -103,7 +103,7 @@ namespace SimpleX.ModelCore.Services
                 (produto.nome == null || b.nome.ToUpper().Contains(produto.nome)) &&
                 (produto.codigo == null || b.codigo.ToUpper().Contains(produto.codigo)) &&                
                 (produto.produtoCategoriaID == Guid.Empty || b.produtoCategoriaID == produto.produtoCategoriaID) &&
-                (produto.valorProduto == null || b.valorProduto == produto.valorProduto) &&
+                (produto.valorProduto == 0 || b.valorProduto == produto.valorProduto) &&
                 (produto.produtoTipoID == Guid.Empty || b.produtoTipoID == produto.produtoTipoID) &&
                 (produto.empresaID == Guid.Empty || b.empresaID == produto.empresaID)
                 )).ToList();
