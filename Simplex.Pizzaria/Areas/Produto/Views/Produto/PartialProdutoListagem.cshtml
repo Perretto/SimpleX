@@ -1,0 +1,49 @@
+﻿@model List<SimpleX.Model.produto>
+@using SimpleX.Model
+
+@{
+    var detalhes = "";
+}
+
+@{
+    if (Model != null)
+    {
+        for (var i = 0; i < Model.Count; i++)
+        {
+            detalhes = "";
+            <div class="grid-form1">
+                <h4>@Model[i].codigo - @Model[i].nome</h4>
+
+                <br />
+                <table class="table">
+                    <tbody>
+                        <tr class="table-row">
+                            <td class="table-img">
+                                <img src="~/images/in.jpg" alt="">
+                            </td>
+                            <td class="table-text">
+                                <h6>@Model[i].nome</h6>
+
+
+                                @if (Model[i].codigo != "")
+                                {
+                                    detalhes += "Codigo: " + Model[i].codigo + " | ";
+                                }
+                                
+                                <p>@detalhes</p>
+                            </td>
+                            @*<td class="march">Cliente com fatura em atraso</td>*@
+                            <td style="width:1px">
+                                <a href="#" class="btn btn-primary"><i class="fa fa-pencil"></i></a>
+                                <a href="#" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <br />
+        }
+    }
+}
+

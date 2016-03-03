@@ -1,0 +1,50 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Listagem de produtos</h2>
+<br />
+
+<table class="table">
+    <tbody>
+        <tr class="table-row">
+            <td class="table-img">
+                <form class=" navbar-left-right">
+                    <input onkeydown="atualizarProdutos()" id="pesquisarproduto" type="text" value="Pesquisar..." onfocus="    this.value = '';" onblur="    if (this.value == '') { this.value = 'Pesquisar...'; }">
+                </form>
+                <br />
+                <br />
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+<div id="PartialProdutoListagem">
+    @{
+        Html.RenderPartial("PartialProdutoListagem");
+    }
+</div>
+
+
+<div class="btn btn-primary btn-float-right"><i class="fa fa-plus-circle"></i> Incluir novo produto</div>
+</div>
+
+<script type="text/javascript" src="~/Scripts/jquery-1.7.1.min.js"></script>
+<script type="text/javascript">
+    function atualizarProdutos() {
+        var pesquisarproduto = $("#pesquisarproduto").val();
+        $.ajax({
+            type: 'GET',
+            url: '/Produto/Produto/PartialProdutoListagem?pesquisarproduto=' + pesquisarproduto,
+            dataType: 'html',
+            cache: false,
+            async: true,
+            success: function (data) {
+                $('#PartialProdutoListagem').html(data);
+            }
+        });
+    }
+    $(document).ready(function () {
+        setInterval(atualizarProdutos, 30000);
+    });
+</script>
