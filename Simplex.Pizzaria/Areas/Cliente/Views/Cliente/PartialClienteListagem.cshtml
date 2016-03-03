@@ -1,0 +1,67 @@
+﻿@model List<SimpleX.Model.cliente>
+@using SimpleX.Model
+
+@{
+    //ViewBag.Title = "ClienteListagem";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+    var detalhes = "";
+}
+@{
+if (Model != null)
+{
+    for (var i = 0; i < Model.Count; i++)
+    {
+        detalhes = "";
+        <div class="grid-form1">
+            <h4>@Model[i].codigo - @Model[i].razaoSocial</h4>
+
+            <br />
+            <table class="table">
+                <tbody>
+                    <tr class="table-row">
+                        <td class="table-img">
+                            <img src="~/images/in.jpg" alt="">
+                        </td>
+                        <td class="table-text">
+                            <h6>@Model[i].nomeFantasia</h6>
+
+
+                            @if (Model[i].CNPJ != "")
+                            {
+                                detalhes += "CNPJ: " + Model[i].CNPJ + " | ";
+                            }
+
+                            @if (Model[i].CPF != "")
+                            {
+                                detalhes += "CPF: " + Model[i].CPF + " | ";
+                            }
+
+                            @if (Model[i].clientesEnderecos.Count > 0)
+                            {
+                                List<clienteEndereco> lstclienteEndereco = (List<clienteEndereco>)Model[i].clientesEnderecos;
+                                detalhes += lstclienteEndereco[0].logradouro + " | ";
+                            }
+
+                            @if (Model[i].clientesContatos.Count > 0)
+                            {
+                                List<clienteContato> lstclientesContatos = (List<clienteContato>)Model[i].clientesContatos;
+                                detalhes += "Telefone: " + lstclientesContatos[0].telefoneContato + " | ";
+                            }
+
+                            <p>@detalhes</p>
+                        </td>
+                        @*<td class="march">Cliente com fatura em atraso</td>*@
+                        <td style="width:1px">
+                            <a href="#" class="btn btn-primary"><i class="fa fa-pencil"></i></a>
+                            <a href="#" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <br />
+    }
+}
+}
+
