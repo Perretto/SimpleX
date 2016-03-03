@@ -48,8 +48,9 @@ namespace SimpleX.ModelCore.Services
 
             try
             {
-                if (fornecedor.ID == null)
+                if (fornecedor.ID == Guid.Empty)
                 {
+                    fornecedor.ID = Guid.NewGuid();
                     repositoryfornecedor.Adicionar(fornecedor);
                 }
                 else

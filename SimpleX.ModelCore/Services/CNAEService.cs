@@ -48,8 +48,9 @@ namespace SimpleX.ModelCore.Services
 
             try
             {
-                if (CNAE.ID == null)
+                if (CNAE.ID == Guid.Empty)
                 {
+                    CNAE.ID = Guid.NewGuid();
                     repositoryCNAE.Adicionar(CNAE);
                 }
                 else

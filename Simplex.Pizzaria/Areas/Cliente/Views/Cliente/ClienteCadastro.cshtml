@@ -2,7 +2,7 @@
 
 
 @{
-    ViewBag.Title = "Cadastro de Clientes";
+    //ViewBag.Title = "Cadastro de Clientes";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -71,7 +71,8 @@
             <div class="form-group">
                 <label for="focusedinput" class="col-sm-2 control-label">CNAE</label>
                 <div class="col-sm-3">
-                    @Html.TextBoxFor(c => c.CNAE, new { @class = "form-control1", placeholder = "Código do CNAE" })
+                    @*@Html.TextBoxFor(c => c.CNAEID, new { @class = "form-control1", placeholder = "Código do CNAE" })*@
+                    @Html.DropDownList("CNAEID", (List<SelectListItem>)ViewBag.CNAEs, new {  @class = "form-control1", placeholder = "Código da Inscrição Municipal", id="CNAEID"})
                 </div>
             </div>
 
@@ -80,59 +81,6 @@
                 <div class="col-sm-3">
                     @Html.TextBoxFor(c => c.suframa, new { @class = "form-control1", placeholder = "Código do Suframa" })
                 </div>
-            </div>
-
-            <div class="grid-form1">
-                <h4>Endereços</h4>
-                <div class="btn btn-primary btn-float-right"><i class="fa fa-plus-circle"></i> Incluir novo endereço</div>
-                <br>
-                <table class="table">
-                    <tbody>
-                        <tr class="table-row">
-                            <td class="table-img">
-                                <img src="images/in.jpg" alt="">
-                            </td>
-                            <td class="table-text">
-                                <h6>Rua Conselheiro Moreira de Barros</h6>
-                                <p>3707 | Sobreloja | São Paulo | SP | 02430002</p>
-                            </td>
-                            <td class="march">Entrega e Cobrança</td>
-                            <td style="width:1px">
-                                <a href="#" class="btn btn-primary"><i class="fa fa-pencil"></i></a>
-                                <a href="#" class="btn btn-danger"><i class="fa fa-trash"></i></a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-
-            <div class="grid-form1">
-                <h4>Contatos</h4>
-                <div class="btn btn-primary btn-float-right"><i class="fa fa-plus-circle"></i> Incluir novo contato</div>
-                <br>
-                <table class="table">
-                    <tbody>
-                        <tr class="table-row">
-                            <td class="table-img">
-                                <img src="images/in.jpg" alt="">
-                            </td>
-                            <td class="table-text">
-                                <h6>Paulo Hidenari</h6>
-                                <p>11 97334-4958 | 11 2233-2255 | paulohidenari@hotmail.com</p>
-                            </td>
-                            <td class="march" align="right">
-                                <div class="btn btn-primary"><i class="fa fa-phone"></i> Ligar</div>
-                                <div class="btn btn-success"><i class="fa fa-whatsapp"></i> WhatsApp</div>
-
-                            </td>
-                            <td style="width:1px">
-                                <a href="#" class="btn btn-primary"><i class="fa fa-pencil"></i></a>
-                                <a href="#" class="btn btn-danger"><i class="fa fa-trash"></i></a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
             </div>
 
             <div class="panel-footer">
@@ -148,5 +96,58 @@
 
 
         }
+        <div class="grid-form1">
+            <h4>Endereços</h4>
+            <div class="btn btn-primary btn-float-right"><i class="fa fa-plus-circle"></i> Incluir novo endereço</div>
+            <br>
+            <table class="table">
+                <tbody>
+                    <tr class="table-row">
+                        <td class="table-img">
+                            <img src="images/in.jpg" alt="">
+                        </td>
+                        <td class="table-text">
+                            <h6>Rua Conselheiro Moreira de Barros</h6>
+                            <p>3707 | Sobreloja | São Paulo | SP | 02430002</p>
+                        </td>
+                        <td class="march">Entrega e Cobrança</td>
+                        <td style="width:1px">
+                            <a href="#" class="btn btn-primary"><i class="fa fa-pencil"></i></a>
+                            <a href="#" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+        <div class="grid-form1">
+            <h4>Contatos</h4>
+            <div class="btn btn-primary btn-float-right"><i class="fa fa-plus-circle"></i> Incluir novo contato</div>
+            <br>
+            <table class="table">
+                <tbody>
+                    <tr class="table-row">
+                        <td class="table-img">
+                            <img src="images/in.jpg" alt="">
+                        </td>
+                        <td class="table-text">
+                            <h6>Paulo Hidenari</h6>
+                            <p>11 97334-4958 | 11 2233-2255 | paulohidenari@hotmail.com</p>
+                        </td>
+                        <td class="march" align="right">
+                            <div class="btn btn-primary"><i class="fa fa-phone"></i> Ligar</div>
+                            <div class="btn btn-success"><i class="fa fa-whatsapp"></i> WhatsApp</div>
+
+                        </td>
+                        <td style="width:1px">
+                            <a href="#" class="btn btn-primary"><i class="fa fa-pencil"></i></a>
+                            <a href="#" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
     </div>
 </div>

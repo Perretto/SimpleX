@@ -286,6 +286,9 @@
     <Content Include="Areas\Produto\Views\web.config" />
     <Content Include="Areas\Produto\Views\Produto\ProdutoListagem.cshtml" />
     <Content Include="Areas\Produto\Views\Produto\PartialProdutoListagem.cshtml" />
+    <Content Include="Areas\Cliente\Views\Cliente\ClienteCadastro.cshtml" />
+    <Content Include="Areas\Cliente\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Cliente\Views\_ViewStart.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Chart.js" />
     <Content Include="Scripts\clndr.js" />
@@ -364,7 +367,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Cliente\Models\" />
-    <Folder Include="Areas\Cliente\Views\Shared\" />
     <Folder Include="Areas\Fornecedor\Models\" />
     <Folder Include="Areas\Fornecedor\Views\Shared\" />
     <Folder Include="Areas\Produto\Models\" />

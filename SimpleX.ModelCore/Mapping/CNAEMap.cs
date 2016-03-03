@@ -13,7 +13,7 @@ namespace SimpleX.ModelCore.Mapping
     {
         public CNAEMap()
         {
-            this.ToTable("CNAE");
+            this.ToTable("cnae");
             this.Property(c => c.ID).HasColumnName("ID");
             this.Property(c => c.nome).HasColumnName("nome");
             this.Property(c => c.codigo).HasColumnName("codigo");

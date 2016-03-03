@@ -48,8 +48,9 @@ namespace SimpleX.ModelCore.Services
 
             try
             {
-                if (vendaPagamento.ID == null)
+                if (vendaPagamento.ID == Guid.Empty)
                 {
+                    vendaPagamento.ID = Guid.NewGuid();
                     repositoryvendaPagamento.Adicionar(vendaPagamento);
                 }
                 else

@@ -48,8 +48,9 @@ namespace SimpleX.ModelCore.Services
             
             try
             {
-                if (cliente.ID == null)
+                if (cliente.ID == Guid.Empty)
                 {
+                    cliente.ID = Guid.NewGuid();
                     repositoryCliente.Adicionar(cliente);
                 }
                 else
@@ -63,7 +64,7 @@ namespace SimpleX.ModelCore.Services
             }
             catch (Exception erro)
             {
-                retorno.Erro(erro.Message);
+                retorno.Erro(erro.InnerException.Message);
             }
 
             return retorno;

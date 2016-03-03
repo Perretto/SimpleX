@@ -48,8 +48,9 @@ namespace SimpleX.ModelCore.Services
 
             try
             {
-                if (vendaProduto.ID == null)
+                if (vendaProduto.ID == Guid.Empty)
                 {
+                    vendaProduto.ID = Guid.NewGuid();
                     repositoryvendaProduto.Adicionar(vendaProduto);
                 }
                 else

@@ -11,5 +11,23 @@ namespace SimpleX.Model
         public Guid ID { get; set; }
         public string nome { get; set; }
         public string codigo { get; set; }
+
+        public List<CNAE> ListaCNAEs()
+        {
+
+            return new List<CNAE>
+
+            {
+
+                new CNAE { ID = Guid.NewGuid(), nome = "Eduardo Pires"},
+
+                new CNAE { ID = Guid.NewGuid(), nome = "João Silva"},
+
+                new CNAE { ID = Guid.NewGuid(), nome = "Fulano de Tal"}
+
+            };
+
+        }
+
     }
 }

@@ -48,8 +48,9 @@ namespace SimpleX.ModelCore.Services
 
             try
             {
-                if (formaPagamento.ID == null)
+                if (formaPagamento.ID == Guid.Empty)
                 {
+                    formaPagamento.ID = Guid.NewGuid();
                     repositoryformaPagamento.Adicionar(formaPagamento);
                 }
                 else
