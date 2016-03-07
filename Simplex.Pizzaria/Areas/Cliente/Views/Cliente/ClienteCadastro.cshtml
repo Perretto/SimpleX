@@ -99,26 +99,8 @@
         <div class="grid-form1">
             <h4>Endereços</h4>
             <div class="btn btn-primary btn-float-right" data-toggle="modal" data-target="#CadastroEndereco"><i class="fa fa-plus-circle"></i> Incluir novo endereço</div>
-            <br>
-            @*<table class="table">
-                <tbody>
-                    <tr class="table-row">
-                        <td class="table-img">
-                            <img src="images/in.jpg" alt="">
-                        </td>
-                        <td class="table-text">
-                            <h6>Rua Conselheiro Moreira de Barros</h6>
-                            <p>3707 | Sobreloja | São Paulo | SP | 02430002</p>
-                        </td>
-                        <td class="march">Entrega e Cobrança</td>
-                        <td style="width:1px">
-                            <a href="#" class="btn btn-primary"><i class="fa fa-pencil"></i></a>
-                            <a href="#" class="btn btn-danger"><i class="fa fa-trash"></i></a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>*@
-        </div>*@
+            <br>            
+        </div>
 
         @if (Model.clientesEnderecos != null)
         {
@@ -167,7 +149,9 @@
                     <h4 class="modal-title" id="myModalLabel">Cadastro de Endereço</h4>
                 </div>
                 <div class="modal-body">
-                    <!--conteudo da janela Modal Endereco -->
+                    <div id="CadastroEnderecoConteudo">
+                        <!--conteudo da janela Modal Endereco -->
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>

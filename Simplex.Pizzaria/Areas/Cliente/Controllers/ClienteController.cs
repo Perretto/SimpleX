@@ -72,8 +72,6 @@ namespace Simplex.Pizzaria.Areas.Cliente.Controllers
 
         public ActionResult ClienteCadastroEdicao(string idCliente = "")
         {
-
-
             List<SelectListItem> itens = new List<SelectListItem>();
             cadastroGeralFacade = new cadastroGeralFacade();
             facadeCliente = new cadastroFacade();
@@ -97,10 +95,79 @@ namespace Simplex.Pizzaria.Areas.Cliente.Controllers
             return View("ClienteCadastro", cliente);
         }
 
+        public ActionResult ClienteEnderecoCadastroEdicao(string idClienteEndereco = "")
+        {
+            List<SelectListItem> itens = new List<SelectListItem>();
+            cadastroGeralFacade = new cadastroGeralFacade();
+            facadeCliente = new cadastroFacade();
+
+            List<cidade> lstCidade = cadastroGeralFacade.ListarCidade();
+
+            for (int i = 0; i < lstCidade.Count; i++)
+            {
+                itens.Add(new SelectListItem { Value = lstCidade[i].ID.ToString(), Text = lstCidade[i].codigo });
+            }
+
+            @ViewBag.cidades = itens;
+
+
+            itens = new List<SelectListItem>();
+            cadastroGeralFacade = new cadastroGeralFacade();
+            facadeCliente = new cadastroFacade();
+
+            List<estado> lstEstados = cadastroGeralFacade.ListarEstado();
+
+            for (int i = 0; i < lstEstados.Count; i++)
+            {
+                itens.Add(new SelectListItem { Value = lstEstados[i].ID.ToString(), Text = lstEstados[i].codigo });
+            }
+
+            @ViewBag.estados = itens;
+
+
+
+
+            itens = new List<SelectListItem>();
+            cadastroGeralFacade = new cadastroGeralFacade();
+            facadeCliente = new cadastroFacade();
+
+            List<pais> lstPaises = cadastroGeralFacade.ListarPais();
+
+            for (int i = 0; i < lstPaises.Count; i++)
+            {
+                itens.Add(new SelectListItem { Value = lstPaises[i].ID.ToString(), Text = lstPaises[i].codigo });
+            }
+
+            @ViewBag.paises = itens;
+
+
+
+
+
+            clienteEndereco clienteEndereco = new SimpleX.Model.clienteEndereco();
+            if (idClienteEndereco != "")
+            {
+                clienteEndereco = facadeCliente.ConsultarClienteEndereco(Guid.Parse(idClienteEndereco));
+            }
+
+
+            return View("ClienteEnderecoCadastro", clienteEndereco);
+        }
+
+
+
         public ActionResult SalvarCliente(cliente cliente)
         {
             facadeCliente = new cadastroFacade();
             Result resultado = facadeCliente.SalvarCliente(cliente);
+
+            return Json(resultado);
+        }
+
+        public ActionResult SalvarClienteEndereco(clienteEndereco clienteEndereco)
+        {
+            facadeCliente = new cadastroFacade();
+            Result resultado = facadeCliente.SalvarClienteEndereco(clienteEndereco);
 
             return Json(resultado);
         }
