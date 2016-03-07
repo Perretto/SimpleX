@@ -1202,6 +1202,11 @@ i.fa.fa-twitter {
 .grid-form1 form {
  	margin: 1.5em 0;
 }
+
+.modal form{
+	margin:0;
+}
+
 .form-control {
     box-shadow: none;
     outline: none;

@@ -72,7 +72,7 @@
                 <label for="focusedinput" class="col-sm-2 control-label">CNAE</label>
                 <div class="col-sm-3">
                     @*@Html.TextBoxFor(c => c.CNAEID, new { @class = "form-control1", placeholder = "Código do CNAE" })*@
-                    @Html.DropDownList("CNAEID", (List<SelectListItem>)ViewBag.CNAEs, new {  @class = "form-control1", placeholder = "Código da Inscrição Municipal", id="CNAEID"})
+                    @Html.DropDownList("CNAEID", (List<SelectListItem>)ViewBag.CNAEs, new { @class = "form-control1", placeholder = "Código da Inscrição Municipal", id = "CNAEID" })
                 </div>
             </div>
 
@@ -96,11 +96,11 @@
 
 
         }
-        @*<div class="grid-form1">
+        <div class="grid-form1">
             <h4>Endereços</h4>
-            <div class="btn btn-primary btn-float-right"><i class="fa fa-plus-circle"></i> Incluir novo endereço</div>
+            <div class="btn btn-primary btn-float-right" data-toggle="modal" data-target="#CadastroEndereco"><i class="fa fa-plus-circle"></i> Incluir novo endereço</div>
             <br>
-            <table class="table">
+            @*<table class="table">
                 <tbody>
                     <tr class="table-row">
                         <td class="table-img">
@@ -117,18 +117,18 @@
                         </td>
                     </tr>
                 </tbody>
-            </table>
+            </table>*@
         </div>*@
 
         @if (Model.clientesEnderecos != null)
         {
             @Html.Partial("PartialClienteEnderecoListagem", Model.clientesEnderecos)
         }
-        
+
 
         <div class="grid-form1">
             <h4>Contatos</h4>
-            <div class="btn btn-primary btn-float-right"><i class="fa fa-plus-circle"></i> Incluir novo contato</div>
+            <div class="btn btn-primary btn-float-right" data-toggle="modal" data-target="#CadastroContato"><i class="fa fa-plus-circle"></i> Incluir novo contato</div>
             <br>
             <table class="table">
                 <tbody>
@@ -154,5 +154,48 @@
             </table>
         </div>
 
+    </div>
+</div>
+
+<!-- Modal Endereco -->
+<div class="modal fade" id="CadastroEndereco" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form>
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Cadastro de Endereço</h4>
+                </div>
+                <div class="modal-body">
+                    <!--conteudo da janela Modal Endereco -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal Contato -->
+<div class="modal fade" id="CadastroContato" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form>
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Cadastro de Contato</h4>
+                </div>
+                <div class="modal-body">
+                    <!--conteudo da janela Modal Contato -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary">Salvar</button>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
