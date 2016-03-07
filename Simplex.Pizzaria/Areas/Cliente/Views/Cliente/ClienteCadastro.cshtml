@@ -96,7 +96,7 @@
 
 
         }
-        <div class="grid-form1">
+        @*<div class="grid-form1">
             <h4>Endereços</h4>
             <div class="btn btn-primary btn-float-right"><i class="fa fa-plus-circle"></i> Incluir novo endereço</div>
             <br>
@@ -118,8 +118,13 @@
                     </tr>
                 </tbody>
             </table>
-        </div>
+        </div>*@
 
+        @if (Model.clientesEnderecos != null)
+        {
+            @Html.Partial("PartialClienteEnderecoListagem", Model.clientesEnderecos)
+        }
+        
 
         <div class="grid-form1">
             <h4>Contatos</h4>

@@ -15,8 +15,8 @@ namespace Simplex.Pizzaria
 
             routes.MapRoute(
                 name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                url: "{Areas}/{controller}/{action}/{id}",
+                defaults: new { Areas=UrlParameter.Optional,  controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

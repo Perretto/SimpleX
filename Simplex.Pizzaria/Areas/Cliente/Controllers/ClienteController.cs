@@ -69,6 +69,34 @@ namespace Simplex.Pizzaria.Areas.Cliente.Controllers
             return View();
         }
 
+
+        public ActionResult ClienteCadastroEdicao(string idCliente = "")
+        {
+
+
+            List<SelectListItem> itens = new List<SelectListItem>();
+            cadastroGeralFacade = new cadastroGeralFacade();
+            facadeCliente = new cadastroFacade();
+
+            List<CNAE> lstCNAE = cadastroGeralFacade.ListarCNAE();
+
+            for (int i = 0; i < lstCNAE.Count; i++)
+            {
+                itens.Add(new SelectListItem { Value = lstCNAE[i].ID.ToString(), Text = lstCNAE[i].codigo });
+            }
+
+            @ViewBag.CNAEs = itens;
+
+            cliente cliente = new SimpleX.Model.cliente();
+            if (idCliente != "")
+            {
+                cliente = facadeCliente.ConsultarCliente(Guid.Parse(idCliente));
+            }
+              
+
+            return View("ClienteCadastro", cliente);
+        }
+
         public ActionResult SalvarCliente(cliente cliente)
         {
             facadeCliente = new cadastroFacade();
