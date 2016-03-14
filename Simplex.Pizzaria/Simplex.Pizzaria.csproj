@@ -296,7 +296,10 @@
     <Content Include="Scripts\clndr.js" />
     <Content Include="Scripts\custom.js" />
     <Content Include="Scripts\data.js" />
+    <Content Include="Scripts\framework\jquery.simplexis.cliente.js" />
+    <Content Include="Scripts\framework\jquery.simplexis.mensagem.js" />
     <Content Include="Scripts\framework\jquery.simplexis.modal.js" />
+    <Content Include="Scripts\framework\jquery.simplexis.universal.js" />
     <Content Include="Scripts\gmaps.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

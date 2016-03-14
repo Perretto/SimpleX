@@ -13,8 +13,8 @@
             $('#' + idModal).modal()
         },
         error: function (result) {
-            $('#' + idConteudo).html(result);
-            $('#' + idModal).modal()
+            //$('#' + idConteudo).html(result);
+            //$('#' + idModal).modal()
         }
 
     });

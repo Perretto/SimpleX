@@ -68,8 +68,7 @@ namespace Simplex.Pizzaria.Areas.Cliente.Controllers
 
             return View();
         }
-
-
+        
         public ActionResult ClienteCadastroEdicao(string idCliente = "")
         {
             List<SelectListItem> itens = new List<SelectListItem>();
@@ -110,7 +109,6 @@ namespace Simplex.Pizzaria.Areas.Cliente.Controllers
 
             @ViewBag.cidades = itens;
 
-
             itens = new List<SelectListItem>();
             cadastroGeralFacade = new cadastroGeralFacade();
             facadeCliente = new cadastroFacade();
@@ -123,9 +121,6 @@ namespace Simplex.Pizzaria.Areas.Cliente.Controllers
             }
 
             @ViewBag.estados = itens;
-
-
-
 
             itens = new List<SelectListItem>();
             cadastroGeralFacade = new cadastroGeralFacade();
@@ -140,10 +135,6 @@ namespace Simplex.Pizzaria.Areas.Cliente.Controllers
 
             @ViewBag.paises = itens;
 
-
-
-
-
             clienteEndereco clienteEndereco = new SimpleX.Model.clienteEndereco();
             if (idClienteEndereco != "")
             {
@@ -153,9 +144,7 @@ namespace Simplex.Pizzaria.Areas.Cliente.Controllers
 
             return View("ClienteEnderecoCadastro", clienteEndereco);
         }
-
-
-
+        
         public ActionResult SalvarCliente(cliente cliente)
         {
             facadeCliente = new cadastroFacade();
@@ -172,13 +161,17 @@ namespace Simplex.Pizzaria.Areas.Cliente.Controllers
             return Json(resultado);
         }
 
-        //public ActionResult ClienteCadastro(Guid ClienteID)
-        //{
-        //    cadastroFacade facadeCliente = new cadastroFacade();
-        //    cliente cliente = facadeCliente.ConsultarCliente(ClienteID);
+        public ActionResult ExcluirCliente(string idCliente = "")
+        {
+            facadeCliente = new cadastroFacade();
+            Result resultado = new Result();
 
-        //    return View(cliente);
-        //}
+            if (idCliente != "")
+            {
+                resultado = facadeCliente.ExcluirCliente(Guid.Parse(idCliente));
+            }
+            return Json(resultado);
+        }
 
     }
 }
