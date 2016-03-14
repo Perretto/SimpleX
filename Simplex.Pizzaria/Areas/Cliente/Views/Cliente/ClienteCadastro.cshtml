@@ -99,14 +99,16 @@
         <div class="grid-form1">
             <h4>Endereços</h4>
             <div class="btn btn-primary btn-float-right" data-toggle="modal" data-target="#CadastroEndereco"><i class="fa fa-plus-circle"></i> Incluir novo endereço</div>
-            <br>            
+            <br>
         </div>
 
-        @if (Model.clientesEnderecos != null)
+        @if (Model != null)
         {
-            @Html.Partial("PartialClienteEnderecoListagem", Model.clientesEnderecos)
+            if (Model.clientesEnderecos.Count > 0)
+            {
+                @Html.Partial("PartialClienteEnderecoListagem", Model.clientesEnderecos)
+            }
         }
-
 
         <div class="grid-form1">
             <h4>Contatos</h4>

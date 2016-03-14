@@ -18,7 +18,10 @@ namespace Simplex.Pizzaria.Areas.Cliente.Controllers
         // GET: Cliente/Cliente
         public ActionResult Index()
         {
-            return View();
+            cliente cliente = new cliente();
+            cliente.clientesEnderecos = new List<clienteEndereco>();
+            cliente.clientesContatos = new List<clienteContato>();
+            return View(cliente);
         }
 
         public ActionResult ClienteListagem()
@@ -65,8 +68,11 @@ namespace Simplex.Pizzaria.Areas.Cliente.Controllers
             
             @ViewBag.CNAEs = itens;
 
+            cliente cliente = new cliente();
+            cliente.clientesEnderecos = new List<clienteEndereco>();
+            cliente.clientesContatos = new List<clienteContato>();
 
-            return View();
+            return View(cliente);
         }
         
         public ActionResult ClienteCadastroEdicao(string idCliente = "")
