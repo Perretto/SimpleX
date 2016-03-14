@@ -150,7 +150,58 @@ namespace Simplex.Pizzaria.Areas.Cliente.Controllers
 
             return View("ClienteEnderecoCadastro", clienteEndereco);
         }
-        
+
+        public ActionResult ClienteEnderecoCadastro(string idCliente = "")
+        {
+            List<SelectListItem> itens = new List<SelectListItem>();
+            cadastroGeralFacade = new cadastroGeralFacade();
+            facadeCliente = new cadastroFacade();
+
+            List<cidade> lstCidade = cadastroGeralFacade.ListarCidade();
+
+            for (int i = 0; i < lstCidade.Count; i++)
+            {
+                itens.Add(new SelectListItem { Value = lstCidade[i].ID.ToString(), Text = lstCidade[i].codigo });
+            }
+
+            @ViewBag.cidades = itens;
+
+            itens = new List<SelectListItem>();
+            cadastroGeralFacade = new cadastroGeralFacade();
+            facadeCliente = new cadastroFacade();
+
+            List<estado> lstEstados = cadastroGeralFacade.ListarEstado();
+
+            for (int i = 0; i < lstEstados.Count; i++)
+            {
+                itens.Add(new SelectListItem { Value = lstEstados[i].ID.ToString(), Text = lstEstados[i].codigo });
+            }
+
+            @ViewBag.estados = itens;
+
+            itens = new List<SelectListItem>();
+            cadastroGeralFacade = new cadastroGeralFacade();
+            facadeCliente = new cadastroFacade();
+
+            List<pais> lstPaises = cadastroGeralFacade.ListarPais();
+
+            for (int i = 0; i < lstPaises.Count; i++)
+            {
+                itens.Add(new SelectListItem { Value = lstPaises[i].ID.ToString(), Text = lstPaises[i].codigo });
+            }
+
+            @ViewBag.paises = itens;
+
+            clienteEndereco clienteEndereco = new clienteEndereco();
+            if (idCliente != "")
+            {
+                clienteEndereco.clienteID = Guid.Parse(idCliente);
+            }
+
+
+            return View("ClienteEnderecoCadastro", clienteEndereco);
+        }
+
         public ActionResult SalvarCliente(cliente cliente)
         {
             facadeCliente = new cadastroFacade();
