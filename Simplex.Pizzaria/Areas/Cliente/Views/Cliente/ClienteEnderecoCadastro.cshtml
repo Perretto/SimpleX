@@ -10,7 +10,7 @@
 <div class="tab-content">
     <div class="tab-pane active" id="horizontal-form">
 
-        @using (Html.BeginForm("SalvarClienteEndereco", "Cliente", FormMethod.Post, new { @class = "form-horizontal" }))
+        @using (Html.BeginForm("SalvarClienteEndereco", "Cliente", FormMethod.Post, new { @class = "form-horizontal", @id = "form-clienteendereco" }))
         {
             <div class="form-group">
                 <div class="col-sm-2">
@@ -93,9 +93,8 @@
             <div class="panel-footer">
                 <div class="row">
                     <div class="col-sm-8 col-sm-offset-2">
-                        <input type="submit" class="btn-primary btn" title="Salvar" name="Salvar" value="Salvar">
-                        <button class="btn-default btn">Cancelar</button>
-                        <button class="btn-inverse btn">Limpar Dados</button>
+                        <input type="button" onclick="salvarClienteEndereco()" class="btn-primary btn" title="Salvar" name="Salvar" value="Salvar">
+                        <input type="button" onclick="cancelarClienteEndereco()" class="btn-default btn" value="Cancelar">
                     </div>
                 </div>
             </div>

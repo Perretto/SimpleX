@@ -7,16 +7,16 @@ function AjaxParameter(parameters) {
     var dados = (parameters.dados) ? parameters.dados : "";
     var callback = (parameters.callback) ? parameters.callback : "";
     var async = (parameters.async) ? parameters.async : false;
-    var contentType = (parameters.type == "POST") ? "application/json; charset=utf-8" : "";
+    var contentType = (parameters.type == "POST") ? "" : "charset=utf-8";
 
     $.ajax({
         type: type,
-        url: url,
-        dataType: dataType,
-        contentType: contentType,
-        async: async,
-        crossDomain: true,
+        headers: {
+            'Accept': 'application/json'
+        },
         data: dados,
+        url: url,
+        async: false,
         success: function (result) {
             if (result) {
                 retorno = result;
@@ -24,16 +24,40 @@ function AjaxParameter(parameters) {
                     callback(result);
                     retorno = result;
                 }
-                notification({ messageTitle: "", messageText: "", fix: false, type: "ok", icon: "thumbs-up" });
-            } else {
-                notification({ messageTitle: "", messageText: "", fix: false, type: "warning", icon: "thumbs-down" });
-            }
+                
+            } 
         },
         error: function (result) {
             notification({ messageText: "Falha na comunicação com o servidor", messageTitle: "Desculpe!", fix: false, type: "warning", icon: "thumbs-down" });
-
         }
+
     });
+
+    //$.ajax({
+    //    type: type,
+    //    headers: {
+    //        'Accept': 'application/json',
+    //        'Content-Type': 'text/plain'
+    //    },
+    //    url: url,
+    //    async: async,
+    //    success: function (result) {
+    //        if (result) {
+    //            retorno = result;
+    //            if (callback) {
+    //                callback(result);
+    //                retorno = result;
+    //            }
+    //            notification({ messageTitle: "", messageText: "", fix: false, type: "ok", icon: "thumbs-up" });
+    //        } else {
+    //            notification({ messageTitle: "", messageText: "", fix: false, type: "warning", icon: "thumbs-down" });
+    //        }
+    //    },
+    //    error: function (result) {
+    //        notification({ messageText: "Falha na comunicação com o servidor", messageTitle: "Desculpe!", fix: false, type: "warning", icon: "thumbs-down" });
+
+    //    }
+    //});
 
     return retorno;
 }

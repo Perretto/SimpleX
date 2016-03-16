@@ -291,6 +291,8 @@
     <Content Include="Areas\Cliente\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Cliente\Views\Cliente\ClienteEnderecoCadastro.cshtml" />
     <Content Include="Areas\Cliente\Views\Cliente\PartialClienteEnderecoListagem.cshtml" />
+    <Content Include="Areas\Cliente\Views\Cliente\PartialClienteContatoListagem.cshtml" />
+    <Content Include="Areas\Cliente\Views\Cliente\ClienteContatoCadastro.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Chart.js" />
     <Content Include="Scripts\clndr.js" />

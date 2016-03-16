@@ -24,12 +24,13 @@ namespace Simplex.Pizzaria.Areas.Cliente.Controllers
             return View(cliente);
         }
 
+        //Listagens============================================================================================
+
         public ActionResult ClienteListagem()
         {
             return View();
         }
-
-        //[HttpGet]
+   
         public PartialViewResult PartialClienteListagem(string pesquisarcliente)
         {
             facadeCliente = new cadastroFacade();
@@ -53,6 +54,8 @@ namespace Simplex.Pizzaria.Areas.Cliente.Controllers
 
             return PartialView(lstCliente);
         }
+
+        //Cadastros============================================================================================
 
         public ActionResult ClienteCadastro()
         {
@@ -202,6 +205,34 @@ namespace Simplex.Pizzaria.Areas.Cliente.Controllers
             return View("ClienteEnderecoCadastro", clienteEndereco);
         }
 
+        public ActionResult ClienteContatoCadastroEdicao(string idClienteContato = "")
+        {
+            facadeCliente = new cadastroFacade();
+
+            clienteContato clienteContato = new SimpleX.Model.clienteContato();
+            if (idClienteContato != "")
+            {
+                clienteContato = facadeCliente.ConsultarClienteContato(Guid.Parse(idClienteContato));
+            }
+            
+            return View("ClienteContatoCadastro", clienteContato);
+        }
+
+        public ActionResult ClienteContatoCadastro(string idCliente = "")
+        {
+            facadeCliente = new cadastroFacade();
+
+            clienteContato clienteContato = new clienteContato();
+            if (idCliente != "")
+            {
+                clienteContato.clienteID = Guid.Parse(idCliente);
+            }
+
+            return View("ClienteContatoCadastro", clienteContato);
+        }
+
+        //Salvar============================================================================================
+        [HttpPost]
         public ActionResult SalvarCliente(cliente cliente)
         {
             facadeCliente = new cadastroFacade();
@@ -218,6 +249,14 @@ namespace Simplex.Pizzaria.Areas.Cliente.Controllers
             return Json(resultado);
         }
 
+        public ActionResult SalvarClienteContato(clienteContato clienteContato)
+        {
+            facadeCliente = new cadastroFacade();
+            Result resultado = facadeCliente.SalvarClienteContato(clienteContato);
+
+            return Json(resultado);
+        }
+        //Excluir============================================================================================
         public ActionResult ExcluirCliente(string idCliente = "")
         {
             facadeCliente = new cadastroFacade();
@@ -227,8 +266,31 @@ namespace Simplex.Pizzaria.Areas.Cliente.Controllers
             {
                 resultado = facadeCliente.ExcluirCliente(Guid.Parse(idCliente));
             }
-            return Json(resultado);
+            return Json(resultado, JsonRequestBehavior.AllowGet);
         }
 
+        public ActionResult ExcluirClienteEndereco(string idClienteEndereco = "")
+        {
+            facadeCliente = new cadastroFacade();
+            Result resultado = new Result();
+
+            if (idClienteEndereco != "")
+            {
+                resultado = facadeCliente.ExcluirClienteEndereco(Guid.Parse(idClienteEndereco));
+            }
+            return Json(resultado, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult ExcluirClienteContato(string idClienteContato = "")
+        {
+            facadeCliente = new cadastroFacade();
+            Result resultado = new Result();
+
+            if (idClienteContato != "")
+            {
+                resultado = facadeCliente.ExcluirClienteContato(Guid.Parse(idClienteContato));
+            }
+            return Json(resultado, JsonRequestBehavior.AllowGet);
+        }
     }
 }

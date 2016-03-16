@@ -4,5 +4,5 @@
     var type = parameters.type;
     var icon = parameters.icon;
 
-
+    alert(messageTitle + " - " + messageText);
 }
