@@ -164,7 +164,7 @@ namespace Simplex.Pizzaria.Areas.Cliente.Controllers
 
             for (int i = 0; i < lstCidade.Count; i++)
             {
-                itens.Add(new SelectListItem { Value = lstCidade[i].ID.ToString(), Text = lstCidade[i].codigo });
+                itens.Add(new SelectListItem { Value = lstCidade[i].ID.ToString(), Text = lstCidade[i].nome });
             }
 
             @ViewBag.cidades = itens;
@@ -177,7 +177,7 @@ namespace Simplex.Pizzaria.Areas.Cliente.Controllers
 
             for (int i = 0; i < lstEstados.Count; i++)
             {
-                itens.Add(new SelectListItem { Value = lstEstados[i].ID.ToString(), Text = lstEstados[i].codigo });
+                itens.Add(new SelectListItem { Value = lstEstados[i].ID.ToString(), Text = lstEstados[i].nome });
             }
 
             @ViewBag.estados = itens;
@@ -190,7 +190,7 @@ namespace Simplex.Pizzaria.Areas.Cliente.Controllers
 
             for (int i = 0; i < lstPaises.Count; i++)
             {
-                itens.Add(new SelectListItem { Value = lstPaises[i].ID.ToString(), Text = lstPaises[i].codigo });
+                itens.Add(new SelectListItem { Value = lstPaises[i].ID.ToString(), Text = lstPaises[i].nome });
             }
 
             @ViewBag.paises = itens;
