@@ -14,7 +14,12 @@
             if (result.Sucesso == true) {
                 notification({ messageTitle: "OK", messageText: result.MensagemGeral, fix: false, type: "ok", icon: "thumbs-up" });
 
-                location.reload();
+                if (result.Campos.length > 0) {
+                    var idCliente = result.Campos[0].Mensagem;
+                    window.location = "http://" + window.location.host + "/Cliente/Cliente/ClienteCadastroEdicao?idCliente=" + idCliente;
+                } else {
+                    location.reload();
+                }
             } else {
                 notification({ messageTitle: "Ops", messageText: result.MensagemGeral, fix: false, type: "Ops", icon: "thumbs-down" });
             }

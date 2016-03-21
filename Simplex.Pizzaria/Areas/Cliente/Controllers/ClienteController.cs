@@ -36,7 +36,7 @@ namespace Simplex.Pizzaria.Areas.Cliente.Controllers
             facadeCliente = new cadastroFacade();
             cliente cliente = new cliente();
             cliente.razaoSocial = pesquisarcliente;
-            cliente.empresaID = Guid.Parse("fc70ecab-61b8-4e53-9a99-6098b0a75a02");
+            //cliente.empresaID = Guid.Parse("fc70ecab-61b8-4e53-9a99-6098b0a75a02");
             List<cliente> lstCliente = facadeCliente.FiltrarCliente(cliente);
 
             for (int i = 0; i < lstCliente.Count; i++)
@@ -237,7 +237,12 @@ namespace Simplex.Pizzaria.Areas.Cliente.Controllers
         {
             facadeCliente = new cadastroFacade();
             Result resultado = facadeCliente.SalvarCliente(cliente);
-
+            if (cliente.ID != Guid.Empty)
+            {
+                resultado.AddMensagem("ID", cliente.ID.ToString());
+                resultado.Sucesso = true;
+            }
+            
             return Json(resultado);
         }
 

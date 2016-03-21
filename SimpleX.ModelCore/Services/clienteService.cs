@@ -61,9 +61,11 @@ namespace SimpleX.ModelCore.Services
                 context.SaveChanges();
 
                 retorno.Ok("Cadastro realizado com sucesso.");
+                retorno.Sucesso = true;
             }
             catch (Exception erro)
             {
+                retorno.Sucesso = false;
                 retorno.Erro(erro.InnerException.Message);
             }
 
