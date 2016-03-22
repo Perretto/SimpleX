@@ -1,0 +1,61 @@
+﻿@model List<SimpleX.Model.fornecedorEndereco>
+@using SimpleX.Model
+
+@{
+    var detalhes = "";
+}
+
+@{
+    if (Model != null)
+    {
+        for (var i = 0; i < Model.Count; i++)
+        {
+            detalhes = "";
+
+            <tr class="table-row">
+                <td class="table-img">
+                    <img src="~/images/in.jpg" alt="">
+                </td>
+                <td class="table-text">
+                    <h6>@Model[i].logradouro</h6>
+
+
+                    @if (Model[i].numero != "")
+                    {
+                        detalhes += "Número: " + Model[i].numero + " | ";
+                    }
+
+                    @if (Model[i].bairro != "")
+                    {
+                        detalhes += "Bairro: " + Model[i].bairro + " | ";
+                    }
+
+                    @if (Model[i].cidade != null)
+                    {
+                        detalhes += Model[i].cidade.nome + " | ";
+                    }
+
+                    @if (Model[i].estado != null)
+                    {
+                        detalhes += Model[i].estado.nome + " | ";
+                    }
+
+                    @if (Model[i].CEP != "")
+                    {
+                        detalhes += "CEP: " + Model[i].CEP + " | ";
+                    }
+
+                    <p>@detalhes</p>
+                </td>
+                @*<td class="march">fornecedor com fatura em atraso</td>*@
+                <td style="width:1px">
+                    <a href="javascript:ajaxModal('/fornecedor/fornecedor/fornecedorEnderecoCadastroEdicao?idFornecedorEndereco=@Model[i].ID','cadastroendereco','cadastroenderecoconteudo')" class="btn btn-primary"><i class="fa fa-pencil"></i></a>
+
+                    <a href="javascript:excluirFornecedorEndereco('@Model[i].ID')" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                </td>
+            </tr>
+
+            <br />
+        }
+    }
+}

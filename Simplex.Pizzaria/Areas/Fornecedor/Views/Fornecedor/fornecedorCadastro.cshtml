@@ -1,0 +1,214 @@
+﻿@model SimpleX.Model.fornecedor
+
+
+@{
+    //ViewBag.Title = "Cadastro de fornecedores";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4>Cadastro de fornecedor</h4>
+<div class="tab-content">
+    <div class="tab-pane active" id="horizontal-form">
+
+        @using (Html.BeginForm("salvarFornecedor", "Fornecedor", FormMethod.Post, new { @class = "form-horizontal", @id = "form-fornecedor" }))
+        {
+            <div class="form-group">
+                <div class="col-sm-2">
+                    @Html.HiddenFor(c => c.ID, new { @class = "form-control1" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="focusedinput" class="col-sm-2 control-label">Código</label>
+                <div class="col-sm-2">
+                    @Html.TextBoxFor(c => c.codigo, new { @class = "form-control1", placeholder = "Código do fornecedor" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="focusedinput" class="col-sm-2 control-label">Nome</label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(c => c.razaoSocial, new { @class = "form-control1", placeholder = "Código do fornecedor" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="focusedinput" class="col-sm-2 control-label">Apelido</label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(c => c.nomeFantasia, new { @class = "form-control1", placeholder = "Apelido ou Nome Fantasia" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="focusedinput" class="col-sm-2 control-label">CNPJ</label>
+                <div class="col-sm-3">
+                    @Html.TextBoxFor(c => c.CNPJ, new { @class = "form-control1", placeholder = "Número do Cadastro Nacional de Pessoa Jurídica" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="focusedinput" class="col-sm-2 control-label">CPF</label>
+                <div class="col-sm-3">
+                    @Html.TextBoxFor(c => c.CPF, new { @class = "form-control1", placeholder = "Número do Cadastro de Pessoa Física (CPF)" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="focusedinput" class="col-sm-2 control-label">RG</label>
+                <div class="col-sm-3">
+                    @Html.TextBoxFor(c => c.RG, new { @class = "form-control1", placeholder = "Número do Registro Geral (RG)" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="focusedinput" class="col-sm-2 control-label">IE</label>
+                <div class="col-sm-3">
+                    @Html.TextBoxFor(c => c.IE, new { @class = "form-control1", placeholder = "Código da Inscrição Estadual" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="focusedinput" class="col-sm-2 control-label">IM</label>
+                <div class="col-sm-3">
+                    @Html.TextBoxFor(c => c.IM, new { @class = "form-control1", placeholder = "Código da Inscrição Municipal" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="focusedinput" class="col-sm-2 control-label">CNAE</label>
+                <div class="col-sm-3">
+                    @*@Html.TextBoxFor(c => c.CNAEID, new { @class = "form-control1", placeholder = "Código do CNAE" })*@
+                    @Html.DropDownList("CNAEID", (List<SelectListItem>)ViewBag.CNAEs, new { @class = "form-control1", placeholder = "Código da Inscrição Municipal", id = "CNAEID" })
+                </div>
+            </div>
+
+            <div class="panel-footer">
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2">
+                        <input type="button" onclick="salvarFornecedor()" class="btn-primary btn" title="Salvar" name="Salvar" value="Salvar">
+                        <input type="button" onclick="cancelarFornecedor()" class="btn-default btn" title="Cancelar" name="Cancelar" value="Cancelar">
+                        <input type="button" onclick="limpaFormFornecedor()" class="btn-inverse btn" title="Limpar Dados" name="Limpar Dados" value="Limpar Dados">
+                    </div>
+                </div>
+            </div>
+
+
+
+        }
+
+
+
+        @if (Model != null)
+        {
+            if (Model.ID != Guid.Empty)
+            {
+                <div class="grid-form1">
+                    <h4>Endereços</h4>
+                    <a href="javascript:ajaxModal('/Fornecedor/Fornecedor/fornecedorEnderecoCadastro?idFornecedor=@Model.ID','cadastroendereco','cadastroenderecoconteudo')"><div class="btn btn-primary btn-float-right"><i class="fa fa-plus-circle"></i> Incluir novo endereço</div></a>
+                    <br />
+                    <table class="table">
+                        <tbody>
+
+                            @if (Model.fornecedoresEnderecos.Count > 0)
+                            {
+                                @Html.Partial("partialFornecedorEnderecoListagem", Model.fornecedoresEnderecos)
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            }
+        }
+
+        @if (Model != null)
+        {
+            if (Model.ID != Guid.Empty)
+            {
+                <div class="grid-form1">
+                    <h4>Contatos</h4>
+                    <a href="javascript:ajaxModal('/Fornecedor/Fornecedor/fornecedorContatoCadastro?idFornecedor=@Model.ID','cadastrocontato','cadastrocontatoconteudo')"><div class="btn btn-primary btn-float-right"><i class="fa fa-plus-circle"></i> Incluir novo contato</div></a>
+                    <br />
+                    <table class="table">
+                        <tbody>
+                            @if (Model.fornecedoresContatos.Count > 0)
+                            {
+                                @Html.Partial("partialFornecedorContatoListagem", Model.fornecedoresContatos)
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+        }
+
+        @*<div class="grid-form1">
+                <h4>Contatos</h4>
+                <div class="btn btn-primary btn-float-right" data-toggle="modal" data-target="#CadastroContato"><i class="fa fa-plus-circle"></i> Incluir novo contato</div>
+                <br>
+                <table class="table">
+                    <tbody>
+                        <tr class="table-row">
+                            <td class="table-img">
+                                <img src="images/in.jpg" alt="">
+                            </td>
+                            <td class="table-text">
+                                <h6>Paulo Hidenari</h6>
+                                <p>11 97334-4958 | 11 2233-2255 | paulohidenari@hotmail.com</p>
+                            </td>
+                            <td class="march" align="right">
+                                <div class="btn btn-primary"><i class="fa fa-phone"></i> Ligar</div>
+                                <div class="btn btn-success"><i class="fa fa-whatsapp"></i> WhatsApp</div>
+
+                            </td>
+                            <td style="width:1px">
+                                <a href="#" class="btn btn-primary"><i class="fa fa-pencil"></i></a>
+                                <a href="#" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>*@
+
+    </div>
+</div>
+
+<!-- Modal Endereco -->
+<div class="modal fade" id="cadastroendereco" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Cadastro de Endereço</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="cadastroenderecoconteudo">
+                        <!--conteudo da janela Modal Endereco -->
+                    </div>
+                </div>
+
+            
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal Contato -->
+<div class="modal fade" id="cadastrocontato" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Cadastro de Contato</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="cadastrocontatoconteudo">
+                        <!--conteudo da janela Modal Endereco -->
+                    </div>
+                </div>
+            
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/framework/jquery.simplexis.fornecedor.js"></script>

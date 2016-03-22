@@ -2,9 +2,11 @@
 @using SimpleX.Model
 
 @{
+    //ViewBag.Title = "fornecedorListagem";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
     var detalhes = "";
 }
-
+<script src="~/Scripts/framework/jquery.simplexis.fornecedor.js"></script>
 @{
     if (Model != null)
     {
@@ -23,7 +25,6 @@
                             </td>
                             <td class="table-text">
                                 <h6>@Model[i].nomeFantasia</h6>
-
 
                                 @if (Model[i].CNPJ != "")
                                 {
@@ -49,10 +50,10 @@
 
                                 <p>@detalhes</p>
                             </td>
-                            @*<td class="march">Cliente com fatura em atraso</td>*@
+                            @*<td class="march">fornecedor com fatura em atraso</td>*@
                             <td style="width:1px">
-                                <a href="#" class="btn btn-primary"><i class="fa fa-pencil"></i></a>
-                                <a href="#" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                                <a href="~/fornecedor/fornecedor/fornecedorCadastroEdicao?idFornecedor=@Model[i].ID" class="btn btn-primary"><i class="fa fa-pencil"></i></a>
+                                <a href="javascript:excluirFornecedor('@Model[i].ID')" class="btn btn-danger"><i class="fa fa-trash"></i></a>
                             </td>
                         </tr>
                     </tbody>
@@ -63,4 +64,3 @@
         }
     }
 }
-

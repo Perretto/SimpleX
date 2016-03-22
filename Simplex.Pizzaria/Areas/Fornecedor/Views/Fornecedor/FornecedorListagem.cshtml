@@ -1,4 +1,5 @@
 ﻿@{
+    //ViewBag.Title = "fornecedorListagem";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <h2>Listagem de fornecedores</h2>
@@ -26,24 +27,24 @@
 </div>
 
 
-<div class="btn btn-primary btn-float-right"><i class="fa fa-plus-circle"></i> Incluir novo fornecedor</div>
+<a href="~/fornecedor/fornecedor/fornecedorCadastro"><div class="btn btn-primary btn-float-right"><i class="fa fa-plus-circle"></i> Incluir novo fornecedor</div></a>
 </div>
 
 <script type="text/javascript" src="~/Scripts/jquery-1.7.1.min.js"></script>
 <script type="text/javascript">
     function atualizarFornecedores() {
         var pesquisarfornecedor = $("#pesquisarfornecedor").val();
-     $.ajax({
-         type: 'GET',
-         url: '/Fornecedor/Fornecedor/PartialFornecedorListagem?pesquisarfornecedor=' + pesquisarfornecedor,
-         dataType: 'html',
-         cache: false,
-         async: true,
-         success: function (data) {
-             $('#PartialFornecedorListagem').html(data);
-         }
-     });
- } $(document).ready(function () {
-     setInterval(atualizarFornecedores, 30000);
- });
+        $.ajax({
+            type: 'GET',
+            url: '/fornecedor/fornecedor/PartialFornecedorListagem?pesquisarfornecedor=' + pesquisarfornecedor,
+            dataType: 'html',
+            cache: false,
+            async: true,
+            success: function (data) {
+                $('#PartialFornecedorListagem').html(data);
+            }
+        });
+    } $(document).ready(function () {
+        setInterval(atualizarFornecedores, 30000);
+    });
 </script>
