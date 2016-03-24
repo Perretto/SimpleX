@@ -298,6 +298,7 @@
     <Content Include="Areas\Fornecedor\Views\Fornecedor\fornecedorEnderecoCadastro.cshtml" />
     <Content Include="Areas\Fornecedor\Views\Fornecedor\partialFornecedorContatoListagem.cshtml" />
     <Content Include="Areas\Fornecedor\Views\Fornecedor\partialFornecedorEnderecoListagem.cshtml" />
+    <Content Include="Areas\Produto\Views\Produto\produtoCadastro.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Chart.js" />
     <Content Include="Scripts\clndr.js" />
@@ -307,6 +308,7 @@
     <Content Include="Scripts\framework\jquery.simplexis.fornecedor.js" />
     <Content Include="Scripts\framework\jquery.simplexis.mensagem.js" />
     <Content Include="Scripts\framework\jquery.simplexis.modal.js" />
+    <Content Include="Scripts\framework\jquery.simplexis.produto.js" />
     <Content Include="Scripts\framework\jquery.simplexis.universal.js" />
     <Content Include="Scripts\gmaps.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

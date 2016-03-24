@@ -19,6 +19,7 @@
     </tbody>
 </table>
 
+<a href="/Cliente/Cliente/ClienteCadastro" class="btn btn-primary btn-float-right"><i class="fa fa-plus-circle"></i> Incluir novo cliente</a>
 
 <div id="PartialClienteListagem">
     @{
@@ -27,24 +28,26 @@
 </div>
 
 
-<div class="btn btn-primary btn-float-right"><i class="fa fa-plus-circle"></i> Incluir novo cliente</div>
-</div>
 
-<script type="text/javascript" src="~/Scripts/jquery-1.7.1.min.js"></script>
-<script type="text/javascript">
-    function atualizarClientes() {
-        var  pesquisarcliente = $("#pesquisarcliente").val();
-     $.ajax({
-         type: 'GET',
-         url: '/Cliente/Cliente/PartialClienteListagem?pesquisarcliente=' + pesquisarcliente,
-         dataType: 'html',
-         cache: false,
-         async: true,
-         success: function (data) {
-             $('#PartialClienteListagem').html(data);
-         }
-     });
- } $(document).ready(function () {
-     setInterval(atualizarClientes, 30000);
- });
-</script>
+    
+    
+
+
+    <script type="text/javascript" src="~/Scripts/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript">
+        function atualizarClientes() {
+            var pesquisarcliente = $("#pesquisarcliente").val();
+            $.ajax({
+                type: 'GET',
+                url: '/Cliente/Cliente/PartialClienteListagem?pesquisarcliente=' + pesquisarcliente,
+                dataType: 'html',
+                cache: false,
+                async: true,
+                success: function (data) {
+                    $('#PartialClienteListagem').html(data);
+                }
+            });
+        } $(document).ready(function () {
+            setInterval(atualizarClientes, 30000);
+        });
+    </script>
