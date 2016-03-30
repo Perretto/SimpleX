@@ -1,0 +1,73 @@
+﻿@model List<SimpleX.Model.vendaProduto>
+@using SimpleX.Model
+
+@{
+    //ViewBag.Title = "ClienteListagem";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+    var detalhes = "";
+    var iddiv = "";
+}
+<script src="~/Scripts/framework/jquery.simplexis.venda.js"></script>
+@{
+    if (Model != null)
+    {
+        for (var i = 0; i < Model.Count; i++)
+        {
+            detalhes = "";
+            @*<div class="grid-form1">*@
+                
+                <br />
+                <table class="table">
+                    <tbody>
+                        <tr class="table-row">
+                            <td class="table-img">
+                                <img src="~/images/in.jpg" alt="">
+                            </td>
+                            <td class="table-text">
+                                @if (Model[i].produto != null)
+                                {
+                                    <h4>@Model[i].produto.codigo - @Model[i].produto.nome</h4>
+                                }
+
+                                @if (Model[i].produto != null)
+                                {
+                                    if (Model[i].produto.produtoCategoria != null)
+                                    {
+                                        <h6>@Model[i].produto.produtoCategoria.nome</h6>
+                                    }
+                                }
+
+                               @{
+                                detalhes += "Quantidade: " + Model[i].quantidade + " | ";
+                                detalhes += "Valor Unitário: " + Model[i].valorUnitario + " | ";
+                                detalhes += "Valor Total: " + Model[i].valorTotal + " | ";
+                                }
+
+                                <p>@detalhes</p>
+                                @{
+                                    iddiv = "iddivvendaproduto" + i;
+                                }
+
+                                <div id="@iddiv"></div>
+
+                            </td>
+                            @*<td class="march">Cliente com fatura em atraso</td>*@
+                            
+                            <td style="width:1px">
+                                <a href="javascript:ajaxContainer('/Venda/Venda/vendaProdutoCadastroEdicao?idVendaProduto=@Model[i].ID','@iddiv')" class="btn btn-primary"><i class="fa fa-pencil"></i></a>
+                                
+                            </td>
+
+                            
+                            
+                        </tr>
+                    </tbody>
+                </table>
+            @*</div>*@
+
+            <br />
+        }
+    }
+}
+
+

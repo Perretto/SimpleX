@@ -17,5 +17,6 @@ namespace SimpleX.Model
         public vendaStatus vendaStatus { get; set; }
         public Guid empresaID { get; set; }
         public empresa empresa { get; set; }
+        public List<vendaProduto> vendaProdutos { get; set; }
     }
 }

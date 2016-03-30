@@ -1,0 +1,52 @@
+﻿@{
+    //ViewBag.Title = "ClienteListagem";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h4>Nova venda</h4>
+<h2>Cliente</h2>
+<br />
+
+<table class="table">
+    <tbody>
+        <tr class="table-row">
+            <td class="table-img">
+                <form class=" navbar-left-right">
+                    <input onkeydown="atualizarClientes()" id="pesquisarcliente" type="text" value="Pesquisar cliente..." onfocus="    this.value = '';" onblur="    if (this.value == '') { this.value = 'Pesquisar...'; }">
+                </form>
+                <br />
+                <br />
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div id="partialVendaClienteListagem">
+    @{
+        Html.RenderPartial("partialVendaClienteListagem");
+    }
+</div>
+
+
+
+
+
+
+
+<script type="text/javascript" src="~/Scripts/jquery-1.7.1.min.js"></script>
+<script type="text/javascript">
+    function atualizarClientes() {
+        var pesquisarcliente = $("#pesquisarcliente").val();
+        $.ajax({
+            type: 'GET',
+            url: '/Venda/Venda/PartialVendaClienteListagem?pesquisarcliente=' + pesquisarcliente,
+            dataType: 'html',
+            cache: false,
+            async: true,
+            success: function (data) {
+                $('#partialVendaClienteListagem').html(data);
+            }
+        });
+    } $(document).ready(function () {
+        setInterval(atualizarClientes, 30000);
+    });
+</script>

@@ -1,0 +1,68 @@
+﻿@model List<SimpleX.Model.venda>
+@using SimpleX.Model
+
+@{
+    //ViewBag.Title = "ClienteListagem";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+    var detalhes = "";
+}
+<script src="~/Scripts/framework/jquery.simplexis.venda.js"></script>
+@{
+    if (Model != null)
+    {
+        for (var i = 0; i < Model.Count; i++)
+        {
+            detalhes = "";
+            <div class="grid-form1">
+                <h4>Pedido: @Model[i].numeroPedido.ToString()</h4>
+
+                <br />
+                <table class="table">
+                    <tbody>
+                        <tr class="table-row">
+                            <td class="table-img">
+                                <img src="~/images/in.jpg" alt="">
+                            </td>
+                            <td class="table-text">
+                                @if (Model[i].cliente != null)
+                                {
+                                    <h6>@Model[i].cliente.razaoSocial</h6>
+                                }
+                                
+                                @{
+                                    detalhes += "Valor Total: " + Model[i].valorTotal.ToString() + " | ";
+                                }                      
+
+                                @*@if (Model[i].CPF != "")
+                                {
+                                    detalhes += "CPF: " + Model[i].CPF + " | ";
+                                }
+
+                                @if (Model[i].clientesEnderecos.Count > 0)
+                                {
+                                    List<clienteEndereco> lstclienteEndereco = (List<clienteEndereco>)Model[i].clientesEnderecos;
+                                    detalhes += lstclienteEndereco[0].logradouro + " | ";
+                                }
+
+                                @if (Model[i].clientesContatos.Count > 0)
+                                {
+                                    List<clienteContato> lstclientesContatos = (List<clienteContato>)Model[i].clientesContatos;
+                                    detalhes += "Telefone: " + lstclientesContatos[0].telefoneContato + " | ";
+                                }*@
+
+                                <p>@detalhes</p>
+                            </td>
+                            @*<td class="march">Cliente com fatura em atraso</td>*@
+                            <td style="width:1px">
+                                <a href="~/Venda/Venda/movimentacaoVenda?idVenda=@Model[i].ID" class="btn btn-primary"><i class="fa fa-pencil"></i></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <br />
+        }
+    }
+}
+

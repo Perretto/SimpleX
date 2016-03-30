@@ -1,0 +1,60 @@
+﻿@{
+    //ViewBag.Title = "ClienteListagem";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Listagem de vendas</h2>
+<br />
+
+<table class="table">
+    <tbody>
+        <tr class="table-row">
+            <td class="table-img">
+                <form class=" navbar-left-right">
+                    <input onkeydown="atualizarVendas()" id="pesquisarvendapedido" type="text" value="Pesquisar pedido..." onfocus="    this.value = '';" onblur="    if (this.value == '') { this.value = 'Pesquisar pedido...'; }">
+                </form>
+                
+                <form class=" navbar-left-right">
+                    <input onkeydown="atualizarVendas()" id="pesquisarvendacliente" type="text" value="Pesquisar cliente..." onfocus="    this.value = '';" onblur="    if (this.value == '') { this.value = 'Pesquisar cliente...'; }">
+                </form>
+
+                <br />
+                <br />
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<a href="/Venda/Venda/vendaInicio" class="btn btn-primary btn-float-right"><i class="fa fa-plus-circle"></i> Incluir nova venda</a>
+
+<div id="partialVendaListagem">
+    @{
+        Html.RenderPartial("partialVendaListagem");
+    }
+</div>
+
+
+
+
+
+
+
+<script type="text/javascript" src="~/Scripts/jquery-1.7.1.min.js"></script>
+<script type="text/javascript">
+    function atualizarVendas() {
+        var pesquisarvendapedido = $("#pesquisarvendapedido").val();
+        var pesquisarvendacliente = $("#pesquisarvendacliente").val();
+
+            $.ajax({
+                type: 'GET',
+                url: '/Venda/Venda/partialVendaListagem?pesquisarvendapedido=' + pesquisarvendapedido + "&pesquisarvendacliente=" + pesquisarvendacliente,
+                dataType: 'html',
+                cache: false,
+                async: true,
+                success: function (data) {
+                    $('#partialVendaListagem').html(data);
+                }
+            });
+        } $(document).ready(function () {
+            setInterval(atualizarVendas, 30000);
+        });
+</script>

@@ -1,0 +1,109 @@
+﻿@model SimpleX.Model.venda
+
+
+@{
+    //ViewBag.Title = "Cadastro de produtos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4>Venda</h4>
+<div class="tab-content">
+    <div class="tab-pane active" id="horizontal-form">
+
+        @using (Html.BeginForm("salvarVenda", "Venda", FormMethod.Post, new { @class = "form-horizontal", @id = "form-venda" }))
+        {
+            <div><h4>Cliente: </h4><h3>@Model.cliente.razaoSocial</h3></div>
+            <div class="form-group">
+                <div class="col-sm-2">
+                    @Html.HiddenFor(c => c.ID, new { @class = "form-control1" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-2">
+                    @Html.HiddenFor(c => c.empresaID, new { @class = "form-control1" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="focusedinput" class="col-sm-2 control-label">Número do Pedido</label>
+                <div class="col-sm-2">
+                    @Html.TextBoxFor(c => c.numeroPedido, new { @class = "form-control1", placeholder = "Número do Pedido" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-2">
+                    @Html.HiddenFor(c => c.clienteID, new { @class = "form-control1" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="focusedinput" class="col-sm-2 control-label">Status</label>
+                <div class="col-sm-3">
+                    @Html.DropDownList("vendaStatusID", (List<SelectListItem>)ViewBag.status, new { @class = "form-control1", placeholder = "Status", id = "vendaStatusID" })
+                </div>
+            </div>
+
+            <div class="navbar-right">
+                <h3>Valor Total: @Model.valorTotal</h3>
+            </div>
+
+            <div class="panel-footer">
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2">
+                        <input type="button" onclick="salvarVenda()" class="btn-primary btn" title="Salvar" name="Salvar" value="Salvar">
+                        <input type="button" onclick="cancelarVenda()" class="btn-default btn" title="Sair" name="Cancelar" value="Sair">
+
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@if (Model != null)
+{
+    if (Model.ID != Guid.Empty)
+    {
+        <div class="grid-form1">
+            <h4>Produto</h4>
+            <a href="javascript:ajaxContainer('/Venda/Venda/vendaProdutoCadastro?idVenda=@Model.ID','divvendaproduto')"><div class="btn btn-primary btn-float-right"><i class="fa fa-plus-circle"> Incluir novo produto</i></div></a>
+            <br />
+            <div id="divvendaproduto"></div>
+            <table class="table">
+                <tbody>
+                    @if (Model.vendaProdutos != null)
+                    {
+                        if (Model.vendaProdutos.Count > 0)
+                        {
+                            @Html.Partial("partialVendaProdutoListagem", Model.vendaProdutos);
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+}
+
+<div class="modal fade" id="movimentacaoproduto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Produto da venda</h4>
+            </div>
+            <div class="modal-body">
+                <div id="movimentacaoprodutoconteudo">
+                    <!--conteudo da janela Modal Endereco -->
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<script src="~/Scripts/framework/jquery.simplexis.venda.js"></script>
+<script src="~/Scripts/framework/jquery.simplexis.container.js"></script>

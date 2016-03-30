@@ -103,9 +103,9 @@ namespace SimpleX.ModelCore.Services
                 (vendaProduto.ID == Guid.Empty || b.ID == vendaProduto.ID) &&
                 (vendaProduto.vendaID == Guid.Empty || b.vendaID == vendaProduto.vendaID) &&
                 (vendaProduto.produtoID == Guid.Empty || b.produtoID == vendaProduto.produtoID) &&
-                (vendaProduto.valorUnitario == null || b.valorUnitario == vendaProduto.valorUnitario) &&
-                (vendaProduto.quantidade == null || b.quantidade == vendaProduto.quantidade) &&
-                (vendaProduto.valorTotal == null || b.valorTotal == vendaProduto.valorTotal) &&
+                (vendaProduto.valorUnitario == 0 || b.valorUnitario == vendaProduto.valorUnitario) &&
+                (vendaProduto.quantidade == 0 || b.quantidade == vendaProduto.quantidade) &&
+                (vendaProduto.valorTotal == 0 || b.valorTotal == vendaProduto.valorTotal) &&
                 (vendaProduto.empresaID == Guid.Empty || b.empresaID == vendaProduto.empresaID)
                 )).ToList();
         }

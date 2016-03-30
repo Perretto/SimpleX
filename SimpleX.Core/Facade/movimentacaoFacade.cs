@@ -74,7 +74,11 @@ namespace SimpleX.Core.Facade
             return serviceVenda.Excluir(Id);
         }
 
-
+        public int BuscarUltimoPedido(Guid IdEmpresa)
+        {
+            return serviceVenda.BuscarUltimoPedido(IdEmpresa);
+        }
+        
 
         public List<vendaProduto> FiltrarVendaProduto(vendaProduto vendaProduto)
         {
