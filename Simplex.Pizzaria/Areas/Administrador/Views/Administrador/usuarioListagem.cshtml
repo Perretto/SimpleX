@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewBag.Title = "usuarioListagem";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var detalhes = "";
+    var iddiv = "";
+}
+
+@model List<SimpleX.Model.usuario>
+@using SimpleX.Model
+
+<br />
+<h4>Cadastro de usuário</h4>
+<div>
+    <a href="javascript:ajaxContainer('/Administrador/Administrador/usuarioCadastro','divusuario')"><div class="btn btn-primary btn-float-right"><i class="fa fa-plus-circle"> Incluir novo usuario</i></div></a>
+</div>
+<br />
+<div id="divusuario"></div>
+
+@{
+    if (Model != null)
+    {
+        for (var i = 0; i < Model.Count; i++)
+        {
+            detalhes = "";
+            <div class="grid-form1">
+                @*<h4>@Model[i].nome</h4>*@
+
+                <br />
+                <table class="table">
+                    <tbody>
+                        <tr class="table-row">
+                            <td class="table-img">
+                                <img src="~/images/in.jpg" alt="">
+                            </td>
+                            <td class="table-text">
+                                <h4>@Model[i].nome</h4>
+
+
+                                @*@if (Model[i].codigo != "")
+                                {
+                                    detalhes += "Codigo: " + Model[i].codigo + " | ";
+                                }
+
+                                <p>@detalhes</p>*@
+
+                                @{
+            iddiv = "iddivvendaproduto" + i;
+                                }
+
+                                <div id="@iddiv"></div>
+
+                            </td>
+                            @*<td class="march">Produto em falta no estoque</td>*@
+                            <td style="width:1px">
+                                <a href="javascript:ajaxContainer('/Administrador/Administrador/usuarioCadastroEdicao?idUsuario=@Model[i].ID','@iddiv')" class="btn btn-primary"><i class="fa fa-pencil"></i></a>
+                                <a href="javascript:excluirUsuario('@Model[i].ID')" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <br />
+        }
+    }
+}
+
+
+<script src="~/Scripts/framework/jquery.simplexis.container.js"></script>
+<script src="~/Scripts/framework/jquery.simplexis.usuario.js"></script>

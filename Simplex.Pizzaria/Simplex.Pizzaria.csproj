@@ -175,6 +175,8 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\Administrador\AdministradorAreaRegistration.cs" />
+    <Compile Include="Areas\Administrador\Controllers\AdministradorController.cs" />
     <Compile Include="Areas\Cliente\ClienteAreaRegistration.cs" />
     <Compile Include="Areas\Cliente\Controllers\ClienteController.cs" />
     <Compile Include="Areas\Fornecedor\Controllers\fornecedorController.cs" />
@@ -310,6 +312,10 @@
     <Content Include="Areas\Venda\Views\Venda\vendaProdutoCadastro.cshtml" />
     <Content Include="Areas\Venda\Views\Venda\partialVendaListagem.cshtml" />
     <Content Include="Areas\Venda\Views\Venda\vendaListagem.cshtml" />
+    <Content Include="Areas\Administrador\Views\web.config" />
+    <Content Include="Areas\Administrador\Views\Administrador\usuarioCadastro.cshtml" />
+    <Content Include="Areas\Administrador\Views\Administrador\usuarioListagem.cshtml" />
+    <None Include="Properties\PublishProfiles\local.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Chart.js" />
     <Content Include="Scripts\clndr.js" />
@@ -322,6 +328,7 @@
     <Content Include="Scripts\framework\jquery.simplexis.modal.js" />
     <Content Include="Scripts\framework\jquery.simplexis.produto.js" />
     <Content Include="Scripts\framework\jquery.simplexis.universal.js" />
+    <Content Include="Scripts\framework\jquery.simplexis.usuario.js" />
     <Content Include="Scripts\framework\jquery.simplexis.venda.js" />
     <Content Include="Scripts\framework\jquery.simplexis.vendaproduto.js" />
     <Content Include="Scripts\gmaps.js" />
@@ -396,6 +403,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Administrador\Models\" />
+    <Folder Include="Areas\Administrador\Views\Shared\" />
     <Folder Include="Areas\Cliente\Models\" />
     <Folder Include="Areas\Fornecedor\Models\" />
     <Folder Include="Areas\Fornecedor\Views\Shared\" />
