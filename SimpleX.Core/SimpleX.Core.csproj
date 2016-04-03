@@ -64,6 +64,7 @@
     <Compile Include="Facade\cadastroGeralFacade.cs" />
     <Compile Include="Facade\movimentacaoFacade.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="signIn.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

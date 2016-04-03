@@ -2424,9 +2424,10 @@ form.navbar-form.navbar-right {
 }
 .navbar-header {
     background-color: #D95459;
+    width:185px;
 }
 h1 a.navbar-brand {
-    width: 152px;
+    width: 182px;
 }
 .full-left {
     width: 35%;

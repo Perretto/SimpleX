@@ -31,7 +31,7 @@ namespace Simplex.Pizzaria.Areas.Administrador.Controllers
             usuario usuario = new usuario();
             usuario.empresaID = Guid.Parse("fc70ecab-61b8-4e53-9a99-6098b0a75a02");
             List<usuario> lstUsuario = facadeAdministrador.FiltrarUsuario(usuario);
-            
+            @ViewBag.caminho = "Usuario";
 
             return View(lstUsuario);
         }
@@ -44,6 +44,8 @@ namespace Simplex.Pizzaria.Areas.Administrador.Controllers
                 usuario = facadeAdministrador.ConsultarUsuario(Guid.Parse(idUsuario));
             }
 
+            @ViewBag.caminho = "Usuario";
+
             return View("usuarioCadastro", usuario);
         }
 
@@ -54,6 +56,8 @@ namespace Simplex.Pizzaria.Areas.Administrador.Controllers
             {
                 usuario = facadeAdministrador.ConsultarUsuario(Guid.Parse(idUsuario));
             }
+
+            @ViewBag.caminho = "Usuario";
 
             return View("usuarioCadastro", usuario);
         }

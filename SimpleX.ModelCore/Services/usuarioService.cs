@@ -102,7 +102,7 @@ namespace SimpleX.ModelCore.Services
             return repositoryusuario.ObterPorFiltros(b => (
                 (usuario.ID == Guid.Empty || b.ID == usuario.ID) &&
                 (usuario.nome == null || b.nome.ToUpper().Contains(usuario.nome)) &&
-                (usuario.login == null || b.login.ToUpper().Contains(usuario.login)) &&
+                (usuario.email == null || b.email.ToUpper().Contains(usuario.email)) &&
                 (usuario.senha == null || b.senha.ToUpper().Contains(usuario.senha)) &&
                 (usuario.empresaID == Guid.Empty || b.empresaID == usuario.empresaID)
                 )).ToList();

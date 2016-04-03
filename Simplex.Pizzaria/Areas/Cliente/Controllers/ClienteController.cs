@@ -21,6 +21,9 @@ namespace Simplex.Pizzaria.Areas.Cliente.Controllers
             cliente cliente = new cliente();
             cliente.clientesEnderecos = new List<clienteEndereco>();
             cliente.clientesContatos = new List<clienteContato>();
+
+            @ViewBag.caminho = "Cliente";
+
             return View(cliente);
         }
 
@@ -28,6 +31,8 @@ namespace Simplex.Pizzaria.Areas.Cliente.Controllers
 
         public ActionResult ClienteListagem()
         {
+            @ViewBag.caminho = "Cliente";
+
             return View();
         }
    
@@ -52,6 +57,8 @@ namespace Simplex.Pizzaria.Areas.Cliente.Controllers
                 }
             }
 
+            @ViewBag.caminho = "Cliente";
+
             return PartialView(lstCliente);
         }
 
@@ -74,6 +81,8 @@ namespace Simplex.Pizzaria.Areas.Cliente.Controllers
             cliente cliente = new cliente();
             cliente.clientesEnderecos = new List<clienteEndereco>();
             cliente.clientesContatos = new List<clienteContato>();
+
+            @ViewBag.caminho = "Cliente";
 
             return View(cliente);
         }
@@ -98,7 +107,8 @@ namespace Simplex.Pizzaria.Areas.Cliente.Controllers
             {
                 cliente = facadeCliente.ConsultarCliente(Guid.Parse(idCliente));
             }
-              
+
+            @ViewBag.caminho = "Cliente";
 
             return View("ClienteCadastro", cliente);
         }
@@ -150,6 +160,7 @@ namespace Simplex.Pizzaria.Areas.Cliente.Controllers
                 clienteEndereco = facadeCliente.ConsultarClienteEndereco(Guid.Parse(idClienteEndereco));
             }
 
+            @ViewBag.caminho = "Endereço";
 
             return View("ClienteEnderecoCadastro", clienteEndereco);
         }
@@ -201,6 +212,7 @@ namespace Simplex.Pizzaria.Areas.Cliente.Controllers
                 clienteEndereco.clienteID = Guid.Parse(idCliente);
             }
 
+            @ViewBag.caminho = "Endereço";
 
             return View("ClienteEnderecoCadastro", clienteEndereco);
         }
@@ -214,7 +226,9 @@ namespace Simplex.Pizzaria.Areas.Cliente.Controllers
             {
                 clienteContato = facadeCliente.ConsultarClienteContato(Guid.Parse(idClienteContato));
             }
-            
+
+            @ViewBag.caminho = "Contato";
+
             return View("ClienteContatoCadastro", clienteContato);
         }
 
@@ -227,6 +241,9 @@ namespace Simplex.Pizzaria.Areas.Cliente.Controllers
             {
                 clienteContato.clienteID = Guid.Parse(idCliente);
             }
+
+
+            @ViewBag.caminho = "Contato";
 
             return View("ClienteContatoCadastro", clienteContato);
         }

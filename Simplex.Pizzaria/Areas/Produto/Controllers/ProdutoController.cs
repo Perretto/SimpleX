@@ -21,6 +21,9 @@ namespace Simplex.Pizzaria.Areas.Produto.Controllers
             produto produto = new produto();
             produto.produtoCategoria = new produtoCategoria();
             produto.produtoTipo = new produtoTipo();
+
+            @ViewBag.caminho = "Produto";
+
             return View(produto);
         }
 
@@ -28,6 +31,8 @@ namespace Simplex.Pizzaria.Areas.Produto.Controllers
 
         public ActionResult produtoListagem()
         {
+            @ViewBag.caminho = "Produto";
+
             return View();
         }
 
@@ -38,6 +43,8 @@ namespace Simplex.Pizzaria.Areas.Produto.Controllers
             produto.nome = pesquisarproduto;
             //produto.empresaID = Guid.Parse("fc70ecab-61b8-4e53-9a99-6098b0a75a02");
             List<produto> lstProduto = facadeProduto.FiltrarProduto(produto);
+
+            @ViewBag.caminho = "Produto";
 
             return PartialView(lstProduto);
         }
@@ -71,6 +78,8 @@ namespace Simplex.Pizzaria.Areas.Produto.Controllers
             produto produto = new produto();
             produto.produtoCategoria = new produtoCategoria();
             produto.produtoTipo = new produtoTipo();
+
+            @ViewBag.caminho = "Produto";
 
             return View(produto);
         }
@@ -107,6 +116,7 @@ namespace Simplex.Pizzaria.Areas.Produto.Controllers
                 produto = facadeProduto.ConsultarProduto(Guid.Parse(idProduto));
             }
 
+            @ViewBag.caminho = "Produto";
 
             return View("produtoCadastro", produto);
         }

@@ -21,6 +21,9 @@ namespace Simplex.Pizzaria.Areas.Fornecedor.Controllers
             fornecedor fornecedor = new fornecedor();
             fornecedor.fornecedoresEnderecos = new List<fornecedorEndereco>();
             fornecedor.fornecedoresContatos = new List<fornecedorContato>();
+
+            @ViewBag.caminho = "Fornecedor";
+
             return View(fornecedor);
         }
 
@@ -28,6 +31,8 @@ namespace Simplex.Pizzaria.Areas.Fornecedor.Controllers
 
         public ActionResult fornecedorListagem()
         {
+            @ViewBag.caminho = "Fornecedor";
+
             return View();
         }
 
@@ -52,6 +57,8 @@ namespace Simplex.Pizzaria.Areas.Fornecedor.Controllers
                 }
             }
 
+            @ViewBag.caminho = "Fornecedor";
+
             return PartialView(lstFornecedor);
         }
 
@@ -74,6 +81,8 @@ namespace Simplex.Pizzaria.Areas.Fornecedor.Controllers
             fornecedor fornecedor = new fornecedor();
             fornecedor.fornecedoresEnderecos = new List<fornecedorEndereco>();
             fornecedor.fornecedoresContatos = new List<fornecedorContato>();
+
+            @ViewBag.caminho = "Fornecedor";
 
             return View(fornecedor);
         }
@@ -99,6 +108,7 @@ namespace Simplex.Pizzaria.Areas.Fornecedor.Controllers
                 fornecedor = facadeFornecedor.ConsultarFornecedor(Guid.Parse(idFornecedor));
             }
 
+            @ViewBag.caminho = "Fornecedor";
 
             return View("fornecedorCadastro", fornecedor);
         }
@@ -150,6 +160,7 @@ namespace Simplex.Pizzaria.Areas.Fornecedor.Controllers
                 fornecedorEndereco = facadeFornecedor.ConsultarFornecedorEndereco(Guid.Parse(idFornecedorEndereco));
             }
 
+            @ViewBag.caminho = "Endereço";
 
             return View("fornecedorEnderecoCadastro", fornecedorEndereco);
         }
@@ -201,6 +212,7 @@ namespace Simplex.Pizzaria.Areas.Fornecedor.Controllers
                 fornecedorEndereco.fornecedorID = Guid.Parse(idFornecedor);
             }
 
+            @ViewBag.caminho = "Endereço";
 
             return View("fornecedorEnderecoCadastro", fornecedorEndereco);
         }
@@ -215,6 +227,9 @@ namespace Simplex.Pizzaria.Areas.Fornecedor.Controllers
                 fornecedorContato = facadeFornecedor.ConsultarFornecedorContato(Guid.Parse(idFornecedorContato));
             }
 
+
+            @ViewBag.caminho = "Contato";
+
             return View("fornecedorContatoCadastro", fornecedorContato);
         }
 
@@ -227,6 +242,8 @@ namespace Simplex.Pizzaria.Areas.Fornecedor.Controllers
             {
                 fornecedorContato.fornecedorID = Guid.Parse(idFornecedor);
             }
+
+            @ViewBag.caminho = "Contato";
 
             return View("fornecedorContatoCadastro", fornecedorContato);
         }

@@ -37,12 +37,12 @@
                                 <h4>@Model[i].nome</h4>
 
 
-                                @*@if (Model[i].codigo != "")
+                                @if (Model[i].email != "")
                                 {
-                                    detalhes += "Codigo: " + Model[i].codigo + " | ";
+                                    detalhes += "Email: " + Model[i].email + " | ";
                                 }
 
-                                <p>@detalhes</p>*@
+                                <p>@detalhes</p>
 
                                 @{
             iddiv = "iddivvendaproduto" + i;

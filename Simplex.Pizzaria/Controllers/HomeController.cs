@@ -16,7 +16,7 @@ namespace Simplex.Pizzaria.Controllers
         {
             //empresaService empresaService = new empresaService();
             //List<empresa> lstEmpresa = empresaService.Listar();
-            
+            @ViewBag.caminho = "Dashboard";
             return View();
         }
 

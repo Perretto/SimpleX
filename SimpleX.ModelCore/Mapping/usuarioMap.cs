@@ -16,7 +16,7 @@ namespace SimpleX.ModelCore.Mapping
             this.ToTable("usuario");
             this.Property(c => c.ID).HasColumnName("ID");
             this.Property(c => c.nome).HasColumnName("nome");
-            this.Property(c => c.login).HasColumnName("login");
+            this.Property(c => c.email).HasColumnName("email");
             this.Property(c => c.senha).HasColumnName("senha");
             this.Property(c => c.empresaID).HasColumnName("empresaID");
 

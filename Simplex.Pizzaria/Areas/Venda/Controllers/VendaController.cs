@@ -22,6 +22,8 @@ namespace Simplex.Pizzaria.Areas.Venda.Controllers
         // GET: Venda/Venda
         public ActionResult Index()
         {
+            @ViewBag.caminho = "Venda";
+
             return View();
         }
 
@@ -29,12 +31,16 @@ namespace Simplex.Pizzaria.Areas.Venda.Controllers
 
         public ActionResult vendaListagem()
         {
+            @ViewBag.caminho = "Venda";
+
             return View();
         }
 
         //Movimentações
         public ActionResult vendaInicio()
         {
+            @ViewBag.caminho = "Venda Inicio";
+
             return View();
         }
         public ActionResult movimentacaoVenda(string idVenda = "", string idCliente = "")
@@ -55,6 +61,7 @@ namespace Simplex.Pizzaria.Areas.Venda.Controllers
             itens = itens.OrderBy(s => s.Text).ToList();
 
             @ViewBag.status = itens;
+            @ViewBag.caminho = "Venda";
 
             if (idVenda != "" && idVenda != null)
             {
@@ -137,7 +144,7 @@ namespace Simplex.Pizzaria.Areas.Venda.Controllers
                 vendaProduto.vendaID = Guid.Parse(idVenda);
             }
 
-
+            @ViewBag.caminho = "Produto da venda";
 
             return View("vendaProdutoCadastro", vendaProduto);
         }
@@ -176,6 +183,7 @@ namespace Simplex.Pizzaria.Areas.Venda.Controllers
                 @ViewBag.nomeProduto = produto.nome;
             }
 
+            @ViewBag.caminho = "Produto da venda";
 
             return View("vendaProdutoCadastro", vendaProduto);
         }
@@ -199,6 +207,8 @@ namespace Simplex.Pizzaria.Areas.Venda.Controllers
                     lstCliente[i].clientesContatos[j].cliente = new cliente();
                 }
             }
+
+            @ViewBag.caminho = "Venda";
 
             return PartialView(lstCliente);
         }
@@ -249,6 +259,8 @@ namespace Simplex.Pizzaria.Areas.Venda.Controllers
                     lstVenda[j].cliente = facadeCadastro.ConsultarCliente(lstVenda[j].clienteID);
                 }
             }
+
+            @ViewBag.caminho = "Venda";
 
             return PartialView(lstVenda);
         }

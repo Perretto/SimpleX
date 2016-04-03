@@ -22,6 +22,14 @@ namespace Simplex.Pizzaria.Controllers
         {
         }
 
+        public ActionResult Index()
+        {
+            //empresaService empresaService = new empresaService();
+            //List<empresa> lstEmpresa = empresaService.Listar();
+
+            return View();
+        }
+
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
         {
             UserManager = userManager;
@@ -57,7 +65,7 @@ namespace Simplex.Pizzaria.Controllers
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
-            ViewBag.ReturnUrl = returnUrl;
+            ViewBag.ReturnUrl = Request.Url.Host + ":" + Request.Url.Port + "/";
             return View();
         }
 
@@ -75,18 +83,22 @@ namespace Simplex.Pizzaria.Controllers
 
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
-            var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
+            //string result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
+
+            SimpleX.Core.signIn signIn = new SimpleX.Core.signIn();
+            string result = signIn.PasswordSignIn(model.Email, model.Password);
+
             switch (result)
             {
-                case SignInStatus.Success:
+                case "Success":
                     return RedirectToLocal(returnUrl);
-                case SignInStatus.LockedOut:
+                case "LockedOut":
                     return View("Lockout");
-                case SignInStatus.RequiresVerification:
+                case "RequiresVerification":
                     return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
-                case SignInStatus.Failure:
+                case "Failure":
                 default:
-                    ModelState.AddModelError("", "Invalid login attempt.");
+                    ModelState.AddModelError("", "Falha no login");
                     return View(model);
             }
         }
