@@ -216,6 +216,7 @@
     <Content Include="Content\jquery-ui.theme.min.css" />
     <Content Include="Content\main.css" />
     <Content Include="Content\owl.carousel.css" />
+    <Content Include="Content\sidebar.css" />
     <Content Include="Content\style.css" />
     <Content Include="Content\swipebox.css" />
     <Content Include="favicon.ico" />
@@ -235,6 +236,7 @@
     <Content Include="Images\ga6.jpg" />
     <Content Include="Images\ga7.jpg" />
     <Content Include="Images\ga8.jpg" />
+    <Content Include="Images\icon logo.png" />
     <Content Include="Images\icons.svg" />
     <Content Include="Images\in.jpg" />
     <Content Include="Images\in1.jpg" />
@@ -315,6 +317,8 @@
     <Content Include="Areas\Administrador\Views\web.config" />
     <Content Include="Areas\Administrador\Views\Administrador\usuarioCadastro.cshtml" />
     <Content Include="Areas\Administrador\Views\Administrador\usuarioListagem.cshtml" />
+    <Content Include="Content\sidebar.css.map" />
+    <Content Include="Content\sidebar.sass" />
     <None Include="Properties\PublishProfiles\local.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Chart.js" />
@@ -361,6 +365,10 @@
     <Content Include="Scripts\scripts.js" />
     <Content Include="Scripts\site.js" />
     <Content Include="Scripts\skycons.js" />
+    <Content Include="Scripts\slidebars.css" />
+    <Content Include="Scripts\slidebars.js" />
+    <Content Include="Scripts\slidebars.min.css" />
+    <Content Include="Scripts\slidebars.min.js" />
     <Content Include="Scripts\underscore-min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config">
