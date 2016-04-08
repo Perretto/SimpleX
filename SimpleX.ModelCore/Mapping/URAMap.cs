@@ -13,7 +13,7 @@ namespace SimpleX.ModelCore.Mapping
     {
         public URAMap()
         {
-            this.ToTable("URA");
+            this.ToTable("ura");
             this.Property(c => c.ID).HasColumnName("ID");
             this.Property(c => c.texto).HasColumnName("texto");
             this.Property(c => c.nivel).HasColumnName("nivel");

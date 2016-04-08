@@ -14,12 +14,14 @@ namespace SimpleX.Core.Facade
         private empresaService serviceEmpresa;
         private empresaEnderecoService serviceEmpresaEndereco;
         private usuarioService serviceUsuario;
+        private URAService serviceURA;
 
         public administracaoFacade()
         {
             serviceEmpresa = new empresaService();
             serviceEmpresaEndereco = new empresaEnderecoService();
             serviceUsuario = new usuarioService();
+            serviceURA = new URAService();
         }
 
         public void Dispose()
@@ -116,5 +118,33 @@ namespace SimpleX.Core.Facade
 
         #endregion Usuario //=====================================================================
 
+        #region URA //URA==============================================================
+        public List<URA> FiltrarURA(URA URA)
+        {
+            return serviceURA.Filtrar(URA);
+        }
+
+        public URA ConsultarURA(Guid Id)
+        {
+            return serviceURA.Consultar(Id);
+        }
+
+        public List<URA> ListarURA()
+        {
+            return serviceURA.Listar();
+        }
+
+        public Result SalvarURA(URA URA)
+        {
+            Result retorno = serviceURA.Salvar(URA);
+            return retorno;
+        }
+
+        public Result ExcluirURA(Guid Id)
+        {
+            return serviceURA.Excluir(Id);
+        }
+
+        #endregion URA //=====================================================================
     }
 }

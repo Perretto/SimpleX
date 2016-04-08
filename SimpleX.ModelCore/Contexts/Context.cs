@@ -23,6 +23,9 @@ namespace SimpleX.ModelCore.Contexts
         public DbSet<empresa> empresa { get; set; }
         public DbSet<empresaEndereco> empresaEndereco { get; set; }
         public DbSet<usuario> usuario { get; set; }
+        public DbSet<URA> URA { get; set; }
+        public DbSet<statusURA> statusURA { get; set; }
+
         //==========================================
 
         //Cadastro==================================
@@ -92,6 +95,7 @@ namespace SimpleX.ModelCore.Contexts
             modelBuilder.Entity<empresaEndereco>().HasOptional(a => a.empresa).WithOptionalDependent().WillCascadeOnDelete(false);
             modelBuilder.Configurations.Add(new usuarioMap());
             modelBuilder.Entity<usuario>().HasOptional(a => a.empresa).WithOptionalDependent().WillCascadeOnDelete(false);
+            modelBuilder.Configurations.Add(new URAMap());
             //==========================================
 
             //Cadastro==================================
