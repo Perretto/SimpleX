@@ -28,6 +28,8 @@ namespace Simplex.Pizzaria.Areas.Administrador.Controllers
 
         public ActionResult usuarioListagem()
         {
+            List<empresa> lstemp = facadeAdministrador.ListarEmpresa();
+
             usuario usuario = new usuario();
             usuario.empresaID = Guid.Parse("fc70ecab-61b8-4e53-9a99-6098b0a75a02");
             List<usuario> lstUsuario = facadeAdministrador.FiltrarUsuario(usuario);

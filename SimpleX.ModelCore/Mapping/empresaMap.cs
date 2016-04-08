@@ -23,6 +23,9 @@ namespace SimpleX.ModelCore.Mapping
             this.Property(c => c.IE).HasColumnName("IE");
             this.Property(c => c.IM).HasColumnName("IM");
             this.Property(c => c.CNAEID).HasColumnName("CNAEID");
+            this.Property(c => c.numeroWhatsApp).HasColumnName("numeroWhatsApp");
+            this.Property(c => c.nomeWhatsApp).HasColumnName("nomeWhatsApp");
+            this.Property(c => c.senhaWhatsApp).HasColumnName("senhaWhatsApp");
         }
     }
 }

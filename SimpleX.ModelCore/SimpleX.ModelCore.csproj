@@ -80,6 +80,8 @@
     <Compile Include="Mapping\produtoComposicaoMap.cs" />
     <Compile Include="Mapping\produtoMap.cs" />
     <Compile Include="Mapping\produtoTipoMap.cs" />
+    <Compile Include="Mapping\statusURAMap.cs" />
+    <Compile Include="Mapping\URAMap.cs" />
     <Compile Include="Mapping\usuarioMap.cs" />
     <Compile Include="Mapping\vendaMap.cs" />
     <Compile Include="Mapping\vendaPagamentoMap.cs" />
@@ -111,6 +113,8 @@
     <Compile Include="Services\produtoComposicaoService.cs" />
     <Compile Include="Services\produtoService.cs" />
     <Compile Include="Services\produtoTipoService.cs" />
+    <Compile Include="Services\statusURAService.cs" />
+    <Compile Include="Services\URAService.cs" />
     <Compile Include="Services\usuarioService.cs" />
     <Compile Include="Services\vendaPagamentoService.cs" />
     <Compile Include="Services\vendaProdutoService.cs" />

@@ -1,31 +1,139 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+<script src="scripts/Chart.js"></script>
+
+@*<div class="jumbotron">
+        <h1>ASP.NET</h1>
+        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
+        <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    </div>*@
+
+@*<div class="row">
+        <div class="col-md-4">
+            <h2>Getting started</h2>
+            <p>
+                ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
+                enables a clean separation of concerns and gives you full control over markup
+                for enjoyable, agile development.
+            </p>
+            <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Get more libraries</h2>
+            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+            <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Web Hosting</h2>
+            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+            <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        </div>
+    </div>*@
+
+<div class="col-md-12 graph-box1 clearfix">
+    <div class="grid-1">
+        <h4>Pedidos de hoje</h4>
+        <div class="grid-graph">
+            <div class="grid-graph1">
+                <div id="os-Win-lbl">Pedidos entregues <span>80%</span></div>
+                <div id="os-Mac-lbl">Pedidos pendentes <span> 20%</span></div>
+                <div id="os-Other-lbl">Cancelamentos<span>1%</span></div>
+            </div>
+        </div>
+        <div class="grid-2">
+            <canvas id="pie" height="315" width="470" style="width: 470px; height: 315px;"></canvas>
+            <script>
+                var pieData = [
+                    {
+                        value: 80,
+                        color: "#D95459"
+                    },
+                    {
+                        value: 20,
+                        color: "#1ABC9C"
+                    },
+                    {
+                        value: 1,
+                        color: "#3BB2D0"
+                    }
+
+                ];
+                new Chart(document.getElementById("pie").getContext("2d")).Pie(pieData);
+            </script>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+
+</div>
+<!------------------------------------->
+<div class="graph">
+    <div class="graph-grid">
+        <div class="col-md-6 graph-1">
+            <div class="grid-1">
+                <h4>Vendas</h4>
+                <canvas id="bar1" height="300" width="500" style="width: 500px; height: 300px;"></canvas>
+                <script>
+                    var barChartData = {
+                        labels: ["Dom", "Seg", "Ter", "Qua", "Qui", "Sexta", "Sáb", "Dom", "Seg", "Ter"],
+                        datasets: [
+                            {
+                                fillColor: "#FBB03B",
+                                strokeColor: "#FBB03B",
+                                data: [25, 40, 50, 65, 55, 30, 20, 10, 6, 4]
+                            },
+                            {
+                                fillColor: "#FBB03B",
+                                strokeColor: "#FBB03B",
+                                data: [30, 45, 55, 70, 40, 25, 15, 8, 5, 2]
+                            }
+                        ]
+
+                    };
+                    new Chart(document.getElementById("bar1").getContext("2d")).Bar(barChartData);
+                </script>
+            </div>
+        </div>
+    </div>
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+
+
+<div class="graph">
+    <div class="graph-grid">
+        <div class="col-md-6 graph-1">
+            <div class="grid-1">
+                <h4>Pizzas mais vendidas</h4>
+                <div class="grid-graph">
+                    <div class="grid-graph1">
+                        <div id="os-pizza1-lbl">Mussarela <span>60%</span></div>
+                        <div id="os-pizza2-lbl">Calabreza <span> 30%</span></div>
+                        <div id="os-pizza3-lbl">Frango com catupiry<span>10%</span></div>
+                    </div>
+                </div>
+                <div class="grid-2">
+                    <canvas id="pie2" height="315" width="470" style="width: 470px; height: 315px;"></canvas>
+                    <script>
+                        var pieData2 = [
+                            {
+                                value: 60,
+                                color: "#D95459"
+                            },
+                            {
+                                value: 30,
+                                color: "#1ABC9C"
+                            },
+                            {
+                                value: 10,
+                                color: "#3BB2D0"
+                            }
+
+                        ];
+                        new Chart(document.getElementById("pie2").getContext("2d")).Pie(pieData2);
+                    </script>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
     </div>
 </div>

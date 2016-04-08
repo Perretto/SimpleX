@@ -18,5 +18,8 @@ namespace SimpleX.Model
         public string IM { get; set; }
         public Guid CNAEID { get; set; }
         public CNAE CNAE { get; set; }
+        public string numeroWhatsApp { get; set; }
+        public string nomeWhatsApp { get; set; }
+        public string senhaWhatsApp { get; set; }
     }
 }

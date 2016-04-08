@@ -108,6 +108,9 @@ namespace SimpleX.ModelCore.Services
                 (empresa.RG == null || b.RG.ToUpper().Contains(empresa.RG)) &&
                 (empresa.IE == null || b.IE.ToUpper().Contains(empresa.IE)) &&
                 (empresa.IM == null || b.IM.ToUpper().Contains(empresa.IM)) &&
+                (empresa.numeroWhatsApp == null || b.numeroWhatsApp == empresa.numeroWhatsApp) &&
+                (empresa.nomeWhatsApp == null || b.nomeWhatsApp == empresa.nomeWhatsApp) &&
+                (empresa.senhaWhatsApp == null || b.senhaWhatsApp == empresa.senhaWhatsApp) &&
                 (empresa.CNAEID == Guid.Empty || b.CNAEID == empresa.CNAEID)
                 )).ToList();
         }

@@ -19,11 +19,11 @@ namespace SimpleX.Model
 
             {
 
-                new CNAE { ID = Guid.NewGuid(), nome = "Eduardo Pires"},
+                new CNAE { ID = Guid.NewGuid(), nome = ""},
 
-                new CNAE { ID = Guid.NewGuid(), nome = "João Silva"},
+                new CNAE { ID = Guid.NewGuid(), nome = ""},
 
-                new CNAE { ID = Guid.NewGuid(), nome = "Fulano de Tal"}
+                new CNAE { ID = Guid.NewGuid(), nome = ""}
 
             };
 

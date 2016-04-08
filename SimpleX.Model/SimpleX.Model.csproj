@@ -79,6 +79,8 @@
     <Compile Include="produto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="compraStatus.cs" />
+    <Compile Include="statusURA.cs" />
+    <Compile Include="URA.cs" />
     <Compile Include="vendaPagamento.cs" />
     <Compile Include="vendaStatus.cs" />
     <Compile Include="produtoTipo.cs" />
