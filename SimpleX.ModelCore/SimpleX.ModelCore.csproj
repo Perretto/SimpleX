@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contexts\Context.cs" />
+    <Compile Include="Mapping\CFOPMap.cs" />
     <Compile Include="Mapping\cidadeMap.cs" />
     <Compile Include="Mapping\clienteEnderecoMap.cs" />
     <Compile Include="Mapping\clienteMap.cs" />
@@ -92,6 +93,7 @@
     <Compile Include="Repository\IRepository.cs" />
     <Compile Include="Repository\Repository.cs" />
     <Compile Include="Result.cs" />
+    <Compile Include="Services\CFOPService.cs" />
     <Compile Include="Services\cidadeService.cs" />
     <Compile Include="Services\clienteContatoService.cs" />
     <Compile Include="Services\clienteEnderecoService.cs" />
