@@ -7,7 +7,7 @@ using System.Linq.Expressions;
 
 namespace SimpleX.ModelCore.Repository
 {
-    internal interface IRepository<T> where T : class
+    public interface IRepository<T> where T : class
     {
         T Adicionar(T t);
         void Alterar(T t);
