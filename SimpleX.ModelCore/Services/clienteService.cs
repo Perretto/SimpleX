@@ -9,6 +9,7 @@ using SimpleX.ModelCore.Repository;
 using SimpleX.Model;
 using System.Data.Entity;
 using SimpleX.ModelCore.Contexts;
+using SimpleX.ModelCore.Message;
 
 namespace SimpleX.ModelCore.Services
 {
@@ -60,7 +61,19 @@ namespace SimpleX.ModelCore.Services
 
                 context.SaveChanges();
 
-                retorno.Ok("Cadastro realizado com sucesso.");
+                systemMessageCore systemMessageCore = new systemMessageCore();
+
+                string description = systemMessageCore.BuscarSystemMessageByExternalNumber("0001");
+
+                if (description != "")
+                {
+                    retorno.Ok(description);
+                }
+                else
+                {
+                    retorno.Ok("Cadastro realizado com sucesso.");
+                }
+                                
                 retorno.Sucesso = true;
             }
             catch (Exception erro)
