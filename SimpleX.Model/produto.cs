@@ -14,12 +14,10 @@ namespace SimpleX.Model
         public string codigo { get; set; }
         public string nome { get; set; }
         public Guid produtoCategoriaID { get; set; }
-        public produtoCategoria produtoCategoria { get; set; }
         public Decimal valorProduto { get; set; }
         public Guid produtoTipoID { get; set; }
-        public produtoTipo produtoTipo { get; set; }
+
         public Guid empresaID { get; set; }
-        public empresa empresa { get; set; }
 
     }
 }

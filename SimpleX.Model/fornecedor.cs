@@ -20,9 +20,9 @@ namespace SimpleX.Model
         public string IE { get; set; }
         public string IM { get; set; }
         public Guid CNAEID { get; set; }
-        public CNAE CNAE { get; set; }
+        
         public Guid empresaID { get; set; }
-        public empresa empresa { get; set; }
+        
 
     }
 }

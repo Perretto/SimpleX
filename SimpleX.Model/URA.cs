@@ -14,9 +14,7 @@ namespace SimpleX.Model
         public string texto { get; set; }
         public string nivel { get; set; }
         public Guid statusURAID { get; set; }
-        public statusURA statusURA { get; set; }
         public Guid empresaID { get; set; }
-        public empresa empresa { get; set; }
-
+       
     }
 }

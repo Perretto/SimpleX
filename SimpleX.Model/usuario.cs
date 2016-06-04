@@ -15,6 +15,5 @@ namespace SimpleX.Model
         public string email { get; set; }
         public string senha { get; set; }
         public Guid empresaID { get; set; }
-        public empresa empresa { get; set; }
     }
 }

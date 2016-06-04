@@ -17,14 +17,14 @@ namespace SimpleX.Model
         public string bairro { get; set; }
         public string CEP { get; set; }
         public Guid cidadeID { get; set; }
-        public cidade cidade { get; set; }
+       
         public Guid estadoID { get; set; }
-        public estado estado { get; set; }
+        
         public Guid paisID { get; set; }
-        public pais pais { get; set; }
+        
         public Guid empresaID { get; set; }
-        public empresa empresa { get; set; }
+        
         public Guid fornecedorID { get; set; }
-        public fornecedor fornecedor { get; set; }
+        
     }
 }
