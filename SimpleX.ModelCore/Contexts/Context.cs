@@ -1,5 +1,4 @@
 ﻿using SimpleX.Model;
-using SimpleX.ModelCore.Mapping;
 using SimpleX.ModelCore.Migrations;
 using System;
 using System.Collections.Generic;
