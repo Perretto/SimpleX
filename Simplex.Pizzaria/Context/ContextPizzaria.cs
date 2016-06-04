@@ -7,15 +7,17 @@ using Simplex.Pizzaria.Models;
 using SimpleX.Model;
 using SimpleX.ModelCore;
 using SimpleX.ModelCore.Contexts;
-using SimpleX.ModelCore.Mapping;
 using Simplex.Pizzaria.Migrations;
+using Simplex.Pizzaria.Models.Mapping;
 
 namespace Simplex.Pizzaria.Context
 {
     public class ContextPizzaria : SimpleX.ModelCore.Contexts.Context
     {
       
-        //public DbSet<Teste> Teste { get; set; }
+        public DbSet<cliente> cliente { get; set; }
+
+        public DbSet<produto> produto { get; set; }
 
         
 
@@ -41,8 +43,10 @@ namespace Simplex.Pizzaria.Context
 
             base.OnModelCreating(modelBuilder);
 
+            modelBuilder.Configurations.Add(new vendaProdutoMap());
+            modelBuilder.Entity<Simplex.Pizzaria.Models.vendaProduto>().HasOptional(a => a.empresa).WithOptionalDependent().WillCascadeOnDelete(false);
+                        
                  
-            //modelBuilder.Configurations.Add(new testeMap());
             //this.Configuration.LazyLoadingEnabled = false;
         }
 
