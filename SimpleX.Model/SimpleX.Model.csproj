@@ -58,6 +58,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CFOP.cs" />
+    <Compile Include="systemMessage.cs" />
     <Compile Include="produtoCategoria.cs" />
     <Compile Include="cidade.cs" />
     <Compile Include="cliente.cs" />
