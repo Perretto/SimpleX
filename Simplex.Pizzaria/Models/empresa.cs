@@ -9,6 +9,7 @@ namespace Simplex.Pizzaria.Models
 {
     public class empresa : SimpleX.Model.empresa
     {
+        public CNAE CNAE { get; set; }
 
     }
 }

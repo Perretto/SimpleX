@@ -36,5 +36,36 @@ namespace Simplex.Pizzaria.Service
                 )).ToList();
         }
 
+
+        public int BuscarUltimoPedido(Guid idEmpresa)
+        {
+            int numeroPedido = 0;
+
+            venda venda = new venda();
+            venda.empresaID = idEmpresa;
+
+            //List<venda> lstvenda = repositoryvenda.ObterPorFiltros(b => (
+            //    (venda.ID == Guid.Empty || b.ID == venda.ID) &&
+            //    (venda.numeroPedido == 0 || b.numeroPedido == venda.numeroPedido) &&
+            //    (venda.clienteID == Guid.Empty || b.clienteID == venda.clienteID) &&
+            //    (venda.valorTotal == 0 || b.valorTotal == venda.valorTotal) &&
+            //    (venda.vendaStatusID == Guid.Empty || b.vendaStatusID == venda.vendaStatusID) &&
+            //    (venda.empresaID == Guid.Empty || b.empresaID == venda.empresaID)
+            //    )).ToList();
+
+            List<venda> lstvenda = repositoryvenda.ObterPorFiltros(b => (
+                (venda.empresaID == Guid.Empty || b.empresaID == venda.empresaID)
+                )).ToList();
+
+            lstvenda = lstvenda.OrderByDescending(v => v.numeroPedido).ToList();
+
+            if (lstvenda.Count > 0)
+            {
+                numeroPedido = lstvenda[0].numeroPedido;
+            }
+            return numeroPedido;
+        }
+
+
     }
 }

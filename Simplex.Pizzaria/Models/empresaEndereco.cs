@@ -9,6 +9,10 @@ namespace Simplex.Pizzaria.Models
 {
     public class empresaEndereco : SimpleX.Model.empresaEndereco
     {
+        public cidade cidade { get; set; }
+        public pais pais { get; set; }
+        public estado estado { get; set; }
+        public empresa empresa { get; set; }
 
     }
 }

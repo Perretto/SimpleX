@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
-using SimpleX.Core.Facade;
-using SimpleX.Model;
+using Simplex.Pizzaria.Facade;
+using Simplex.Pizzaria.Models;
 using SimpleX.ModelCore;
 using System;
 using System.Collections.Generic;
@@ -71,7 +71,7 @@ namespace Simplex.Pizzaria.Areas.Venda.Controllers
                 venda.cliente = new cliente();
                 venda.cliente = facadeCadastro.ConsultarCliente(venda.clienteID);
 
-                vendaProduto vendaProduto = new SimpleX.Model.vendaProduto();
+                vendaProduto vendaProduto = new vendaProduto();
                 vendaProduto.vendaID = venda.ID;
                 venda.vendaProdutos = facadeVenda.FiltrarVendaProduto(vendaProduto);
 
@@ -174,7 +174,7 @@ namespace Simplex.Pizzaria.Areas.Venda.Controllers
 
             @ViewBag.produtoTipos = itens;
 
-            vendaProduto vendaProduto = new SimpleX.Model.vendaProduto();
+            vendaProduto vendaProduto = new vendaProduto();
             if (idVendaProduto != "")
             {
                 vendaProduto = facadeMovimentacao.ConsultarVendaProduto(Guid.Parse(idVendaProduto));
@@ -389,7 +389,7 @@ namespace Simplex.Pizzaria.Areas.Venda.Controllers
         public JsonResult buscarProduto(string Filtro = "")
         {
             facadeCadastro = new cadastroFacade();
-            produto produto = new SimpleX.Model.produto();
+            produto produto = new produto();
             produto.nome = Filtro;
             List<produto> lstProduto = facadeCadastro.FiltrarProduto(produto);
 

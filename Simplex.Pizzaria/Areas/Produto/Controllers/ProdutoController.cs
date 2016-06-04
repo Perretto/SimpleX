@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using SimpleX.Core.Facade;
-using SimpleX.Model;
+using Simplex.Pizzaria.Facade;
 using SimpleX.ModelCore;
-using SimpleX.Core;
+using Simplex.Pizzaria.Models;
 
 namespace Simplex.Pizzaria.Areas.Produto.Controllers
 {
@@ -110,7 +109,7 @@ namespace Simplex.Pizzaria.Areas.Produto.Controllers
 
             @ViewBag.produtoTipos = itens;
 
-            produto produto = new SimpleX.Model.produto();
+            produto produto = new produto();
             if (idProduto != "")
             {
                 produto = facadeProduto.ConsultarProduto(Guid.Parse(idProduto));

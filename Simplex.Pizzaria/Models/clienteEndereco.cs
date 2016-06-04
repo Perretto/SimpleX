@@ -9,7 +9,12 @@ namespace Simplex.Pizzaria.Models
 {
     public class clienteEndereco : SimpleX.Model.clienteEndereco
     {
-        
+
+        public virtual cliente cliente { get; set; }
+        public cidade cidade { get; set; }
+        public empresa empresa { get; set; }
+        public estado estado { get; set; }
+        public pais pais { get; set; }
  
     }
 }

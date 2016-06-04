@@ -9,7 +9,8 @@ namespace Simplex.Pizzaria.Models
 {
     public class clienteContato : SimpleX.Model.clienteContato
     {
-        
+        public virtual cliente cliente { get; set; }
+        public empresa empresa { get; set; }
  
     }
 }

@@ -14,8 +14,6 @@ namespace SimpleX.Model
         public int numeroPedido { get; set; }
         public Decimal valorTotal { get; set; }
         public Guid compraStatusID { get; set; }
-        public compraStatus compraStatus { get; set; }
         public Guid empresaID { get; set; }
-        public empresa empresa { get; set; }
     }
 }

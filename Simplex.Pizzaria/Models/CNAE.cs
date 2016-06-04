@@ -9,6 +9,22 @@ namespace Simplex.Pizzaria.Models
 {
     public class CNAE : SimpleX.Model.CNAE
     {
+        public List<CNAE> ListaCNAEs()
+        {
+
+            return new List<CNAE>
+
+            {
+
+                new CNAE { ID = Guid.NewGuid(), nome = ""},
+
+                new CNAE { ID = Guid.NewGuid(), nome = ""},
+
+                new CNAE { ID = Guid.NewGuid(), nome = ""}
+
+            };
+
+        }
 
 
     }

@@ -15,9 +15,7 @@ namespace SimpleX.Model
         public string telefoneContato { get; set; }
         public string emailContato { get; set; }
         public Guid clienteID { get; set; }
-        public virtual cliente cliente { get; set; }
         public Guid empresaID { get; set; }
-        public empresa empresa { get; set; }
  
     }
 }

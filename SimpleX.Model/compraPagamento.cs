@@ -14,8 +14,6 @@ namespace SimpleX.Model
         public Guid compraID { get; set; }
         public compra compra { get; set; }
         public Guid formaPagamentoID { get; set; }
-        public formaPagamento formaPagamento { get; set; }
         public Guid empresaID { get; set; }
-        public empresa empresa { get; set; }
     }
 }

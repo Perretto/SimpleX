@@ -12,14 +12,11 @@ namespace SimpleX.Model
         [Key]
         public Guid ID { get; set; }
         public Guid compraID { get; set; }
-        public compra compra { get; set; }
         public Guid produtoID { get; set; }
-        public produto produto { get; set; }
         public Decimal valorUnitario { get; set; }
         public Decimal quantidade { get; set; }
         public Decimal valorTotal { get; set; }
         public Guid empresaID { get; set; }
-        public empresa empresa { get; set; }
 
     }
 }
