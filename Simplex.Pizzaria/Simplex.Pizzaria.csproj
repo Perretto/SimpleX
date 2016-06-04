@@ -219,8 +219,6 @@
     <Compile Include="Models\fornecedorEndereco.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Areas\Venda\Models\Mapping\vendaProdutoMap.cs" />
-    <Compile Include="Areas\Venda\Models\vendaProduto.cs" />
     <Compile Include="Models\pais.cs" />
     <Compile Include="Models\produto.cs" />
     <Compile Include="Models\produtoCategoria.cs" />
@@ -260,7 +258,6 @@
     <Compile Include="Service\produtoService.cs" />
     <Compile Include="Service\produtoTipoService.cs" />
     <Compile Include="Service\statusURAService.cs" />
-    <Compile Include="Service\systemMessageService.cs" />
     <Compile Include="Service\URAService.cs" />
     <Compile Include="Service\usuarioService.cs" />
     <Compile Include="Service\vendaPagamentoService.cs" />
@@ -494,6 +491,7 @@
     <Folder Include="Areas\Fornecedor\Views\Shared\" />
     <Folder Include="Areas\Produto\Models\" />
     <Folder Include="Areas\Produto\Views\Shared\" />
+    <Folder Include="Areas\Venda\Models\" />
     <Folder Include="Areas\Venda\Views\Shared\" />
     <Folder Include="Views\Default\" />
   </ItemGroup>
