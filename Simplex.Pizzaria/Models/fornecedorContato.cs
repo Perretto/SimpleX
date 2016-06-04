@@ -9,6 +9,8 @@ namespace Simplex.Pizzaria.Models
 {
     public class fornecedorContato : SimpleX.Model.fornecedorContato
     {
-        
+        public empresa empresa { get; set; }
+        public fornecedor fornecedor { get; set; }
+
     }
 }

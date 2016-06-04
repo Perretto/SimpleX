@@ -9,6 +9,6 @@ namespace Simplex.Pizzaria.Models
 {
     public class usuario : SimpleX.Model.usuario
     {
-        
+        public empresa empresa { get; set; }
     }
 }

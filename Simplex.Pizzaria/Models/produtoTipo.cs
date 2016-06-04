@@ -9,6 +9,7 @@ namespace Simplex.Pizzaria.Models
 {
     public class produtoTipo : SimpleX.Model.produtoTipo
     {
-        
+        public empresa empresa { get; set; }
+
     }
 }

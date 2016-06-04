@@ -11,6 +11,8 @@ namespace Simplex.Pizzaria.Models
     {
         public virtual List<fornecedorEndereco> fornecedoresEnderecos { get; set; }
         public virtual List<fornecedorContato> fornecedoresContatos { get; set; }
+        public empresa empresa { get; set; }
+        public CNAE CNAE { get; set; }
 
     }
 }

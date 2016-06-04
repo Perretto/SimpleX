@@ -9,6 +9,7 @@ namespace Simplex.Pizzaria.Models
 {
     public class pais : SimpleX.Model.pais
     {
-        
+        public empresa empresa { get; set; }
+
     }
 }

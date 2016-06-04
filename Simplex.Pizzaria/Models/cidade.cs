@@ -9,7 +9,7 @@ namespace Simplex.Pizzaria.Models
 {
     public class cidade : SimpleX.Model.cidade
     {
-        
+        public empresa empresa { get; set; }
 
     }
 }

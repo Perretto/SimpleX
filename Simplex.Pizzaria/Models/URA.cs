@@ -9,7 +9,10 @@ namespace Simplex.Pizzaria.Models
 {
     public class URA : SimpleX.Model.URA
     {
-        
+
+        public statusURA statusURA { get; set; }
+
+        public empresa empresa { get; set; }
 
     }
 }

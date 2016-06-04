@@ -9,6 +9,8 @@ namespace Simplex.Pizzaria.Models
 {
     public class produtoComposicao : SimpleX.Model.produtoComposicao
     {
-        
+        public produto produtoOrigem { get; set; }
+        public produto produtoDestino { get; set; }
+        public empresa empresa { get; set; }
     }
 }
