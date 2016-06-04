@@ -25,8 +25,5 @@ namespace SimpleX.Model
         public Guid empresaID { get; set; }
         public empresa empresa { get; set; }
 
-        public virtual List<clienteEndereco> clientesEnderecos { get; set; }
-        public virtual List<clienteContato> clientesContatos { get; set; }
-
     }
 }
