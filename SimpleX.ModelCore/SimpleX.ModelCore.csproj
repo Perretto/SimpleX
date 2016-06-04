@@ -65,95 +65,7 @@
     <Compile Include="Repository\IRepository.cs" />
     <Compile Include="Repository\Repository.cs" />
     <Compile Include="Result.cs" />
-    <Compile Include="Services\CFOPService.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Services\cidadeService.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Services\clienteContatoService.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Services\clienteEnderecoService.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Services\clienteService.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Services\CNAEService.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Services\compraPagamentoService.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Services\compraProdutoService.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Services\compraService.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Services\compraStatusService.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Services\empresaEnderecoService.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Services\empresaService.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Services\estadoService.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Services\formaPagamentoService.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Services\fornecedorContatoService.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Services\fornecedorEnderecoService.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Services\fornecedorService.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Services\paisService.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Services\produtoCategoriaService.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Services\produtoComposicaoService.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Services\produtoService.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Services\produtoTipoService.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Services\Service.cs" />
-    <Compile Include="Services\statusURAService.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Services\systemMessageService.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Services\URAService.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Services\usuarioService.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Services\vendaPagamentoService.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Services\vendaProdutoService.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Services\vendaService.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Services\vendaStatusService.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -170,6 +82,7 @@
       <Name>SimpleX.Model</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
