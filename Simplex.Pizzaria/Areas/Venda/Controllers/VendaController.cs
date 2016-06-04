@@ -138,7 +138,7 @@ namespace Simplex.Pizzaria.Areas.Venda.Controllers
 
 
 
-            vendaProduto vendaProduto = new SimpleX.Model.vendaProduto();
+            Simplex.Pizzaria.Models.vendaProduto vendaProduto = new Simplex.Pizzaria.Models.vendaProduto();
             if (idVenda != "")
             {
                 vendaProduto.vendaID = Guid.Parse(idVenda);
