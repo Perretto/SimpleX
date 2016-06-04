@@ -85,22 +85,22 @@ namespace Simplex.Pizzaria.Controllers
             // To enable password failures to trigger account lockout, change to shouldLockout: true
             //string result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
 
-            SimpleX.Core.signIn signIn = new SimpleX.Core.signIn();
-            string result = signIn.PasswordSignIn(model.Email, model.Password);
+            //SimpleX.Core.signIn signIn = new SimpleX.Core.signIn();
+            //string result = signIn.PasswordSignIn(model.Email, model.Password);
 
-            switch (result)
-            {
-                case "Success":
-                    return RedirectToLocal(returnUrl);
-                case "LockedOut":
-                    return View("Lockout");
-                case "RequiresVerification":
-                    return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
-                case "Failure":
-                default:
-                    ModelState.AddModelError("", "Falha no login");
+            //switch (result)
+            //{
+            //    case "Success":
+            //        return RedirectToLocal(returnUrl);
+            //    case "LockedOut":
+            //        return View("Lockout");
+            //    case "RequiresVerification":
+            //        return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
+            //    case "Failure":
+            //    default:
+            //        ModelState.AddModelError("", "Falha no login");
                     return View(model);
-            }
+            //}
         }
 
         //

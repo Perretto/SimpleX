@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace SimpleX.ModelCore.Message
 {
-    public class systemMessageCore
+    public class systemMessage
     {
         private systemMessageService serviceSystemMessage;
 
-        public systemMessageCore()
+        public systemMessage()
         {
             serviceSystemMessage = new systemMessageService();
         }
@@ -24,10 +24,10 @@ namespace SimpleX.ModelCore.Message
 
         public string BuscarSystemMessageByExternalNumber(string number)
         {
-            systemMessage systemMessage = new systemMessage();
+            SimpleX.Model.systemMessageCore systemMessage = new SimpleX.Model.systemMessageCore();
             systemMessage.externalNumber = number;
             string description = "";
-            List<systemMessage> lstsystemMessage = serviceSystemMessage.Filtrar(systemMessage);
+            List<systemMessageCore> lstsystemMessage = serviceSystemMessage.Filtrar(systemMessage);
 
             if (lstsystemMessage.Count > 0)
             {

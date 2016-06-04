@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Simplex.Pizzaria.Models
 {
-    public class clienteEndereco : SimpleX.Model.clienteEndereco
+    public class clienteEndereco : SimpleX.Model.clienteEnderecoCore
     {
 
         public virtual cliente cliente { get; set; }

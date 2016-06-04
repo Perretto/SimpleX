@@ -102,7 +102,7 @@ namespace Simplex.Pizzaria.Areas.Fornecedor.Controllers
 
             @ViewBag.CNAEs = itens;
 
-            fornecedor fornecedor = new SimpleX.Model.fornecedor();
+            fornecedor fornecedor = new fornecedor();
             if (idFornecedor != "")
             {
                 fornecedor = facadeFornecedor.ConsultarFornecedor(Guid.Parse(idFornecedor));
@@ -154,7 +154,7 @@ namespace Simplex.Pizzaria.Areas.Fornecedor.Controllers
 
             @ViewBag.paises = itens;
 
-            fornecedorEndereco fornecedorEndereco = new SimpleX.Model.fornecedorEndereco();
+            fornecedorEndereco fornecedorEndereco = new fornecedorEndereco();
             if (idFornecedorEndereco != "")
             {
                 fornecedorEndereco = facadeFornecedor.ConsultarFornecedorEndereco(Guid.Parse(idFornecedorEndereco));
@@ -221,7 +221,7 @@ namespace Simplex.Pizzaria.Areas.Fornecedor.Controllers
         {
             facadeFornecedor = new cadastroFacade();
 
-            fornecedorContato fornecedorContato = new SimpleX.Model.fornecedorContato();
+            fornecedorContato fornecedorContato = new fornecedorContato();
             if (idFornecedorContato != "")
             {
                 fornecedorContato = facadeFornecedor.ConsultarFornecedorContato(Guid.Parse(idFornecedorContato));

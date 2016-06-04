@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Simplex.Pizzaria.Models
 {
-    public class fornecedorEndereco : SimpleX.Model.fornecedorEndereco
+    public class fornecedorEndereco : SimpleX.Model.fornecedorEnderecoCore
     {
         public cidade cidade { get; set; }
         public estado estado { get; set; }

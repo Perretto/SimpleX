@@ -17,12 +17,12 @@ namespace SimpleX.ModelCore.Services
     public class systemMessageService : IDisposable
     {
         private Context context;
-        private Repository<systemMessage> repositorymessage;
+        private Repository<SimpleX.Model.systemMessageCore> repositorymessage;
 
         public systemMessageService()
         {
             context = new Context();
-            repositorymessage = new Repository<systemMessage>(context);
+            repositorymessage = new Repository<SimpleX.Model.systemMessageCore>(context);
         }
 
         public void Dispose()
@@ -33,17 +33,17 @@ namespace SimpleX.ModelCore.Services
             }
         }
 
-        public List<systemMessage> Listar()
+        public List<systemMessageCore> Listar()
         {
             return repositorymessage.ObterTodos().ToList();
         }
 
-        public systemMessage Consultar(Guid id)
+        public systemMessageCore Consultar(Guid id)
         {
             return repositorymessage.Obter(id);
         }
 
-        public Result Salvar(systemMessage message)
+        public Result Salvar(systemMessageCore message)
         {
             Result retorno = new Result();
 
@@ -61,7 +61,7 @@ namespace SimpleX.ModelCore.Services
 
                 context.SaveChanges();
 
-                systemMessageCore systemMessageCore = new systemMessageCore();
+                systemMessage systemMessageCore = new systemMessage();
 
                 string description = systemMessageCore.BuscarSystemMessageByExternalNumber("0001");
 
@@ -82,7 +82,7 @@ namespace SimpleX.ModelCore.Services
             return retorno;
         }
 
-        public List<systemMessage> Filtrar(Expression<Func<systemMessage, bool>> filtro, Expression<Func<systemMessage, object>> campo = null, Ordenacao ordenacao = Ordenacao.Asc)
+        public List<systemMessageCore> Filtrar(Expression<Func<systemMessageCore, bool>> filtro, Expression<Func<systemMessageCore, object>> campo = null, Ordenacao ordenacao = Ordenacao.Asc)
         {
             return repositorymessage.Filtrar(filtro, campo, ordenacao).ToList();
         }
@@ -109,7 +109,7 @@ namespace SimpleX.ModelCore.Services
             return retorno;
         }
 
-        public List<systemMessage> Filtrar(systemMessage message)
+        public List<systemMessageCore> Filtrar(systemMessageCore message)
         {
             return repositorymessage.ObterPorFiltros(b => (
                 (message.ID == Guid.Empty || b.ID == message.ID) &&

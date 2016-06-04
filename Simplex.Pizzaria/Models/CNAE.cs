@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Simplex.Pizzaria.Models
 {
-    public class CNAE : SimpleX.Model.CNAE
+    public class CNAE : SimpleX.Model.CNAECore
     {
         public List<CNAE> ListaCNAEs()
         {

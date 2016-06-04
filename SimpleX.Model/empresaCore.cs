@@ -4,11 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SimpleX.Model
 {
-    public class empresa
+    [Table("empresa")] 
+    public class empresaCore
     {
+        
+
         [Key]
         public Guid ID { get; set; }
         public string razaoSocial { get; set; }

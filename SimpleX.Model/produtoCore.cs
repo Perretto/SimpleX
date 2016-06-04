@@ -4,14 +4,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SimpleX.Model
 {
-    public class produtoCategoria
+    [Table("produto")] 
+    public class produtoCore
     {
         [Key]
         public Guid ID { get; set; }
+        public string codigo { get; set; }
         public string nome { get; set; }
+        public Guid produtoCategoriaID { get; set; }
+        public Decimal valorProduto { get; set; }
+        public Guid produtoTipoID { get; set; }
+
         public Guid empresaID { get; set; }
+
     }
 }

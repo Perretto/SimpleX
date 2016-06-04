@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Simplex.Pizzaria.Models
 {
-    public class empresa : SimpleX.Model.empresa
+    public class empresa : SimpleX.Model.empresaCore
     {
         public CNAE CNAE { get; set; }
 

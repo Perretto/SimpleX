@@ -4,14 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SimpleX.Model
 {
-    public class formaPagamento
+    [Table("estado")] 
+    public class estadoCore
     {
         [Key]
         public Guid ID { get; set; }
-         public string nome { get; set; }
-         public Guid empresaID { get; set; }
+        public string nome { get; set; }
+        public string codigo { get; set; }
+        public Guid empresaID { get; set; }
     }
 }

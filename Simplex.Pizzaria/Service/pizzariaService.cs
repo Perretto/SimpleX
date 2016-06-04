@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Linq.Expressions;
 using SimpleX.ModelCore;
-using SimpleX.Model;
+using Simplex.Pizzaria.Models;
 using System.Data.Entity;
 using Simplex.Pizzaria.Context;
 using Simplex.Pizzaria.Repository;

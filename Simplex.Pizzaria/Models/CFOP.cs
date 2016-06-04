@@ -8,7 +8,7 @@ using SimpleX.Model;
 
 namespace Simplex.Pizzaria.Models
 {
-    public class CFOP : SimpleX.Model.CFOP
+    public class CFOP : SimpleX.Model.CFOPCore
     {
        
     }

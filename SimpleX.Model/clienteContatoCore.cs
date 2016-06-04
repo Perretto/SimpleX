@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SimpleX.Model
 {
-    public class clienteContato
+    [Table("clientecontato")] 
+    public class clienteContatoCore
     {
         [Key]
         public Guid ID { get; set; }

@@ -7,7 +7,8 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 namespace SimpleX.Model
 {
-    public class systemMessage
+    [Table("systemmessage")] 
+    public class systemMessageCore
     {
         [Key]
         public Guid ID { get; set; } 

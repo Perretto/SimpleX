@@ -225,7 +225,6 @@
     <Compile Include="Models\produtoComposicao.cs" />
     <Compile Include="Models\produtoTipo.cs" />
     <Compile Include="Models\statusURA.cs" />
-    <Compile Include="Models\systemMessage.cs" />
     <Compile Include="Models\URA.cs" />
     <Compile Include="Models\usuario.cs" />
     <Compile Include="Models\venda.cs" />

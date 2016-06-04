@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Simplex.Pizzaria.Models
 {
-    public class vendaProduto : SimpleX.Model.vendaProduto
+    public class vendaProduto : SimpleX.Model.vendaProdutoCore
     {
         public Guid subProdutoID { get; set; }
         public empresa empresa { get; set; }

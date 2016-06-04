@@ -4,14 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SimpleX.Model
 {
-    public class statusURA
+    [Table("comprastatus")] 
+    public class compraStatusCore
     {
         [Key]
         public Guid ID { get; set; }
-        public string texto { get; set; } // Exemplo: (NENHUM, ATENDENTE, PROXIMO)
+        public string nome { get; set; }
         public Guid empresaID { get; set; }
     }
 }

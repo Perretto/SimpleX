@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Simplex.Pizzaria.Models
 {
-    public class statusURA : SimpleX.Model.statusURA
+    public class statusURA : SimpleX.Model.statusURACore
     {
         
     }

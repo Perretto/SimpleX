@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Simplex.Pizzaria.Models
 {
-    public class systemMessage : SimpleX.Model.systemMessage
+    public class systemMessage : SimpleX.Model.systemMessageCore
     {
         
     }

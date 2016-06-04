@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Simplex.Pizzaria.Models
 {
-    public class produto : SimpleX.Model.produto
+    public class produto : SimpleX.Model.produtoCore
     {
         public empresa empresa { get; set; }
         public produtoCategoria produtoCategoria { get; set; }
