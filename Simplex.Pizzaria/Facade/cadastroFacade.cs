@@ -4,42 +4,41 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
-using SimpleX.ModelCore.Services;
-using SimpleX.ModelCore;
-using SimpleX.Model;
+using Simplex.Pizzaria.Models;
+using Simplex.Pizzaria.Service;
 
 namespace Simplex.Pizzaria.Facade
 {
     public class cadastroFacade
     {
         
-        private Simplex.Pizzaria.Service.clienteService<cliente> serviceCliente;
-        private clienteEnderecoService serviceClienteEndereco;
-        private clienteContatoService serviceClienteContato;
+        private clienteService<cliente> serviceCliente;
+        private clienteEnderecoService<clienteEndereco> serviceClienteEndereco;
+        private clienteContatoService<clienteContato> serviceClienteContato;
 
-        private fornecedorService serviceFornecedor;
-        private fornecedorEnderecoService serviceFornecedorEndereco;
-        private fornecedorContatoService serviceFornecedorContato;
+        private fornecedorService<fornecedor> serviceFornecedor;
+        private fornecedorEnderecoService<fornecedorEndereco> serviceFornecedorEndereco;
+        private fornecedorContatoService<fornecedorContato> serviceFornecedorContato;
 
-        private produtoService serviceProduto;
-        private produtoCategoriaService serviceProdutoCategoria;
-        private produtoTipoService serviceProdutoTipo;
-        private produtoComposicaoService serviceProdutoComposicao;
+        private produtoService<produto> serviceProduto;
+        private produtoCategoriaService<produtoCategoria> serviceProdutoCategoria;
+        private produtoTipoService<produtoTipo> serviceProdutoTipo;
+        private produtoComposicaoService<produtoComposicao> serviceProdutoComposicao;
 
         public cadastroFacade()
         {
-            serviceCliente = new Simplex.Pizzaria.Service.clienteService<cliente>();
-            serviceClienteEndereco = new clienteEnderecoService();
-            serviceClienteContato = new clienteContatoService();
+            serviceCliente = new clienteService<cliente>();
+            serviceClienteEndereco = new clienteEnderecoService<clienteEndereco>();
+            serviceClienteContato = new clienteContatoService<clienteContato>();
 
-            serviceFornecedor = new fornecedorService();
-            serviceFornecedorEndereco = new fornecedorEnderecoService();
-            serviceFornecedorContato = new fornecedorContatoService();
+            serviceFornecedor = new fornecedorService<fornecedor>();
+            serviceFornecedorEndereco = new fornecedorEnderecoService<fornecedorEndereco>();
+            serviceFornecedorContato = new fornecedorContatoService<fornecedorContato>();
 
-            serviceProduto = new produtoService();
-            serviceProdutoCategoria = new produtoCategoriaService();
-            serviceProdutoTipo = new produtoTipoService();
-            serviceProdutoComposicao = new produtoComposicaoService();
+            serviceProduto = new produtoService<produto>();
+            serviceProdutoCategoria = new produtoCategoriaService<produtoCategoria>();
+            serviceProdutoTipo = new produtoTipoService<produtoTipo>();
+            serviceProdutoComposicao = new produtoComposicaoService<produtoComposicao>();
         }
 
         public void Dispose()
