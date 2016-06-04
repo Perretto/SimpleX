@@ -191,6 +191,8 @@
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Facade\cadastroFacade.cs" />
+    <Compile Include="Facade\movimentacaoFacade.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -198,9 +200,13 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Areas\Venda\Models\Mapping\vendaProdutoMap.cs" />
+    <Compile Include="Areas\Venda\Models\vendaProduto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\Repositorio.cs" />
+    <Compile Include="Service\clienteService.cs" />
     <Compile Include="Service\pizzariaService.cs" />
+    <Compile Include="Service\vendaProdutoService.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -428,7 +434,6 @@
     <Folder Include="Areas\Fornecedor\Views\Shared\" />
     <Folder Include="Areas\Produto\Models\" />
     <Folder Include="Areas\Produto\Views\Shared\" />
-    <Folder Include="Areas\Venda\Models\" />
     <Folder Include="Areas\Venda\Views\Shared\" />
     <Folder Include="Views\Default\" />
   </ItemGroup>
