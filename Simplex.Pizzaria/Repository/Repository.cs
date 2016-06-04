@@ -13,7 +13,7 @@ using SimpleX.ModelCore.Contexts;
 using System.Web;
 using SimpleX.ModelCore.Repository;
 using Simplex.Pizzaria.Context;
-using Simplex.Pizzaria.Interface;
+
 
 namespace Simplex.Pizzaria.Repository
 {
@@ -23,14 +23,14 @@ namespace Simplex.Pizzaria.Repository
         Desc
     }
 
-    public class Repositorio<T> : IRepository<T> where T : class
+    public class Repository<T> : IRepository<T> where T : class
     {
         //private IContext context;
 
 
         private ContextPizzaria context;
 
-        public Repositorio(ContextPizzaria context)
+        public Repository(ContextPizzaria context)
         {
             this.context = context;
         }
