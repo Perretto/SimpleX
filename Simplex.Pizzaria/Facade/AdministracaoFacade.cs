@@ -53,6 +53,12 @@ namespace Simplex.Pizzaria.Facade
             return retorno;
         }
 
+        public Result AlterarEmpresa(empresa empresa)
+        {
+            Result retorno = serviceEmpresa.Alterar(empresa);
+            return retorno;
+        }
+
         public Result ExcluirEmpresa(Guid Id)
         {
             return serviceEmpresa.Excluir(Id);
@@ -81,6 +87,12 @@ namespace Simplex.Pizzaria.Facade
             Result retorno = serviceEmpresaEndereco.Salvar(empresaEndereco);
             return retorno;
         }
+        public Result AlterarEmpresaEndereco(empresaEndereco empresaEndereco)
+        {
+            Result retorno = serviceEmpresaEndereco.Alterar(empresaEndereco);
+            return retorno;
+        }
+
 
         public Result ExcluirEmpresaEndereco(Guid Id)
         {
@@ -110,6 +122,11 @@ namespace Simplex.Pizzaria.Facade
             Result retorno = serviceUsuario.Salvar(usuario);
             return retorno;
         }
+        public Result AlterarUsuario(usuario usuario)
+        {
+            Result retorno = serviceUsuario.Alterar(usuario);
+            return retorno;
+        }
 
         public Result ExcluirUsuario(Guid Id)
         {
@@ -137,6 +154,11 @@ namespace Simplex.Pizzaria.Facade
         public Result SalvarURA(URA URA)
         {
             Result retorno = serviceURA.Salvar(URA);
+            return retorno;
+        }
+        public Result AlterarURA(URA URA)
+        {
+            Result retorno = serviceURA.Alterar(URA);
             return retorno;
         }
 

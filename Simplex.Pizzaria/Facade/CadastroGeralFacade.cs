@@ -54,6 +54,11 @@ namespace Simplex.Pizzaria.Facade
             Result retorno = serviceCNAE.Salvar(CNAE);
             return retorno;
         }
+        public Result AlterarCNAE(CNAE CNAE)
+        {
+            Result retorno = serviceCNAE.Alterar(CNAE);
+            return retorno;
+        }
 
         public Result ExcluirCNAE(Guid Id)
         {
@@ -80,6 +85,12 @@ namespace Simplex.Pizzaria.Facade
         public Result SalvarCidade(cidade cidade)
         {
             Result retorno = serviceCidade.Salvar(cidade);
+            return retorno;
+        }
+
+        public Result AlterarCidade(cidade cidade)
+        {
+            Result retorno = serviceCidade.Alterar(cidade);
             return retorno;
         }
 
@@ -110,6 +121,11 @@ namespace Simplex.Pizzaria.Facade
             Result retorno = serviceEstado.Salvar(estado);
             return retorno;
         }
+        public Result AlterarEstado(estado estado)
+        {
+            Result retorno = serviceEstado.Alterar(estado);
+            return retorno;
+        }
 
         public Result ExcluirEstado(Guid Id)
         {
@@ -136,6 +152,11 @@ namespace Simplex.Pizzaria.Facade
         public Result SalvarPais(pais pais)
         {
             Result retorno = servicePais.Salvar(pais);
+            return retorno;
+        }
+        public Result AlterarPais(pais pais)
+        {
+            Result retorno = servicePais.Alterar(pais);
             return retorno;
         }
 

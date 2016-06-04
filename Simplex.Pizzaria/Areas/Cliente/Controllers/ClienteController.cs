@@ -252,7 +252,15 @@ namespace Simplex.Pizzaria.Areas.Cliente.Controllers
         public ActionResult SalvarCliente(cliente cliente)
         {
             facadeCliente = new cadastroFacade();
-            Result resultado = facadeCliente.SalvarCliente(cliente);
+            Result resultado;
+            if (cliente.ID.ToString() == "" || cliente.ID == Guid.Empty)
+            {
+                resultado = facadeCliente.SalvarCliente(cliente);
+            }
+            else
+            {
+                resultado = facadeCliente.AlterarCliente(cliente);
+            }
             if (cliente.ID != Guid.Empty)
             {
                 resultado.AddMensagem("ID", cliente.ID.ToString());
@@ -265,7 +273,15 @@ namespace Simplex.Pizzaria.Areas.Cliente.Controllers
         public ActionResult SalvarClienteEndereco(clienteEndereco clienteEndereco)
         {
             facadeCliente = new cadastroFacade();
-            Result resultado = facadeCliente.SalvarClienteEndereco(clienteEndereco);
+            Result resultado;
+            if (clienteEndereco.ID.ToString() == "" || clienteEndereco.ID == Guid.Empty)
+            {
+                 resultado = facadeCliente.SalvarClienteEndereco(clienteEndereco);
+            }
+            else
+            {
+                 resultado = facadeCliente.AlterarClienteEndereco(clienteEndereco);
+            }
 
             return Json(resultado);
         }
@@ -273,7 +289,15 @@ namespace Simplex.Pizzaria.Areas.Cliente.Controllers
         public ActionResult SalvarClienteContato(clienteContato clienteContato)
         {
             facadeCliente = new cadastroFacade();
-            Result resultado = facadeCliente.SalvarClienteContato(clienteContato);
+            Result resultado;
+            if (clienteContato.ID.ToString() == "" || clienteContato.ID == Guid.Empty)
+            {
+                resultado = facadeCliente.SalvarClienteContato(clienteContato);
+            }
+            else
+            {
+                resultado = facadeCliente.AlterarClienteContato(clienteContato);
+            }
 
             return Json(resultado);
         }

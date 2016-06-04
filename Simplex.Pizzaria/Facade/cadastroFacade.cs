@@ -96,6 +96,27 @@ namespace Simplex.Pizzaria.Facade
             return retorno;
         }
 
+        public Result AlterarCliente(cliente cliente)
+        {
+            //if (!modelState.IsValid)
+            //{
+            //    return;
+            //}
+
+            Result retorno = serviceCliente.Alterar(cliente);
+            //if (!retorno.Sucesso)
+            //{
+            //    modelState.AddModelError("", retorno.MensagemGeral);
+
+            //    foreach (ResultadoCampo campo in retorno.Campos)
+            //    {
+            //        modelState.AddModelError(campo.Campo, campo.Mensagem);
+            //    }
+            //}
+
+            return retorno;
+        }
+
         public Result ExcluirCliente(Guid Id)
         {
             return serviceCliente.Excluir(Id);
@@ -138,6 +159,27 @@ namespace Simplex.Pizzaria.Facade
 
             return retorno;
         }
+        public Result AlterarClienteEndereco(clienteEndereco clienteEndereco)
+        {
+            //if (!modelState.IsValid)
+            //{
+            //    return;
+            //}
+
+            Result retorno = serviceClienteEndereco.Alterar(clienteEndereco);
+            //if (!retorno.Sucesso)
+            //{
+            //    modelState.AddModelError("", retorno.MensagemGeral);
+
+            //    foreach (ResultadoCampo campo in retorno.Campos)
+            //    {
+            //        modelState.AddModelError(campo.Campo, campo.Mensagem);
+            //    }
+            //}
+
+            return retorno;
+        }
+
 
         public Result ExcluirClienteEndereco(Guid Id)
         {
@@ -169,6 +211,27 @@ namespace Simplex.Pizzaria.Facade
             //}
 
             Result retorno = serviceClienteContato.Salvar(clienteContato);
+            //if (!retorno.Sucesso)
+            //{
+            //    modelState.AddModelError("", retorno.MensagemGeral);
+
+            //    foreach (ResultadoCampo campo in retorno.Campos)
+            //    {
+            //        modelState.AddModelError(campo.Campo, campo.Mensagem);
+            //    }
+            //}
+
+            return retorno;
+        }
+
+        public Result AlterarClienteContato(clienteContato clienteContato)
+        {
+            //if (!modelState.IsValid)
+            //{
+            //    return;
+            //}
+
+            Result retorno = serviceClienteContato.Alterar(clienteContato);
             //if (!retorno.Sucesso)
             //{
             //    modelState.AddModelError("", retorno.MensagemGeral);
@@ -227,6 +290,27 @@ namespace Simplex.Pizzaria.Facade
             return retorno;
         }
 
+        public Result AlterarFornecedor(fornecedor fornecedor)
+        {
+            //if (!modelState.IsValid)
+            //{
+            //    return;
+            //}
+
+            Result retorno = serviceFornecedor.Alterar(fornecedor);
+            //if (!retorno.Sucesso)
+            //{
+            //    modelState.AddModelError("", retorno.MensagemGeral);
+
+            //    foreach (ResultadoCampo campo in retorno.Campos)
+            //    {
+            //        modelState.AddModelError(campo.Campo, campo.Mensagem);
+            //    }
+            //}
+
+            return retorno;
+        }
+
         public Result ExcluirFornecedor(Guid Id)
         {
             return serviceFornecedor.Excluir(Id);
@@ -253,6 +337,12 @@ namespace Simplex.Pizzaria.Facade
         {
             
             Result retorno = serviceFornecedorEndereco.Salvar(fornecedorEndereco);
+            return retorno;
+        }
+        public Result AlterarFornecedorEndereco(fornecedorEndereco fornecedorEndereco)
+        {
+
+            Result retorno = serviceFornecedorEndereco.Alterar(fornecedorEndereco);
             return retorno;
         }
 
@@ -284,6 +374,13 @@ namespace Simplex.Pizzaria.Facade
             return retorno;
         }
 
+        public Result AlterarFornecedorContato(fornecedorContato fornecedorContato)
+        {
+            Result retorno = serviceFornecedorContato.Alterar(fornecedorContato);
+            return retorno;
+        }
+
+
         public Result ExcluirFornecedorContato(Guid Id)
         {
             return serviceFornecedorContato.Excluir(Id);
@@ -314,6 +411,13 @@ namespace Simplex.Pizzaria.Facade
             return retorno;
         }
 
+        public Result AlterarProduto(produto produto)
+        {
+
+            Result retorno = serviceProduto.Alterar(produto);
+            return retorno;
+        }
+
         public Result ExcluirProduto(Guid Id)
         {
             return serviceProduto.Excluir(Id);
@@ -339,6 +443,12 @@ namespace Simplex.Pizzaria.Facade
         {
 
             Result retorno = serviceProdutoCategoria.Salvar(produtoCategoria);
+            return retorno;
+        }
+        public Result AlterarProdutoCategoria(produtoCategoria produtoCategoria)
+        {
+
+            Result retorno = serviceProdutoCategoria.Alterar(produtoCategoria);
             return retorno;
         }
 
@@ -369,6 +479,12 @@ namespace Simplex.Pizzaria.Facade
             Result retorno = serviceProdutoTipo.Salvar(produtoTipo);
             return retorno;
         }
+        public Result AlterarProdutoTipo(produtoTipo produtoTipo)
+        {
+
+            Result retorno = serviceProdutoTipo.Alterar(produtoTipo);
+            return retorno;
+        }
 
         public Result ExcluirProdutoTipo(Guid Id)
         {
@@ -395,6 +511,13 @@ namespace Simplex.Pizzaria.Facade
         {
 
             Result retorno = serviceProdutoComposicao.Salvar(produtoComposicao);
+            return retorno;
+        }
+
+        public Result AlterarProdutoComposicao(produtoComposicao produtoComposicao)
+        {
+
+            Result retorno = serviceProdutoComposicao.Alterar(produtoComposicao);
             return retorno;
         }
 

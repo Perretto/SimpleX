@@ -68,7 +68,11 @@ namespace Simplex.Pizzaria.Facade
             Result retorno = serviceVenda.Salvar(venda);
             return retorno;
         }
-
+        public Result AlterarVenda(venda venda)
+        {
+            Result retorno = serviceVenda.Alterar(venda);
+            return retorno;
+        }
         public Result ExcluirVenda(Guid Id)
         {
             return serviceVenda.Excluir(Id);
@@ -80,7 +84,7 @@ namespace Simplex.Pizzaria.Facade
         }
 
 
-        public List<Simplex.Pizzaria.Models.vendaProduto> FiltrarVendaProduto(Simplex.Pizzaria.Models.vendaProduto vendaProduto)
+        public List<vendaProduto> FiltrarVendaProduto(vendaProduto vendaProduto)
         {
             return serviceVendaProduto.Filtrar(vendaProduto);
         }
@@ -90,14 +94,19 @@ namespace Simplex.Pizzaria.Facade
             return serviceVendaProduto.Consultar(Id);
         }
 
-        public List<Simplex.Pizzaria.Models.vendaProduto> ListarVendaProduto()
+        public List<vendaProduto> ListarVendaProduto()
         {
             return serviceVendaProduto.Listar();
         }
 
-        public Result SalvarVendaProduto(Simplex.Pizzaria.Models.vendaProduto vendaProduto)
+        public Result SalvarVendaProduto(vendaProduto vendaProduto)
         {
             Result retorno = serviceVendaProduto.Salvar(vendaProduto);
+            return retorno;
+        }
+        public Result AlterarVendaProduto(vendaProduto vendaProduto)
+        {
+            Result retorno = serviceVendaProduto.Alterar(vendaProduto);
             return retorno;
         }
 
@@ -128,7 +137,11 @@ namespace Simplex.Pizzaria.Facade
             Result retorno = serviceVendaStatus.Salvar(vendaStatus);
             return retorno;
         }
-
+        public Result AlterarVendaStatus(vendaStatus vendaStatus)
+        {
+            Result retorno = serviceVendaStatus.Alterar(vendaStatus);
+            return retorno;
+        }
         public Result ExcluirVendaStatus(Guid Id)
         {
             return serviceVendaStatus.Excluir(Id);
@@ -154,6 +167,11 @@ namespace Simplex.Pizzaria.Facade
         public Result SalvarVendaPagamento(vendaPagamento vendaPagamento)
         {
             Result retorno = serviceVendaPagamento.Salvar(vendaPagamento);
+            return retorno;
+        }
+        public Result AlterarVendaPagamento(vendaPagamento vendaPagamento)
+        {
+            Result retorno = serviceVendaPagamento.Alterar(vendaPagamento);
             return retorno;
         }
 
@@ -188,6 +206,11 @@ namespace Simplex.Pizzaria.Facade
             return retorno;
         }
 
+        public Result AlterarCompra(compra compra)
+        {
+            Result retorno = serviceCompra.Alterar(compra);
+            return retorno;
+        }
         public Result ExcluirCompra(Guid Id)
         {
             return serviceCompra.Excluir(Id);
@@ -213,6 +236,11 @@ namespace Simplex.Pizzaria.Facade
         public Result SalvarCompraProduto(compraProduto compraProduto)
         {
             Result retorno = serviceCompraProduto.Salvar(compraProduto);
+            return retorno;
+        }
+        public Result AlterarCompraProduto(compraProduto compraProduto)
+        {
+            Result retorno = serviceCompraProduto.Alterar(compraProduto);
             return retorno;
         }
 
@@ -244,6 +272,12 @@ namespace Simplex.Pizzaria.Facade
             return retorno;
         }
 
+        public Result AlterarCompraStatus(compraStatus compraStatus)
+        {
+            Result retorno = serviceCompraStatus.Alterar(compraStatus);
+            return retorno;
+        }
+
         public Result ExcluirCompraStatus(Guid Id)
         {
             return serviceCompraStatus.Excluir(Id);
@@ -271,6 +305,12 @@ namespace Simplex.Pizzaria.Facade
             Result retorno = serviceCompraPagamento.Salvar(compraPagamento);
             return retorno;
         }
+        public Result AlterarCompraPagamento(compraPagamento compraPagamento)
+        {
+            Result retorno = serviceCompraPagamento.Alterar(compraPagamento);
+            return retorno;
+        }
+
 
         public Result ExcluirCompraPagamento(Guid Id)
         {

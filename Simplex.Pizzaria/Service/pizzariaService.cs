@@ -42,16 +42,30 @@ namespace Simplex.Pizzaria.Service
             return repositorycidade.Obter(id);
         }
 
-        public Result Salvar(T cidade)
+        public Result Salvar(T objeto)
         {
             Result retorno = new Result();
 
            
-                repositorycidade.Adicionar(cidade);
+                repositorycidade.Adicionar(objeto);
                 context.SaveChanges();
 
                 retorno.Ok("Cadastro realizado com sucesso.");
           
+
+            return retorno;
+        }
+
+        public Result Alterar(T objeto)
+        {
+            Result retorno = new Result();
+
+
+            repositorycidade.Alterar(objeto);
+            context.SaveChanges();
+
+            retorno.Ok("Cadastro alterado com sucesso.");
+
 
             return retorno;
         }
