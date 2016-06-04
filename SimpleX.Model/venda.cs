@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace SimpleX.Model
 {
     public class venda
     {
+        [Key]
         public Guid ID { get; set; }
         public int numeroPedido { get; set; }
         public Guid clienteID { get; set; }
