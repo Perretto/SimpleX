@@ -62,9 +62,11 @@ namespace SimpleX.ModelCore.Contexts
         public DbSet<cidade> cidade { get; set; }
         public DbSet<estado> estado { get; set; }
         public DbSet<pais> pais { get; set; }
+        public DbSet<CFOP> CFOP { get; set; }
 
         //==========================================
 
+        public DbSet<systemMessage> message { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -90,72 +92,77 @@ namespace SimpleX.ModelCore.Contexts
             //modelBuilder.Entity<empresa>().Ignore(o => o.empresaID);
 
             //Administrador=============================    
-            modelBuilder.Configurations.Add(new empresaMap());
-            modelBuilder.Configurations.Add(new empresaEnderecoMap());
-            modelBuilder.Entity<empresaEndereco>().HasOptional(a => a.empresa).WithOptionalDependent().WillCascadeOnDelete(false);
-            modelBuilder.Configurations.Add(new usuarioMap());
-            modelBuilder.Entity<usuario>().HasOptional(a => a.empresa).WithOptionalDependent().WillCascadeOnDelete(false);
-            modelBuilder.Configurations.Add(new URAMap());
-            //==========================================
+            //modelBuilder.Configurations.Add(new empresaMap());
+            //modelBuilder.Configurations.Add(new empresaEnderecoMap());
+            //modelBuilder.Entity<empresaEndereco>().HasOptional(a => a.empresa).WithOptionalDependent().WillCascadeOnDelete(false);
+            //modelBuilder.Configurations.Add(new usuarioMap());
+            //modelBuilder.Entity<usuario>().HasOptional(a => a.empresa).WithOptionalDependent().WillCascadeOnDelete(false);
+            //modelBuilder.Configurations.Add(new URAMap());
+            ////==========================================
 
-            //Cadastro==================================
-            modelBuilder.Configurations.Add(new clienteMap());
-            modelBuilder.Entity<cliente>().HasOptional(a => a.empresa).WithOptionalDependent().WillCascadeOnDelete(false);
-            modelBuilder.Configurations.Add(new clienteContatoMap());
-            modelBuilder.Entity<clienteContato>().HasOptional(a => a.empresa).WithOptionalDependent().WillCascadeOnDelete(false);
-            modelBuilder.Configurations.Add(new clienteEnderecoMap());
-            modelBuilder.Entity<clienteEndereco>().HasOptional(a => a.empresa).WithOptionalDependent().WillCascadeOnDelete(false);
+            ////Cadastro==================================
+            //modelBuilder.Configurations.Add(new clienteMap());
+            //modelBuilder.Entity<cliente>().HasOptional(a => a.empresa).WithOptionalDependent().WillCascadeOnDelete(false);
+            //modelBuilder.Configurations.Add(new clienteContatoMap());
+            //modelBuilder.Entity<clienteContato>().HasOptional(a => a.empresa).WithOptionalDependent().WillCascadeOnDelete(false);
+            //modelBuilder.Configurations.Add(new clienteEnderecoMap());
+            //modelBuilder.Entity<clienteEndereco>().HasOptional(a => a.empresa).WithOptionalDependent().WillCascadeOnDelete(false);
 
-            modelBuilder.Configurations.Add(new fornecedorMap());
-            modelBuilder.Entity<fornecedor>().HasOptional(a => a.empresa).WithOptionalDependent().WillCascadeOnDelete(false);
-            modelBuilder.Configurations.Add(new fornecedorContatoMap());
-            modelBuilder.Entity<fornecedorContato>().HasOptional(a => a.empresa).WithOptionalDependent().WillCascadeOnDelete(false);
-            modelBuilder.Configurations.Add(new fornecedorEnderecoMap());
-            modelBuilder.Entity<fornecedorEndereco>().HasOptional(a => a.empresa).WithOptionalDependent().WillCascadeOnDelete(false);
+            //modelBuilder.Configurations.Add(new fornecedorMap());
+            //modelBuilder.Entity<fornecedor>().HasOptional(a => a.empresa).WithOptionalDependent().WillCascadeOnDelete(false);
+            //modelBuilder.Configurations.Add(new fornecedorContatoMap());
+            //modelBuilder.Entity<fornecedorContato>().HasOptional(a => a.empresa).WithOptionalDependent().WillCascadeOnDelete(false);
+            //modelBuilder.Configurations.Add(new fornecedorEnderecoMap());
+            //modelBuilder.Entity<fornecedorEndereco>().HasOptional(a => a.empresa).WithOptionalDependent().WillCascadeOnDelete(false);
 
-            modelBuilder.Configurations.Add(new produtoMap());
-            modelBuilder.Entity<produto>().HasOptional(a => a.empresa).WithOptionalDependent().WillCascadeOnDelete(false);
-            modelBuilder.Configurations.Add(new produtoCategoriaMap());
-            modelBuilder.Entity<produtoCategoria>().HasOptional(a => a.empresa).WithOptionalDependent().WillCascadeOnDelete(false);
-            modelBuilder.Configurations.Add(new produtoComposicaoMap());
-            modelBuilder.Entity<produtoComposicao>().HasOptional(a => a.empresa).WithOptionalDependent().WillCascadeOnDelete(false);
-            modelBuilder.Entity<produtoComposicao>().HasOptional(a => a.produtoOrigem).WithOptionalDependent().WillCascadeOnDelete(false);
-            modelBuilder.Entity<produtoComposicao>().HasOptional(a => a.produtoDestino).WithOptionalDependent().WillCascadeOnDelete(false);
-            modelBuilder.Configurations.Add(new produtoTipoMap());
-            modelBuilder.Entity<produtoTipo>().HasOptional(a => a.empresa).WithOptionalDependent().WillCascadeOnDelete(false);
-            //==========================================
+            //modelBuilder.Configurations.Add(new produtoMap());
+            //modelBuilder.Entity<produto>().HasOptional(a => a.empresa).WithOptionalDependent().WillCascadeOnDelete(false);
+            //modelBuilder.Configurations.Add(new produtoCategoriaMap());
+            //modelBuilder.Entity<produtoCategoria>().HasOptional(a => a.empresa).WithOptionalDependent().WillCascadeOnDelete(false);
+            //modelBuilder.Configurations.Add(new produtoComposicaoMap());
+            //modelBuilder.Entity<produtoComposicao>().HasOptional(a => a.empresa).WithOptionalDependent().WillCascadeOnDelete(false);
+            //modelBuilder.Entity<produtoComposicao>().HasOptional(a => a.produtoOrigem).WithOptionalDependent().WillCascadeOnDelete(false);
+            //modelBuilder.Entity<produtoComposicao>().HasOptional(a => a.produtoDestino).WithOptionalDependent().WillCascadeOnDelete(false);
+            //modelBuilder.Configurations.Add(new produtoTipoMap());
+            //modelBuilder.Entity<produtoTipo>().HasOptional(a => a.empresa).WithOptionalDependent().WillCascadeOnDelete(false);
+            ////==========================================
 
-            //Movimentação==============================
-            modelBuilder.Configurations.Add(new formaPagamentoMap());
-            modelBuilder.Entity<formaPagamento>().HasOptional(a => a.empresa).WithOptionalDependent().WillCascadeOnDelete(false);
-            modelBuilder.Configurations.Add(new compraMap());
-            modelBuilder.Entity<compra>().HasOptional(a => a.empresa).WithOptionalDependent().WillCascadeOnDelete(false);
-            modelBuilder.Configurations.Add(new compraPagamentoMap());
-            modelBuilder.Entity<compraPagamento>().HasOptional(a => a.empresa).WithOptionalDependent().WillCascadeOnDelete(false);
-            modelBuilder.Configurations.Add(new compraProdutoMap());
-            modelBuilder.Entity<compraProduto>().HasOptional(a => a.empresa).WithOptionalDependent().WillCascadeOnDelete(false);
-            modelBuilder.Configurations.Add(new compraStatusMap());
-            modelBuilder.Entity<compraStatus>().HasOptional(a => a.empresa).WithOptionalDependent().WillCascadeOnDelete(false);
+            ////Movimentação==============================
+            //modelBuilder.Configurations.Add(new formaPagamentoMap());
+            //modelBuilder.Entity<formaPagamento>().HasOptional(a => a.empresa).WithOptionalDependent().WillCascadeOnDelete(false);
+            //modelBuilder.Configurations.Add(new compraMap());
+            //modelBuilder.Entity<compra>().HasOptional(a => a.empresa).WithOptionalDependent().WillCascadeOnDelete(false);
+            //modelBuilder.Configurations.Add(new compraPagamentoMap());
+            //modelBuilder.Entity<compraPagamento>().HasOptional(a => a.empresa).WithOptionalDependent().WillCascadeOnDelete(false);
+            //modelBuilder.Configurations.Add(new compraProdutoMap());
+            //modelBuilder.Entity<compraProduto>().HasOptional(a => a.empresa).WithOptionalDependent().WillCascadeOnDelete(false);
+            //modelBuilder.Configurations.Add(new compraStatusMap());
+            //modelBuilder.Entity<compraStatus>().HasOptional(a => a.empresa).WithOptionalDependent().WillCascadeOnDelete(false);
 
-            modelBuilder.Configurations.Add(new vendaMap());
-            modelBuilder.Entity<venda>().HasOptional(a => a.empresa).WithOptionalDependent().WillCascadeOnDelete(false);
-            modelBuilder.Configurations.Add(new vendaPagamentoMap());
-            modelBuilder.Entity<vendaPagamento>().HasOptional(a => a.empresa).WithOptionalDependent().WillCascadeOnDelete(false);
-            modelBuilder.Configurations.Add(new vendaProdutoMap());
-            modelBuilder.Entity<vendaProduto>().HasOptional(a => a.empresa).WithOptionalDependent().WillCascadeOnDelete(false);
-            modelBuilder.Configurations.Add(new vendaStatusMap());
-            modelBuilder.Entity<vendaStatus>().HasOptional(a => a.empresa).WithOptionalDependent().WillCascadeOnDelete(false);
-            //==========================================
+            //modelBuilder.Configurations.Add(new vendaMap());
+            //modelBuilder.Entity<venda>().HasOptional(a => a.empresa).WithOptionalDependent().WillCascadeOnDelete(false);
+            //modelBuilder.Configurations.Add(new vendaPagamentoMap());
+            //modelBuilder.Entity<vendaPagamento>().HasOptional(a => a.empresa).WithOptionalDependent().WillCascadeOnDelete(false);
+            ////modelBuilder.Configurations.Add(new vendaProdutoMap());
+            ////modelBuilder.Entity<vendaProduto>().HasOptional(a => a.empresa).WithOptionalDependent().WillCascadeOnDelete(false);
+            //modelBuilder.Configurations.Add(new vendaStatusMap());
+            //modelBuilder.Entity<vendaStatus>().HasOptional(a => a.empresa).WithOptionalDependent().WillCascadeOnDelete(false);
+            ////==========================================
 
-            //Cadastro Geral ===========================
-            modelBuilder.Configurations.Add(new CNAEMap());
-            modelBuilder.Configurations.Add(new cidadeMap());
-            modelBuilder.Entity<cidade>().HasOptional(a => a.empresa).WithOptionalDependent().WillCascadeOnDelete(false);
-            modelBuilder.Configurations.Add(new estadoMap());
-            modelBuilder.Entity<estado>().HasOptional(a => a.empresa).WithOptionalDependent().WillCascadeOnDelete(false);
-            modelBuilder.Configurations.Add(new paisMap());
-            modelBuilder.Entity<pais>().HasOptional(a => a.empresa).WithOptionalDependent().WillCascadeOnDelete(false);
-            //==========================================
+            ////Cadastro Geral ===========================
+            //modelBuilder.Configurations.Add(new CNAEMap());
+            //modelBuilder.Configurations.Add(new cidadeMap());
+            //modelBuilder.Entity<cidade>().HasOptional(a => a.empresa).WithOptionalDependent().WillCascadeOnDelete(false);
+            //modelBuilder.Configurations.Add(new estadoMap());
+            //modelBuilder.Entity<estado>().HasOptional(a => a.empresa).WithOptionalDependent().WillCascadeOnDelete(false);
+            //modelBuilder.Configurations.Add(new paisMap());
+            //modelBuilder.Entity<pais>().HasOptional(a => a.empresa).WithOptionalDependent().WillCascadeOnDelete(false);
+            //modelBuilder.Configurations.Add(new CFOPMap());
+            ////==========================================
+
+
+            //modelBuilder.Configurations.Add(new messageMap());
+            //modelBuilder.Entity<systemMessage>().Ignore(m => m.success);
 
             //this.Configuration.LazyLoadingEnabled = false;
         }

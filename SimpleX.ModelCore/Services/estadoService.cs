@@ -63,7 +63,7 @@ namespace SimpleX.ModelCore.Services
                 retorno.Ok("Cadastro realizado com sucesso.");
             }
             catch (Exception erro)
-            {
+            {                
                 retorno.Erro(erro.Message);
             }
 

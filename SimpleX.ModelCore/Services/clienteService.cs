@@ -125,7 +125,7 @@ namespace SimpleX.ModelCore.Services
                 (cliente.IE == null || b.IE.ToUpper().Contains(cliente.IE)) &&
                 (cliente.IM == null || b.IM.ToUpper().Contains(cliente.IM)) &&
                 (cliente.suframa == null || b.suframa.ToUpper().Contains(cliente.suframa)) &&
-                (cliente.CNAEID == Guid.Empty || b.CNAEID == cliente.CNAEID) &&                
+                (cliente.CNAEID == Guid.Empty || b.CNAEID == cliente.CNAEID) &&
                 (cliente.empresaID == Guid.Empty || b.empresaID == cliente.empresaID)
                 )).ToList();
         }

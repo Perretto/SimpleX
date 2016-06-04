@@ -76,6 +76,7 @@
     <Compile Include="Mapping\fornecedorContatoMap.cs" />
     <Compile Include="Mapping\fornecedorEnderecoMap.cs" />
     <Compile Include="Mapping\fornecedorMap.cs" />
+    <Compile Include="Mapping\messageMap.cs" />
     <Compile Include="Mapping\paisMap.cs" />
     <Compile Include="Mapping\produtoCategoriaMap.cs" />
     <Compile Include="Mapping\produtoComposicaoMap.cs" />
@@ -88,6 +89,7 @@
     <Compile Include="Mapping\vendaPagamentoMap.cs" />
     <Compile Include="Mapping\vendaProdutoMap.cs" />
     <Compile Include="Mapping\vendaStatusMapcs.cs" />
+    <Compile Include="Message\systemMessageCore.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\IRepository.cs" />
@@ -110,6 +112,7 @@
     <Compile Include="Services\fornecedorContatoService.cs" />
     <Compile Include="Services\fornecedorEnderecoService.cs" />
     <Compile Include="Services\fornecedorService.cs" />
+    <Compile Include="Services\systemMessageService.cs" />
     <Compile Include="Services\paisService.cs" />
     <Compile Include="Services\produtoCategoriaService.cs" />
     <Compile Include="Services\produtoComposicaoService.cs" />
@@ -123,7 +126,9 @@
     <Compile Include="Services\vendaService.cs" />
     <Compile Include="Services\vendaStatusService.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
