@@ -252,8 +252,21 @@
     <Compile Include="Service\formaPagamentoService.cs" />
     <Compile Include="Service\fornecedorContatoService.cs" />
     <Compile Include="Service\fornecedorEnderecoService.cs" />
+    <Compile Include="Service\fornecedorService.cs" />
+    <Compile Include="Service\paisService.cs" />
     <Compile Include="Service\pizzariaService.cs" />
+    <Compile Include="Service\produtoCategoriaService.cs" />
+    <Compile Include="Service\produtoComposicaoService.cs" />
+    <Compile Include="Service\produtoService.cs" />
+    <Compile Include="Service\produtoTipoService.cs" />
+    <Compile Include="Service\statusURAService.cs" />
+    <Compile Include="Service\systemMessageService.cs" />
+    <Compile Include="Service\URAService.cs" />
+    <Compile Include="Service\usuarioService.cs" />
+    <Compile Include="Service\vendaPagamentoService.cs" />
     <Compile Include="Service\vendaProdutoService.cs" />
+    <Compile Include="Service\vendaService.cs" />
+    <Compile Include="Service\vendaStatusService.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
