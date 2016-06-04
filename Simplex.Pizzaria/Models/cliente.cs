@@ -9,7 +9,10 @@ namespace Simplex.Pizzaria.Models
 {
     public class cliente : SimpleX.Model.cliente
     {
-        
+
+        public virtual List<clienteEndereco> clientesEnderecos { get; set; }
+        public virtual List<clienteContato> clientesContatos { get; set; }
+
 
     }
 }

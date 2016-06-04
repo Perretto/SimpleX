@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using SimpleX.Core.Facade;
-using SimpleX.Model;
 using SimpleX.ModelCore;
-using SimpleX.Core;
+using Simplex.Pizzaria.Facade;
+using Simplex.Pizzaria.Models;
 
 namespace Simplex.Pizzaria.Areas.Cliente.Controllers
 {
@@ -102,7 +101,7 @@ namespace Simplex.Pizzaria.Areas.Cliente.Controllers
 
             @ViewBag.CNAEs = itens;
 
-            cliente cliente = new SimpleX.Model.cliente();
+            cliente cliente = new cliente();
             if (idCliente != "")
             {
                 cliente = facadeCliente.ConsultarCliente(Guid.Parse(idCliente));
@@ -117,7 +116,7 @@ namespace Simplex.Pizzaria.Areas.Cliente.Controllers
         {
             List<SelectListItem> itens = new List<SelectListItem>();
             cadastroGeralFacade = new cadastroGeralFacade();
-            facadeCliente = new Simplex.Pizzaria.Facade.cadastroFacade();
+            facadeCliente = new cadastroFacade();
 
             List<cidade> lstCidade = cadastroGeralFacade.ListarCidade();
 
@@ -154,7 +153,7 @@ namespace Simplex.Pizzaria.Areas.Cliente.Controllers
 
             @ViewBag.paises = itens;
 
-            clienteEndereco clienteEndereco = new SimpleX.Model.clienteEndereco();
+            clienteEndereco clienteEndereco = new clienteEndereco();
             if (idClienteEndereco != "")
             {
                 clienteEndereco = facadeCliente.ConsultarClienteEndereco(Guid.Parse(idClienteEndereco));
@@ -182,7 +181,7 @@ namespace Simplex.Pizzaria.Areas.Cliente.Controllers
 
             itens = new List<SelectListItem>();
             cadastroGeralFacade = new cadastroGeralFacade();
-            facadeCliente = new Simplex.Pizzaria.Facade.cadastroFacade();
+            facadeCliente = new cadastroFacade();
 
             List<estado> lstEstados = cadastroGeralFacade.ListarEstado();
 
@@ -195,7 +194,7 @@ namespace Simplex.Pizzaria.Areas.Cliente.Controllers
 
             itens = new List<SelectListItem>();
             cadastroGeralFacade = new cadastroGeralFacade();
-            facadeCliente = new Simplex.Pizzaria.Facade.cadastroFacade();
+            facadeCliente = new cadastroFacade();
 
             List<pais> lstPaises = cadastroGeralFacade.ListarPais();
 
@@ -221,7 +220,7 @@ namespace Simplex.Pizzaria.Areas.Cliente.Controllers
         {
             facadeCliente = new Simplex.Pizzaria.Facade.cadastroFacade();
 
-            clienteContato clienteContato = new SimpleX.Model.clienteContato();
+            clienteContato clienteContato = new clienteContato();
             if (idClienteContato != "")
             {
                 clienteContato = facadeCliente.ConsultarClienteContato(Guid.Parse(idClienteContato));
@@ -234,7 +233,7 @@ namespace Simplex.Pizzaria.Areas.Cliente.Controllers
 
         public ActionResult ClienteContatoCadastro(string idCliente = "")
         {
-            facadeCliente = new Simplex.Pizzaria.Facade.cadastroFacade();
+            facadeCliente = new cadastroFacade();
 
             clienteContato clienteContato = new clienteContato();
             if (idCliente != "")
@@ -252,7 +251,7 @@ namespace Simplex.Pizzaria.Areas.Cliente.Controllers
         [HttpPost]
         public ActionResult SalvarCliente(cliente cliente)
         {
-            facadeCliente = new Simplex.Pizzaria.Facade.cadastroFacade();
+            facadeCliente = new cadastroFacade();
             Result resultado = facadeCliente.SalvarCliente(cliente);
             if (cliente.ID != Guid.Empty)
             {
@@ -265,7 +264,7 @@ namespace Simplex.Pizzaria.Areas.Cliente.Controllers
 
         public ActionResult SalvarClienteEndereco(clienteEndereco clienteEndereco)
         {
-            facadeCliente = new Simplex.Pizzaria.Facade.cadastroFacade();
+            facadeCliente = new cadastroFacade();
             Result resultado = facadeCliente.SalvarClienteEndereco(clienteEndereco);
 
             return Json(resultado);
@@ -273,7 +272,7 @@ namespace Simplex.Pizzaria.Areas.Cliente.Controllers
 
         public ActionResult SalvarClienteContato(clienteContato clienteContato)
         {
-            facadeCliente = new Simplex.Pizzaria.Facade.cadastroFacade();
+            facadeCliente = new cadastroFacade();
             Result resultado = facadeCliente.SalvarClienteContato(clienteContato);
 
             return Json(resultado);
@@ -281,7 +280,7 @@ namespace Simplex.Pizzaria.Areas.Cliente.Controllers
         //Excluir============================================================================================
         public ActionResult ExcluirCliente(string idCliente = "")
         {
-            facadeCliente = new Simplex.Pizzaria.Facade.cadastroFacade();
+            facadeCliente = new cadastroFacade();
             Result resultado = new Result();
 
             if (idCliente != "")
@@ -293,7 +292,7 @@ namespace Simplex.Pizzaria.Areas.Cliente.Controllers
 
         public ActionResult ExcluirClienteEndereco(string idClienteEndereco = "")
         {
-            facadeCliente = new Simplex.Pizzaria.Facade.cadastroFacade();
+            facadeCliente = new cadastroFacade();
             Result resultado = new Result();
 
             if (idClienteEndereco != "")
@@ -305,7 +304,7 @@ namespace Simplex.Pizzaria.Areas.Cliente.Controllers
 
         public ActionResult ExcluirClienteContato(string idClienteContato = "")
         {
-            facadeCliente = new Simplex.Pizzaria.Facade.cadastroFacade();
+            facadeCliente = new cadastroFacade();
             Result resultado = new Result();
 
             if (idClienteContato != "")

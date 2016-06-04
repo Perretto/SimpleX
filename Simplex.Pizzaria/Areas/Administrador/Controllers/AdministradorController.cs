@@ -1,10 +1,10 @@
-﻿using SimpleX.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using SimpleX.Core.Facade;
+using Simplex.Pizzaria.Facade;
+using Simplex.Pizzaria.Models;
 using SimpleX.ModelCore;
 
 namespace Simplex.Pizzaria.Areas.Administrador.Controllers

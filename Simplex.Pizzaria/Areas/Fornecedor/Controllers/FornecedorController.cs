@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using SimpleX.Core.Facade;
-using SimpleX.Model;
+using Simplex.Pizzaria.Facade;
+using Simplex.Pizzaria.Models;
 using SimpleX.ModelCore;
-using SimpleX.Core;
+
 
 namespace Simplex.Pizzaria.Areas.Fornecedor.Controllers
 {
