@@ -17,12 +17,12 @@ namespace Simplex.Pizzaria.Service
     public class fornecedorEnderecoService<T> : pizzariaService<T> where T : class
     {
         private ContextPizzaria context;
-        private Repositorio<fornecedorEndereco> repositoryFornecedorEndereco;
+        private Repository<fornecedorEndereco> repositoryFornecedorEndereco;
 
         public fornecedorEnderecoService()
         {
             context = new ContextPizzaria();
-            repositoryFornecedorEndereco = new Repositorio<fornecedorEndereco>(context);
+            repositoryFornecedorEndereco = new Repository<fornecedorEndereco>(context);
         }
 
 
