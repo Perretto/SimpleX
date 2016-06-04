@@ -1,38 +1,36 @@
-﻿using Simplex.Pizzaria.Service;
-using SimpleX.Model;
-using SimpleX.ModelCore;
-using SimpleX.ModelCore.Services;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Simplex.Pizzaria.Models;
+using Simplex.Pizzaria.Service;
 
 namespace Simplex.Pizzaria.Facade
 {
     public class movimentacaoFacade
     {
-        private vendaService serviceVenda;
-        private Simplex.Pizzaria.Service.vendaProdutoService<Simplex.Pizzaria.Models.vendaProduto> serviceVendaProduto;
-        private vendaStatusService serviceVendaStatus;
-        private vendaPagamentoService serviceVendaPagamento;
+        private vendaService<venda> serviceVenda;
+        private vendaProdutoService<vendaProduto> serviceVendaProduto;
+        private vendaStatusService<vendaStatus> serviceVendaStatus;
+        private vendaPagamentoService<vendaPagamento> serviceVendaPagamento;
 
-        private compraService serviceCompra;
-        private compraProdutoService serviceCompraProduto;
-        private compraStatusService serviceCompraStatus;
-        private compraPagamentoService serviceCompraPagamento;
+        private compraService<compra> serviceCompra;
+        private compraProdutoService<compraProduto> serviceCompraProduto;
+        private compraStatusService<compraStatus> serviceCompraStatus;
+        private compraPagamentoService<compraPagamento> serviceCompraPagamento;
 
         public movimentacaoFacade()
         {
-            serviceVenda = new vendaService();
-            serviceVendaProduto = new vendaProdutoService<Simplex.Pizzaria.Models.vendaProduto>();
-            serviceVendaStatus = new vendaStatusService();
-            serviceVendaPagamento = new vendaPagamentoService();
+            serviceVenda = new vendaService<venda>();
+            serviceVendaProduto = new vendaProdutoService<vendaProduto>();
+            serviceVendaStatus = new vendaStatusService<vendaStatus>();
+            serviceVendaPagamento = new vendaPagamentoService<vendaPagamento>();
 
-            serviceCompra = new compraService();
-            serviceCompraProduto = new compraProdutoService();
-            serviceCompraStatus = new compraStatusService();
-            serviceCompraPagamento = new compraPagamentoService();
+            serviceCompra = new compraService<compra>();
+            serviceCompraProduto = new compraProdutoService<compraProduto>();
+            serviceCompraStatus = new compraStatusService<compraStatus>();
+            serviceCompraPagamento = new compraPagamentoService<compraPagamento>();
         }
 
         public void Dispose()

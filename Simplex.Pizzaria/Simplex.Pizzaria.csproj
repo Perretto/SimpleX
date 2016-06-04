@@ -191,7 +191,9 @@
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Facade\AdministracaoFacade.cs" />
     <Compile Include="Facade\cadastroFacade.cs" />
+    <Compile Include="Facade\CadastroGeralFacade.cs" />
     <Compile Include="Facade\movimentacaoFacade.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
