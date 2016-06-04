@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using Simplex.Pizzaria.Models;
 using Simplex.Pizzaria.Service;
+using SimpleX.ModelCore;
 
 namespace Simplex.Pizzaria.Facade
 {
