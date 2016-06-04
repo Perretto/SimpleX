@@ -198,10 +198,40 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\CFOP.cs" />
+    <Compile Include="Models\cidade.cs" />
+    <Compile Include="Models\cliente.cs" />
+    <Compile Include="Models\clienteContato.cs" />
+    <Compile Include="Models\clienteEndereco.cs" />
+    <Compile Include="Models\CNAE.cs" />
+    <Compile Include="Models\compra.cs" />
+    <Compile Include="Models\compraPagamento.cs" />
+    <Compile Include="Models\compraProduto.cs" />
+    <Compile Include="Models\compraStatus.cs" />
+    <Compile Include="Models\empresa.cs" />
+    <Compile Include="Models\empresaEndereco.cs" />
+    <Compile Include="Models\estado.cs" />
+    <Compile Include="Models\formaPagamento.cs" />
+    <Compile Include="Models\fornecedor.cs" />
+    <Compile Include="Models\fornecedorContato.cs" />
+    <Compile Include="Models\fornecedorEndereco.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Areas\Venda\Models\Mapping\vendaProdutoMap.cs" />
     <Compile Include="Areas\Venda\Models\vendaProduto.cs" />
+    <Compile Include="Models\pais.cs" />
+    <Compile Include="Models\produto.cs" />
+    <Compile Include="Models\produtoCategoria.cs" />
+    <Compile Include="Models\produtoComposicao.cs" />
+    <Compile Include="Models\produtoTipo.cs" />
+    <Compile Include="Models\statusURA.cs" />
+    <Compile Include="Models\systemMessage.cs" />
+    <Compile Include="Models\URA.cs" />
+    <Compile Include="Models\usuario.cs" />
+    <Compile Include="Models\venda.cs" />
+    <Compile Include="Models\vendaPagamento.cs" />
+    <Compile Include="Models\vendaProduto.cs" />
+    <Compile Include="Models\vendaStatus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\Repository.cs" />
     <Compile Include="Service\CFOPService.cs" />
@@ -219,6 +249,7 @@
     <Compile Include="Service\estadoService.cs" />
     <Compile Include="Service\formaPagamentoService.cs" />
     <Compile Include="Service\fornecedorContatoService.cs" />
+    <Compile Include="Service\fornecedorEnderecoService.cs" />
     <Compile Include="Service\pizzariaService.cs" />
     <Compile Include="Service\vendaProdutoService.cs" />
     <Compile Include="Startup.cs" />
@@ -487,7 +518,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>56104</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
