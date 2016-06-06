@@ -255,6 +255,7 @@ namespace Simplex.Pizzaria.Areas.Cliente.Controllers
             Result resultado;
             if (cliente.ID.ToString() == "" || cliente.ID == Guid.Empty)
             {
+                cliente.ID = Guid.NewGuid();
                 resultado = facadeCliente.SalvarCliente(cliente);
             }
             else

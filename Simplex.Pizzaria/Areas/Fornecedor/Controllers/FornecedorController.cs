@@ -253,7 +253,20 @@ namespace Simplex.Pizzaria.Areas.Fornecedor.Controllers
         public ActionResult salvarFornecedor(fornecedor fornecedor)
         {
             facadeFornecedor = new cadastroFacade();
-            Result resultado = facadeFornecedor.SalvarFornecedor(fornecedor);
+
+            Result resultado;
+            if (fornecedor.ID.ToString() == "" || fornecedor.ID == Guid.Empty)
+            {
+                fornecedor.ID = Guid.NewGuid();
+                resultado = facadeFornecedor.SalvarFornecedor(fornecedor);
+            }
+            else
+            {
+                resultado = facadeFornecedor.AlterarFornecedor(fornecedor);
+            }
+
+            //Result resultado = facadeFornecedor.SalvarFornecedor(fornecedor);
+
             if (fornecedor.ID != Guid.Empty)
             {
                 resultado.AddMensagem("ID", fornecedor.ID.ToString());
@@ -266,7 +279,19 @@ namespace Simplex.Pizzaria.Areas.Fornecedor.Controllers
         public ActionResult salvarFornecedorEndereco(fornecedorEndereco fornecedorEndereco)
         {
             facadeFornecedor = new cadastroFacade();
-            Result resultado = facadeFornecedor.SalvarFornecedorEndereco(fornecedorEndereco);
+
+            Result resultado;
+            if (fornecedorEndereco.ID.ToString() == "" || fornecedorEndereco.ID == Guid.Empty)
+            {
+                fornecedorEndereco.ID = Guid.NewGuid();
+                resultado = facadeFornecedor.SalvarFornecedorEndereco(fornecedorEndereco);
+            }
+            else
+            {
+                resultado = facadeFornecedor.AlterarFornecedorEndereco(fornecedorEndereco);
+            }
+
+            //Result resultado = facadeFornecedor.SalvarFornecedorEndereco(fornecedorEndereco);
 
             return Json(resultado);
         }
@@ -274,7 +299,18 @@ namespace Simplex.Pizzaria.Areas.Fornecedor.Controllers
         public ActionResult salvarFornecedorContato(fornecedorContato fornecedorContato)
         {
             facadeFornecedor = new cadastroFacade();
-            Result resultado = facadeFornecedor.SalvarFornecedorContato(fornecedorContato);
+            Result resultado;
+            if (fornecedorContato.ID.ToString() == "" || fornecedorContato.ID == Guid.Empty)
+            {
+                fornecedorContato.ID = Guid.NewGuid();
+                resultado = facadeFornecedor.SalvarFornecedorContato(fornecedorContato);
+            }
+            else
+            {
+                resultado = facadeFornecedor.AlterarFornecedorContato(fornecedorContato);
+            }
+
+            //Result resultado = facadeFornecedor.SalvarFornecedorContato(fornecedorContato);
 
             return Json(resultado);
         }

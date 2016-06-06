@@ -350,7 +350,18 @@ namespace Simplex.Pizzaria.Areas.Venda.Controllers
         public ActionResult salvarVenda(venda venda)
         {
             facadeVenda = new movimentacaoFacade();
-            Result resultado = facadeVenda.SalvarVenda(venda);
+            Result resultado;
+            if (venda.ID.ToString() == "" || venda.ID == Guid.Empty)
+            {
+                venda.ID = Guid.NewGuid();
+                resultado = facadeVenda.SalvarVenda(venda);
+            }
+            else
+            {
+                resultado = facadeVenda.AlterarVenda(venda);
+            }
+
+            //Result resultado = facadeVenda.SalvarVenda(venda);
             if (venda.ID != Guid.Empty)
             {
                 resultado.AddMensagem("ID", venda.ID.ToString());
@@ -366,7 +377,19 @@ namespace Simplex.Pizzaria.Areas.Venda.Controllers
                 
             vendaProduto.empresaID = Guid.Parse("fc70ecab-61b8-4e53-9a99-6098b0a75a02");
             //vendaProduto.produtoID = Guid.Parse("43e0d280-cfd0-430a-afae-9a6f1520841b");
-            Result resultado = facadeVenda.SalvarVendaProduto(vendaProduto);
+
+            Result resultado;
+            if (vendaProduto.ID.ToString() == "" || vendaProduto.ID == Guid.Empty)
+            {
+                vendaProduto.ID = Guid.NewGuid();
+                resultado = facadeVenda.SalvarVendaProduto(vendaProduto);
+            }
+            else
+            {
+                resultado = facadeVenda.AlterarVendaProduto(vendaProduto);
+            }
+
+            //Result resultado = facadeVenda.SalvarVendaProduto(vendaProduto);
             if (vendaProduto.ID != Guid.Empty)
             {
                 resultado.AddMensagem("ID", vendaProduto.ID.ToString());
@@ -380,7 +403,7 @@ namespace Simplex.Pizzaria.Areas.Venda.Controllers
 
                 venda venda = facadeVenda.ConsultarVenda(vendaProdutoTotal.vendaID);
                 venda.valorTotal = valorTotal;
-                facadeVenda.SalvarVenda(venda);
+                facadeVenda.AlterarVenda(venda);
             }
 
             return Json(resultado);

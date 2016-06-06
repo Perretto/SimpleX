@@ -125,7 +125,18 @@ namespace Simplex.Pizzaria.Areas.Produto.Controllers
         public ActionResult SalvarProduto(produto produto)
         {
             facadeProduto = new cadastroFacade();
-            Result resultado = facadeProduto.SalvarProduto(produto);
+            Result resultado;
+            if (produto.ID.ToString() == "" || produto.ID == Guid.Empty)
+            {
+                produto.ID = Guid.NewGuid();
+                resultado = facadeProduto.SalvarProduto(produto);
+            }
+            else
+            {
+                resultado = facadeProduto.AlterarProduto(produto);
+            }
+
+            //Result resultado = facadeProduto.SalvarProduto(produto);
             if (produto.ID != Guid.Empty)
             {
                 resultado.AddMensagem("ID", produto.ID.ToString());

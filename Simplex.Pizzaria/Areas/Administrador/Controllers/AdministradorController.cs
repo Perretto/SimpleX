@@ -69,7 +69,18 @@ namespace Simplex.Pizzaria.Areas.Administrador.Controllers
         public ActionResult SalvarUsuario(usuario usuario)
         {
             usuario.empresaID = Guid.Parse("fc70ecab-61b8-4e53-9a99-6098b0a75a02");
-            Result resultado = facadeAdministrador.SalvarUsuario(usuario);
+            Result resultado;
+            if (usuario.ID.ToString() == "" || usuario.ID == Guid.Empty)
+            {
+                usuario.ID = Guid.NewGuid();
+                resultado = facadeAdministrador.SalvarUsuario(usuario);
+            }
+            else
+            {
+                resultado = facadeAdministrador.AlterarUsuario(usuario);
+            }
+
+            //Result resultado = facadeAdministrador.SalvarUsuario(usuario);
             if (usuario.ID != Guid.Empty)
             {
                 resultado.AddMensagem("ID", usuario.ID.ToString());
